@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5% !important;
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: calc(0.18781567489114657rem + 0.43541364296081275vw) !important;
+  }
+}
+
+@media screen and (min-width: 1530px) {
+  html {
+    font-size: calc(0.8583153928955867rem + 0.4305705059203445vw);
+  }
+}
+
+@font-face {
+  font-family: 'CabinetGrotesk-Variable';
+  src: url('../public/fonts//CabinetGrotesk-Variable.woff2') format('woff2'),
+    url('../public/fonts//CabinetGrotesk-Variable.woff') format('woff'),
+    url('../public/fonts//CabinetGrotesk-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinetGrotesk-Thin';
+  src: url('../public/fonts//CabinetGrotesk-Thin.woff2') format('woff2'),
+    url('../public/fonts//CabinetGrotesk-Thin.woff') format('woff'),
+    url('../public/fonts//CabinetGrotesk-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinetGrotesk-Extralight';
+  src: url('../public/fonts//CabinetGrotesk-Extralight.woff2') format('woff2'),
+    url('../public/fonts//CabinetGrotesk-Extralight.woff') format('woff'),
+    url('../public/fonts//CabinetGrotesk-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinetGrotesk-Light';
+  src: url('../public/fonts//CabinetGrotesk-Light.woff2') format('woff2'),
+    url('../public/fonts//CabinetGrotesk-Light.woff') format('woff'),
+    url('../public/fonts//CabinetGrotesk-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinetGrotesk-Regular';
+  src: url('../public/fonts//CabinetGrotesk-Regular.woff2') format('woff2'),
+    url('../public/fonts//CabinetGrotesk-Regular.woff') format('woff'),
+    url('../public/fonts//CabinetGrotesk-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinetGrotesk-Medium';
+  src: url('../public/fonts//CabinetGrotesk-Medium.woff2') format('woff2'),
+    url('../public/fonts//CabinetGrotesk-Medium.woff') format('woff'),
+    url('../public/fonts//CabinetGrotesk-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinetGrotesk-Bold';
+  src: url('../public/fonts//CabinetGrotesk-Bold.woff2') format('woff2'),
+    url('../public/fonts//CabinetGrotesk-Bold.woff') format('woff'),
+    url('../public/fonts//CabinetGrotesk-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinetGrotesk-Extrabold';
+  src: url('../public/fonts//CabinetGrotesk-Extrabold.woff2') format('woff2'),
+    url('../public/fonts//CabinetGrotesk-Extrabold.woff') format('woff'),
+    url('../public/fonts//CabinetGrotesk-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CabinetGrotesk-Black';
+  src: url('../public/fonts//CabinetGrotesk-Black.woff2') format('woff2'),
+    url('../public/fonts//CabinetGrotesk-Black.woff') format('woff'),
+    url('../public/fonts//CabinetGrotesk-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueLTStd-Lt';
+  src: url('../public/fonts/HelveticaNeueLTStd-Lt.otf');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* html {
+  font-size: calc(0.8583153928955866rem + 0.4305705059203445vw);
+}
+
+@media screen and (max-width: 1920px) {
+  html {
+    font-size: calc(0.8583153928955867rem + 0.4305705059203445vw);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  html {
+    font-size: calc(0.7496212121212121rem + 0.6060606060606061vw);
+  }
+} */
+
+div,
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.hero {
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    white 20%,
+    white 80%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    white 20%,
+    white 80%,
+    transparent 100%
+  );
+}
+
+.loader {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #cecece;
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  inset: -2.8px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  animation: prixClipFix 2.5s infinite linear;
+  animation-delay: 0.8s;
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  40% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  55% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 100% 100%);
+  }
+
+  60% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 65%);
+  }
+
+  80% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 50%);
+  }
+
+  90% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0%);
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
