@@ -106,11 +106,11 @@ const SideBar = () => {
             />
             <SideBarLinkCard
               logo={ProgramsLogo}
-              isActive={active == 'programs'}
-              text={'Programs'}
+              isActive={active == 'startup'}
+              text={'Startup'}
               handleClick={handleClick}
               rounded={false}
-              link={'user/programs'}
+              link={'user/startup'}
             />
 
             <SideBarLinkCard
@@ -193,11 +193,11 @@ const SideBar = () => {
               />
               <SideBarLinkCard
                 logo={ProgramsLogo}
-                isActive={active == 'programs'}
-                text={'Programs'}
+                isActive={active == 'startup'}
+                text={'Startup'}
                 handleClick={handleClick}
                 rounded={false}
-                link={'user/programs'}
+                link={'user/startup'}
               />
 
               <SideBarLinkCard

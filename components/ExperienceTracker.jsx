@@ -62,36 +62,8 @@ const ExperienceTracker = () => {
   return (
     <div className="mobile-lg:p-[0.9375rem] relative">
       <Toaster />
-      <div className="grid grid-cols-3 gap-[15px]  mobile-lg:mt-0">
-        <div className="">
-          <Input
-            placeholder={'Role'}
-            inputValue={role}
-            setInputValue={setRole}
-          />
-        </div>
-        <div className="">
-          <Input
-            placeholder={'Experience (1 - 2 yrs)'}
-            inputValue={experience}
-            setInputValue={setExperience}
-          />
-        </div>
-        <div className=" flex gap-3">
-          <UrlField
-            placeholder={'Url'}
-            Url={url}
-            setUrl={setUrl}
-            setUrlError={setUrlError}
-            UrlError={urlError}
-          />
-          <div onClick={addExperience} className="mt-1 w-fit ">
-            <ColouredButton label="Add" />
-          </div>
-        </div>
-      </div>
 
-      <div className="w-full mobile-lg:border border-[#d7d7d7]   rounded-lg relative overflow-y-auto mobile-lg:h-[calc(100vh-16.2rem)]  lg:h-[calc(100vh-10.5rem)] bg-white border-collapse ">
+      <div className="w-full mobile-lg:border border-[#d7d7d7]   rounded-lg relative overflow-y-auto mobile-lg:h-[calc(100vh-10.5rem)]  lg:h-[calc(100vh-6rem)] bg-white border-collapse ">
         <div className="grid border-[#d7d7d7] border-b grid-cols-3 gap-[15px] sticky top-0 bg-white divide-x-[1px] divide-[#d7d7d7]">
           <p className=" p-[0.9375rem] ">Company</p>
           <p className="  p-[0.9375rem] ">Role</p>

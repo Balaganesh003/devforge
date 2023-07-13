@@ -8,6 +8,7 @@ const nextConfig = {
       'xsgames.co',
       'jumpstart-static.s3.amazonaws.com',
       'www.google.com',
+      'pixlok.com',
     ],
   },
 };
