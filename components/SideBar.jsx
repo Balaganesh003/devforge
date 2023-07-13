@@ -98,11 +98,11 @@ const SideBar = () => {
             />
             <SideBarLinkCard
               logo={StudentLogo}
-              isActive={active == 'students'}
-              text={'Students'}
+              isActive={active == 'profile'}
+              text={'Profile'}
               handleClick={handleClick}
               rounded={false}
-              link={'user/students'}
+              link={'user/profile'}
             />
             <SideBarLinkCard
               logo={ProgramsLogo}
@@ -185,11 +185,11 @@ const SideBar = () => {
               />
               <SideBarLinkCard
                 logo={StudentLogo}
-                isActive={active == 'students'}
-                text={'Students'}
+                isActive={active == 'profile'}
+                text={'Profile'}
                 handleClick={handleClick}
                 rounded={false}
-                link={'user/students'}
+                link={'user/profile'}
               />
               <SideBarLinkCard
                 logo={ProgramsLogo}
