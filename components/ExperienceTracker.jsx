@@ -62,22 +62,22 @@ const ExperienceTracker = () => {
   return (
     <div className="mobile-lg:p-[0.9375rem] relative">
       <Toaster />
-      <div className="flex gap-[15px] mt-2 mobile-lg:mt-0">
-        <div className="flex-1">
+      <div className="grid grid-cols-3 gap-[15px]  mobile-lg:mt-0">
+        <div className="">
           <Input
             placeholder={'Role'}
             inputValue={role}
             setInputValue={setRole}
           />
         </div>
-        <div className="flex-1">
+        <div className="">
           <Input
             placeholder={'Experience (1 - 2 yrs)'}
             inputValue={experience}
             setInputValue={setExperience}
           />
         </div>
-        <div className="flex-1">
+        <div className=" flex gap-3">
           <UrlField
             placeholder={'Url'}
             Url={url}
@@ -85,29 +85,28 @@ const ExperienceTracker = () => {
             setUrlError={setUrlError}
             UrlError={urlError}
           />
-        </div>
-        <div onClick={addExperience} className="mt-1 w-fit ">
-          <ColouredButton label="Add" />
+          <div onClick={addExperience} className="mt-1 w-fit ">
+            <ColouredButton label="Add" />
+          </div>
         </div>
       </div>
-      <div className="mobile-lg:p-[15px] mobile-lg:border mobile-lg:rounded-lg   ">
-        <div className="w-full mobile-lg:border   rounded-lg relative overflow-y-auto mobile-lg:h-[calc(100vh-16.2rem)]  lg:h-[calc(100vh-11.35rem)] ">
-          <div className="flex w-full gap-[15px] mb-[15px] sticky top-0 bg-white p-[0.9375rem]">
-            <p className=" flex-1 ">Company</p>
-            <p className=" flex-1 ">Role</p>
-            <p className=" flex-1 ">Experience </p>
-          </div>
-          <div className="w-full flex flex-col gap-[15px] px-1 mobile-lg:px-[15px] pb-[15px]">
-            {ExperienceTrackerList.map((experience) => (
-              <ExperienceTrackerCard
-                key={experience.id}
-                companyName={experience.companyName}
-                role={experience.role}
-                experience={experience.experience}
-                url={experience.url}
-              />
-            ))}
-          </div>
+
+      <div className="w-full mobile-lg:border border-[#d7d7d7]   rounded-lg relative overflow-y-auto mobile-lg:h-[calc(100vh-16.2rem)]  lg:h-[calc(100vh-10.5rem)] bg-white border-collapse ">
+        <div className="grid border-[#d7d7d7] border-b grid-cols-3 gap-[15px] sticky top-0 bg-white divide-x-[1px] divide-[#d7d7d7]">
+          <p className=" p-[0.9375rem] ">Company</p>
+          <p className="  p-[0.9375rem] ">Role</p>
+          <p className="  p-[0.9375rem]">Experience </p>
+        </div>
+        <div className="w-full flex flex-col ">
+          {ExperienceTrackerList.map((experience) => (
+            <ExperienceTrackerCard
+              key={experience.id}
+              companyName={experience.companyName}
+              role={experience.role}
+              experience={experience.experience}
+              url={experience.url}
+            />
+          ))}
         </div>
       </div>
     </div>
