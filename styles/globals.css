@@ -8,22 +8,6 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 62.5% !important;
-}
-
-@media screen and (min-width: 992px) {
-  html {
-    font-size: calc(0.18781567489114657rem + 0.43541364296081275vw) !important;
-  }
-}
-
-@media screen and (min-width: 1530px) {
-  html {
-    font-size: calc(0.8583153928955867rem + 0.4305705059203445vw);
-  }
-}
-
 @font-face {
   font-family: 'CabinetGrotesk-Variable';
   src: url('../public/fonts//CabinetGrotesk-Variable.woff2') format('woff2'),
@@ -152,7 +136,7 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-.hero {
+/* .hero {
   mask-image: linear-gradient(
     90deg,
     transparent 0%,
@@ -167,9 +151,9 @@ body {
     white 80%,
     transparent 100%
   );
-}
+} */
 
-.loader {
+/* .loader {
   width: 22px;
   height: 22px;
   border: 3px solid #cecece;
@@ -187,7 +171,7 @@ body {
   border: 3px solid #fff;
   animation: prixClipFix 2s linear;
   animation-delay: 0.8s;
-}
+} */
 
 @keyframes prixClipFix {
   0% {

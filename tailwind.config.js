@@ -61,10 +61,7 @@ module.exports = {
         '1/2': '1.5fr 1fr',
         auto: 'auto 1fr',
       },
-      backgroundImage: {
-        primary:
-          'linear-gradient(to bottom right, black 0%, transparent 40%, transparent 60%, black 100%);',
-      },
+
       boxShadow: {
         logocard: '0 0 0 1px rgba(255, 255, 255, 0.12)',
       },
