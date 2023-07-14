@@ -29,7 +29,7 @@ export default function User() {
                 </div>
               </div>
               <div className="basis-[58%] bg-white p-6 pt-[3.5rem] flex flex-col justify-between">
-                <p className="text-[1rem] leading-[1.9rem] tracking-[-0.02rem] ">
+                <p className="text-[15px] leading-[1.9rem] tracking-[-0.02rem] ">
                   It&lsquo;s your turn to take one step closer to your dream
                   career with work experience
                 </p>
@@ -43,7 +43,7 @@ export default function User() {
           </div>
           {/* 2nd element */}
           <div className="p-6 min-h-[11.25rem] rounded-md col-span-1 row-span-1 border border-[#d7d7d7] bg-red-200">
-            <p className="text-[1rem] h-full leading-[1.9rem] tracking-[-0.015rem] p-4 bg-white rounded-md flex items-center justify-center">
+            <p className="text-[15px] h-full leading-[1.75rem] tracking-[-0.015rem] p-4 bg-white rounded-md flex items-center justify-center">
               <span>
                 No company wants your certificate but every company wants your
                 work experience
@@ -57,7 +57,7 @@ export default function User() {
             <h1 className="text-[2.75rem] pt-11 px-6  font-CabinetGrotesk-Medium text-[#9260FF] leading-[1.25]">
               Your dream companies
             </h1>
-            <p className="text-[1rem] leading-[2rem] p-6 tracking-[0.02rem] ">
+            <p className="text-[15px] leading-[2rem] p-6 tracking-[0.02rem] ">
               Here are some of the top tech companies you can break into with
               the power of work experience and magic of referrals
             </p>
@@ -83,7 +83,7 @@ export default function User() {
             <div className="bg-[#F1FBF9] text-[#014552] font-CabinetGrotesk-Medium p-4 rounded-md text-[2rem]">
               1st September
             </div>
-            <div className="text-[1rem] pt-6 leading-[1.9rem]">
+            <div className="text-[15px] pt-6 leading-[1.9rem]">
               Is the earliest date you can start working with companies to gain
               work experience as a part of WorkEx Programs
             </div>
