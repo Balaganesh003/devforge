@@ -50,7 +50,7 @@ const Proofs = () => {
               key={i}
               className="flex gap-[15px] flex-col w-[66%] mx-4 pb-12">
               <div
-                onClick={() => setIsCreatePostOpen(true)}
+                onClick={() => setIsModalOpen(true)}
                 className="mt-[1rem] bg-white p-[2rem] min-h-[5.8125rem] rounded-lg shadow-nav hover:scale-[101%] transform transition-all duration-200 ease-in-out-expo w-full flex cursor-pointer ">
                 <p className="text-[1rem] leading-[150%] text-secondary-text">
                   {proof.postTitle}
