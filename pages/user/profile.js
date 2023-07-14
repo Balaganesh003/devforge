@@ -15,6 +15,7 @@ import LogoTiktok from '@/assets/tiktok.svg';
 import LogoDribble from '@/assets/dribble.svg';
 import LogoBehance from '@/assets/behance.svg';
 import LogoMailStar from '@/assets/mailstar.svg';
+import LogoEducation from '@/assets/education.svg';
 
 const Profile = () => {
   return (
@@ -136,7 +137,35 @@ const Profile = () => {
           </p>
         </div>
       </div>
-      {/* 3rd row */}
+      {/* 3rd */}
+      <div className="w-full flex flex-col mobile-lg:flex-row gap-6 p-6 bg-white border border-[#d7d7d7] mt-6 rounded-[10px] relative">
+        <div className="flex-shrink-0 w-full mobile-lg:w-fit flex justify-center">
+          <Image
+            src={LogoEducation}
+            alt="rank"
+            width={96}
+            height={96}
+            className=""
+          />
+        </div>
+        <div className="w-full">
+          <h4 className="text-[1.125rem]  ">Education</h4>
+          <h4 className="text-[1.25rem] mt-2 font-CabinetGrotesk-Bold ">
+            University of California - Berkeley
+          </h4>
+          <p className="text-[0.875rem]  mt-1">
+            Bachelor of Science (BS) in Computer Engineering | Spring 2023
+          </p>
+          <p className="text-[0.875rem]">
+            Minor in Artificial Intelligence and Robotics
+          </p>
+        </div>
+        {/* Edit */}
+        <button className="absolute right-5 top-5">
+          <Image src={PencilLogo} alt="edit" width={24} height={24} />
+        </button>
+      </div>
+      {/* 4th row */}
       <div className="p-[3rem] bg-white border border-[#d7d7d7] rounded-[10px] mt-6 flex items-end justify-center">
         <div className="flex flex-col items-center">
           <Image src={LogoMailStar} alt="rank" width={96} height={96} />
