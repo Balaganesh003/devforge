@@ -91,11 +91,11 @@ module.exports = {
 
       keyframes: {
         'fade-out-in': {
-          '0%': { transform: 'translateX(0px)' },
-          '10%': { transform: 'translateX(12px)' },
-          '80%': { transform: 'translateX(12px)' },
-          '95%': { transform: 'translateX(-28px)' },
-          '100%': { transform: 'translateX(-28px)' },
+          '0%': { transform: 'translateX(-36px)' },
+          '10%': { transform: 'translateX(0px)' },
+          '82%': { transform: 'translateX(0px)' },
+          '95%': { transform: 'translateX(-42px)' },
+          '100%': { transform: 'translateX(-42px)' },
         },
         'fade-in': {
           '0%': { opacity: 0 },

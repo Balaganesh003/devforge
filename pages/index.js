@@ -51,7 +51,7 @@ export default function Home() {
           <HeroCard key={item.id} {...item} />
         ))}
       </div>
-      {/* <Swapper /> */}
+      <Swapper />
       {/* <Slider /> */}
     </main>
   );
