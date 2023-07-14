@@ -78,16 +78,18 @@ const PostCard = ({ post }) => {
                     </div>
 
                     <div className="relative">
-                      <Image
-                        onClick={() => setShowOptions(!showOptions)}
-                        src={MoreLogo}
-                        alt="MoreLogo"
-                        className="w-4 h-4 cursor-pointer"
-                      />
+                      <div className="p-2 hover:bg-[#f7f7f7] rounded-full">
+                        <Image
+                          onClick={() => setShowOptions(!showOptions)}
+                          src={MoreLogo}
+                          alt="MoreLogo"
+                          className="w-4 h-4 cursor-pointer"
+                        />
+                      </div>
                       <div
-                        className={`w-[15rem] ${
+                        className={`w-[12rem] mobile-lg:w-[15rem] ${
                           !showOptions && 'hidden'
-                        }  rounded-[10px] py-2 absolute top-5 right-1 z-10 border border-[#d7d7d7] bg-white`}>
+                        }  rounded-[10px] py-2 absolute top-7 right-3 z-10 border border-[#d7d7d7] bg-white`}>
                         <div
                           onClick={() => setShowOptions(false)}
                           className="px-4 py-2 hover:bg-[#fafafa]">
