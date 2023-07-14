@@ -1,6 +1,7 @@
 import React from 'react';
 import PostCard from '@/components/PostCard';
 import { useSelector } from 'react-redux';
+import HIghlightCard from '@/components/HIghlightCard';
 
 const Posts = () => {
   const { posts, TrendingPostData } = useSelector((state) => state.posts);
@@ -10,6 +11,7 @@ const Posts = () => {
       {posts.map((post) => (
         <PostCard key={post.id * 9} post={post} />
       ))}
+      <HIghlightCard />
     </div>
   );
 };
