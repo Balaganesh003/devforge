@@ -13,7 +13,7 @@ const UpcomingStartupCard = () => {
       {isLocked && (
         <div
           onClick={() => setIsLocked(false)}
-          className="w-full h-full absolute top-0 left-0 filter backdrop-blur-sm bg-black/5 rounded-md flex items-center justify-center ">
+          className="w-full h-full absolute top-0 left-0 filter backdrop-blur-[4px] bg-white/5 rounded-md flex items-center justify-center ">
           <Image
             src={
               'https://pixlok.com/wp-content/uploads/2021/12/Lock-Icon-SVG-03kdg.png'
