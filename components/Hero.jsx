@@ -135,65 +135,63 @@ const Hero = () => {
   }, []);
 
   return (
-    <>
-      <section className="bg-white pt-[8%] pb-[7%rem]">
-        <div className="max-w-[1180px] mx-auto  px-4 mobile-xl:px-6 md:px-8 ">
-          <div className="grid grid-cols-1 md:grid-cols-1/2 gap-[2.4rem] overflow-hidden ">
-            <div className="flex flex-col ">
-              <h1 className=" capitalize  mb-4">
-                <span className="text-[2rem] xh:text-[2.4rem] xs:text-[2.85rem]  xv:text-[3.5rem] xr:text-[3.8rem] sm:text-[3.75rem] font-black leading-[1.5] tracking-[-0.01em] lg:whitespace-nowrap font-CabinetGrotesk-Bold">
-                  Get discovered by your
-                </span>
-                <span className="text-[2rem] xh:text-[2.4rem] xs:text-[2.85rem] xv:text-[3.5rem] xr:text-[3.8rem] sm:text-[3.75rem] block font-black leading-[1.5] tracking-[-0.01em]  text-[#ED4A60]  font-CabinetGrotesk-Bold  ">
-                  dream companies
-                </span>
-              </h1>
-              <p className="text-[#2C2C2C] text-[16px] mobile-lg:text-[20px] leading-[1.8] max-w-[40ch]">
-                A new age platform helping students unlock their dream career
-                with proof of skills and experience
-              </p>
-            </div>
-            <div className="text-white overflow-hidden hero min-w-[215px]">
-              <div className="flex flex-col md:gap-[2rem] gap-[1rem]">
-                <div
-                  style={{
-                    transform: `translateX(${
-                      scrollPosition * (width <= 768 ? 0.1 : 0.2) * -1
-                    }px)`,
-                  }}
-                  className="flex md:gap-[2rem] gap-[1rem] justify-start">
-                  {logoData1.map((item) => (
-                    <LogoCard key={item.id} logo={item.logo} />
-                  ))}
-                </div>
-                <div
-                  style={{
-                    transform: `translateX(${
-                      scrollPosition * (width <= 768 ? 0.1 : 0.2)
-                    }px)`,
-                  }}
-                  className="flex md:gap-[2rem] gap-[1rem] justify-end">
-                  {logoData2.map((item) => (
-                    <LogoCard key={item.id} logo={item.logo} />
-                  ))}
-                </div>
-                <div
-                  style={{
-                    transform: `translateX(${
-                      scrollPosition * (width <= 768 ? 0.1 : 0.2) * -1
-                    }px)`,
-                  }}
-                  className="flex md:gap-[2rem] gap-[1rem] justify-start">
-                  {logoData3.map((item) => (
-                    <LogoCard key={item.id} logo={item.logo} />
-                  ))}
-                </div>
+    <section className="bg-white py-[6rem]">
+      <div className="max-w-[1180px] mx-auto  px-4 mobile-xl:px-6 md:px-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-1/2 gap-[2.4rem] overflow-hidden ">
+          <div className="flex flex-col ">
+            <h1 className=" capitalize  mb-4">
+              <span className="text-[2rem] xh:text-[2.4rem] xs:text-[2.85rem]  xv:text-[3.5rem] xr:text-[3.8rem] sm:text-[3.75rem] font-black leading-[1.5] tracking-[-0.01em] lg:whitespace-nowrap font-CabinetGrotesk-Bold">
+                Get discovered by your
+              </span>
+              <span className="text-[2rem] xh:text-[2.4rem] xs:text-[2.85rem] xv:text-[3.5rem] xr:text-[3.8rem] sm:text-[3.75rem] block font-black leading-[1.5] tracking-[-0.01em]  text-[#ED4A60]  font-CabinetGrotesk-Bold  ">
+                dream companies
+              </span>
+            </h1>
+            <p className="text-[#2C2C2C] text-[16px] mobile-lg:text-[20px] leading-[1.8] max-w-[40ch]">
+              A new age platform helping students unlock their dream career with
+              proof of skills and experience
+            </p>
+          </div>
+          <div className="text-white overflow-hidden hero min-w-[215px]">
+            <div className="flex flex-col md:gap-[2rem] gap-[1rem]">
+              <div
+                style={{
+                  transform: `translateX(${
+                    scrollPosition * (width <= 768 ? 0.1 : 0.2) * -1
+                  }px)`,
+                }}
+                className="flex md:gap-[2rem] gap-[1rem] justify-start">
+                {logoData1.map((item) => (
+                  <LogoCard key={item.id} logo={item.logo} />
+                ))}
+              </div>
+              <div
+                style={{
+                  transform: `translateX(${
+                    scrollPosition * (width <= 768 ? 0.1 : 0.2)
+                  }px)`,
+                }}
+                className="flex md:gap-[2rem] gap-[1rem] justify-end">
+                {logoData2.map((item) => (
+                  <LogoCard key={item.id} logo={item.logo} />
+                ))}
+              </div>
+              <div
+                style={{
+                  transform: `translateX(${
+                    scrollPosition * (width <= 768 ? 0.1 : 0.2) * -1
+                  }px)`,
+                }}
+                className="flex md:gap-[2rem] gap-[1rem] justify-start">
+                {logoData3.map((item) => (
+                  <LogoCard key={item.id} logo={item.logo} />
+                ))}
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

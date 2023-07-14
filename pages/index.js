@@ -43,16 +43,16 @@ const HeroCardData = [
 
 export default function Home() {
   return (
-    <main className={` ${inter.className} pb-[9.6rem]`}>
+    <main className={` ${inter.className} pb-[6rem]`}>
       <Hero />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-[5rem] md:gap-[2rem] small-lg:gap-[3rem] mx-auto max-w-[1280px] py-[5rem] md:py-[10rem] px-4 mobile-xl:px-6 md:px-8 small-lg:px-[3rem]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-[5rem] md:gap-[2rem] small-lg:gap-[3rem] mx-auto max-w-[1280px] my-[6rem] px-4 mobile-xl:px-6 md:px-8 small-lg:px-[3rem]">
         {HeroCardData.map((item) => (
           <HeroCard key={item.id} {...item} />
         ))}
       </div>
       <Swapper />
-      {/* <Slider /> */}
+      <Slider />
     </main>
   );
 }

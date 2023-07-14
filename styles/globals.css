@@ -106,22 +106,6 @@
   font-style: normal;
 }
 
-/* html {
-  font-size: calc(0.8583153928955866rem + 0.4305705059203445vw);
-}
-
-@media screen and (max-width: 1920px) {
-  html {
-    font-size: calc(0.8583153928955867rem + 0.4305705059203445vw);
-  }
-}
-
-@media screen and (max-width: 991px) {
-  html {
-    font-size: calc(0.7496212121212121rem + 0.6060606060606061vw);
-  }
-} */
-
 div,
 button,
 a {
