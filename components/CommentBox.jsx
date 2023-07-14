@@ -9,7 +9,7 @@ import Avatar6 from '@/assets/avatar_default_5.png';
 
 const AvatarList = [Avatar1, Avatar2, Avatar3, Avatar4, Avatar5, Avatar6];
 
-const CommentBox = () => {
+const CommentBox = ({ comment: { by, comment } }) => {
   return (
     <div className={`px-3 md:px-6  lg:px-8  text-ellipsis cursor-default`}>
       <div className="flex gap-3">
@@ -26,11 +26,11 @@ const CommentBox = () => {
           {/* Heading */}
 
           <h1 className="text-primary-text mb-2 text-[1rem] font-semibold leading-[130%] ">
-            Balaganesh
+            {by}
           </h1>
           {/* Description */}
           <div className="text-secondary-text leading-[1.375rem]  text-[0.875rem] font-normal break-words description max-w-[36.75rem] flex-shrink text-ellipsis ">
-            Hello
+            {comment}
           </div>
         </div>
       </div>
