@@ -46,13 +46,13 @@ export default function Home() {
     <main className={` ${inter.className} pb-[9.6rem]`}>
       <Hero />
 
-      <div className="grid gird-cols-1 md:grid-cols-3 mx-auto max-w-[1280px] gap-[4.8rem] md:gap-[3.6rem] small-lg:gap-[4.8rem] px-[2.4rem] md:px-[3.2rem] py-[9.6rem]">
+      {/* <div className="grid gird-cols-1 md:grid-cols-3 mx-auto max-w-[1280px] gap-[4.8rem] md:gap-[3.6rem] small-lg:gap-[4.8rem] px-[2.4rem] md:px-[3.2rem] py-[9.6rem]">
         {HeroCardData.map((item) => (
           <HeroCard key={item.id} {...item} />
         ))}
-      </div>
-      <Swapper />
-      <Slider />
+      </div> */}
+      {/* <Swapper /> */}
+      {/* <Slider /> */}
     </main>
   );
 }

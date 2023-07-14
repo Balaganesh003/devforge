@@ -136,15 +136,15 @@ const Hero = () => {
 
   return (
     <>
-      <section className="bg-white pt-[8rem] pb-[7rem]">
-        <div className="max-w-[1130px] mx-auto md:px-[3.6rem] small-lg:px-[6.4em] xl:px-[9.6em]">
-          <div className="grid grid-cols-1 md:grid-cols-1/2 gap-[3.6rem] overflow-hidden items-center ">
-            <div className="flex flex-col px-[1.6em] mobile-lg:px-[2.4em] sm:px-[3.6em] md:px-0 ">
-              <h1 className=" capitalize mb-[1.2rem] ">
-                <span className="bg-clip-text font-CabinetGrotesk-Bold  text-[3.6em] mobile-lg:text-[4.8em] sm:text-[5.4em] md:text-[4.8em] small-lg:text-[6.4em] xl:text-[48px] text-[#2C2C2C] leading-[1.5] tracking-[-0.01em]  object-cover bg-[50%]">
+      <section className="bg-white pt-[8%] pb-[7%rem]">
+        <div className="max-w-[1180px] mx-auto  px-4 mobile-xl:px-6 md:px-8 ">
+          <div className="grid grid-cols-1 md:grid-cols-1/2 gap-[2.4rem] overflow-hidden ">
+            <div className="flex flex-col ">
+              <h1 className=" capitalize  mb-4">
+                <span className="text-[2rem] xh:text-[2.4rem] xs:text-[2.85rem]  xv:text-[3.5rem] xr:text-[3.8rem] sm:text-[3.75rem] font-black leading-[1.5] tracking-[-0.01em] lg:whitespace-nowrap font-CabinetGrotesk-Bold">
                   Get discovered by your
                 </span>
-                <span className="text-[3.6em] block font-black leading-[1.5] tracking-[-0.01em] text-[#ED4A60] sm:text-[5.4em] md:text-[4.8em] xl:text-[48px] font-CabinetGrotesk-Bold mobile-lg:text-[4.8em] small-lg:text-[6.4em] ">
+                <span className="text-[2rem] xh:text-[2.4rem] xs:text-[2.85rem] xv:text-[3.5rem] xr:text-[3.8rem] sm:text-[3.75rem] block font-black leading-[1.5] tracking-[-0.01em]  text-[#ED4A60]  font-CabinetGrotesk-Bold  ">
                   dream companies
                 </span>
               </h1>
@@ -153,7 +153,7 @@ const Hero = () => {
                 with proof of skills and experience
               </p>
             </div>
-            <div className="text-white  hero min-w-[215px]">
+            <div className="text-white overflow-hidden hero min-w-[215px]">
               <div className="flex flex-col md:gap-[2rem] gap-[1rem]">
                 <div
                   style={{
