@@ -15,6 +15,7 @@ import AdobeLogo from '@/assets/adobe.svg';
 import InvitePage from '@/components/InvitePage';
 import VerifyEmail from '@/components/VerifyEmail';
 import { motion, AnimatePresence, easeIn } from 'framer-motion';
+import AuthBanner from '@/components/AuthBanner';
 
 const SignUpPage = () => {
   const [height, setHeight] = useState(0);
@@ -62,29 +63,7 @@ const SignUpPage = () => {
       }`}>
       <div className="hidden  mobile-lg:flex  mobile-lg:w-[45%] bg-[#F5F7F9] px-4 py-[2.75rem] sm:p-[1.5rem] lg:p-[2.75rem]   justify-center">
         <div className="max-w-[380px]  w-full flex flex-col h-fit ">
-          <h1 className="font-CabinetGrotesk-Medium text-[1.5rem] sm:text-[1.75rem] tracking-tight leading-[1.5]">
-            Helping students get one step closer to their dream companies
-          </h1>
-          <div className="grid grid-cols-4  grid-rows-2 md:grid-cols-5 gap-6 w-fit mt-8">
-            <Image src={GoogleLogo} alt="Google Logo" />
-            <Image src={MicrosoftLogo} alt="Microsoft Logo" />
-            <Image src={NetflixLogo} alt="Netflix Logo" />
-            <Image src={AmazonLogo} alt="Amazon Logo" />
-            <Image src={AppleLogo} alt="Apple Logo" />
-            <Image src={MetaLogo} alt="Meta Logo" />
-            <Image src={TeslaLogo} alt="Tesla Logo" />
-            <Image src={TiktokLogo} alt="Tiktok Logo" />
-            <Image
-              src={CoinbaseLogo}
-              alt="Coinbase Logo"
-              className="hidden md:block"
-            />
-            <Image
-              src={AdobeLogo}
-              alt="Adobe Logo"
-              className="hidden md:block"
-            />
-          </div>
+          <AuthBanner />
 
           <div className="w-full  top-0 mt-8 md:mt-11 rounded-[10px] h-fit bg-[#2D3345] relative p-[1rem] md:p-[1.5rem] ">
             <div className="absolute top-0 left-0 z-[10]">
