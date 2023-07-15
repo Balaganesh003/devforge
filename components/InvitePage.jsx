@@ -7,7 +7,7 @@ const InvitePage = ({ nextPanel }) => {
   const [inviteCodeError, setInviteCodeError] = useState('');
 
   return (
-    <div className=" max-w-[520px]">
+    <div className=" max-w-[520px]  pb-[2.25rem]">
       <h1 className="text-[2.75rem] leading-[1.5] font-CabinetGrotesk-Medium">
         clevergrad
       </h1>

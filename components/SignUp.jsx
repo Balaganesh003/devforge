@@ -39,7 +39,7 @@ const SignUp = ({ nextPanel }) => {
     checkAllValid();
   }, [FirstNameError, LastNameError, EmailError, PasswordError]);
   return (
-    <div className="bg-white w-full  mobile-lg:w-[520px] h-fit my-auto   pb-[2.75rem] px-6">
+    <div className="bg-white w-full  mobile-lg:max-w-[520px] h-fit my-auto  pb-[2.75rem]">
       <h1 className="text-primary-text text-[3rem] font-CabinetGrotesk-Medium leading-[125%]">
         Sign Up
       </h1>
@@ -50,7 +50,7 @@ const SignUp = ({ nextPanel }) => {
 
       {/* Sign Up with Email */}
       <form className="flex flex-col gap-3 pb-6">
-        <div className="flex flex-col mobile-lg:flex-row gap-3 mobile-lg:gap-6">
+        <div className="flex flex-col sm:flex-row gap-3 mobile-lg:gap-6">
           <InputField
             label={'First name'}
             errorMessage={'First name is required'}

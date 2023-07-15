@@ -9,7 +9,7 @@ import AmazonLogo from '@/assets/amazon.svg';
 import AppleLogo from '@/assets/apple.svg';
 import MetaLogo from '@/assets/meta.svg';
 import TeslaLogo from '@/assets/tesla.svg';
-import TiktokLogo from '@/assets/tiktokLogo.svg';
+import TiktokLogo from '@/assets/tiktoklogo.svg';
 import CoinbaseLogo from '@/assets/coinbase.svg';
 import AdobeLogo from '@/assets/adobe.svg';
 import InvitePage from '@/components/InvitePage';
@@ -57,15 +57,15 @@ const SignUpPage = () => {
 
   return (
     <div
-      className={`flex h-full ${
+      className={`flex h-full w-full ${
         height > 582 ? 'h-screen overflow-hidden' : 'h-full'
       }`}>
-      <div className="hidden  mobile-md:flex mobile-md:w-full lg:w-[45%] bg-[#F5F7F9] p-[1.5rem] lg:p-[2.75rem]   justify-center">
-        <div className="max-w-[380px] w-full  h-fit ">
-          <h1 className="font-CabinetGrotesk-Medium text-[1.75rem] tracking-tight leading-[1.5]">
+      <div className="hidden  mobile-lg:flex  mobile-lg:w-[45%] bg-[#F5F7F9] px-4 py-[2.75rem] sm:p-[1.5rem] lg:p-[2.75rem]   justify-center">
+        <div className="max-w-[380px]  w-full flex flex-col h-fit ">
+          <h1 className="font-CabinetGrotesk-Medium text-[1.5rem] sm:text-[1.75rem] tracking-tight leading-[1.5]">
             Helping students get one step closer to their dream companies
           </h1>
-          <div className="grid grid-cols-5 gap-6 w-fit mt-8">
+          <div className="grid grid-cols-4  grid-rows-2 md:grid-cols-5 gap-6 w-fit mt-8">
             <Image src={GoogleLogo} alt="Google Logo" />
             <Image src={MicrosoftLogo} alt="Microsoft Logo" />
             <Image src={NetflixLogo} alt="Netflix Logo" />
@@ -74,10 +74,19 @@ const SignUpPage = () => {
             <Image src={MetaLogo} alt="Meta Logo" />
             <Image src={TeslaLogo} alt="Tesla Logo" />
             <Image src={TiktokLogo} alt="Tiktok Logo" />
-            <Image src={CoinbaseLogo} alt="Coinbase Logo" />
-            <Image src={AdobeLogo} alt="Adobe Logo" />
+            <Image
+              src={CoinbaseLogo}
+              alt="Coinbase Logo"
+              className="hidden md:block"
+            />
+            <Image
+              src={AdobeLogo}
+              alt="Adobe Logo"
+              className="hidden md:block"
+            />
           </div>
-          <div className="w-full mt-11 rounded-[10px] h-fit bg-[#2D3345] relative p-[1.5rem]">
+
+          <div className="w-full  top-0 mt-8 md:mt-11 rounded-[10px] h-fit bg-[#2D3345] relative p-[1rem] md:p-[1.5rem] ">
             <div className="absolute top-0 left-0 z-[10]">
               <Image
                 src={QuoteLogo}
@@ -87,13 +96,13 @@ const SignUpPage = () => {
             </div>
 
             <div className="z-[20] relative ">
-              <p className="text-white text-[1rem]">
+              <p className="text-white md:text-[1rem] tracking-tight text-[0.875rem]">
                 Amazed by the idea of CleverGrad aimed at creating new skill
                 standards & introducing top 1% talent pool to companies with
                 proof of work and work experience
               </p>
 
-              <p className="text-[#828899] text-right mt-4">
+              <p className="text-[#828899] md:text-[1rem]  tracking-[-0.02rem] text-[0.875rem] text-right mt-4">
                 -Technical Recruiter at Google
               </p>
             </div>
@@ -101,7 +110,7 @@ const SignUpPage = () => {
         </div>
       </div>
       <div
-        className={`lg:w-[55%] overflow-x-hidden flex justify-center pt-[2.25rem] w-full ${
+        className={`mobile-lg:w-[55%] overflow-x-hidden w-full flex justify-center px-[1.5rem] lg:px-[2.25em] py-[2.25rem]   ${
           height > 582 ? 'min-h-screen overflow-y-auto ' : 'h-full  '
         }  `}>
         {/* Slides */}
