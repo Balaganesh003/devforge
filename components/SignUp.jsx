@@ -92,13 +92,13 @@ const SignUp = ({ nextPanel }) => {
           />
         </div>
       </form>
-      <p className=" text-[#666666] text-[0.875rem] mt-4 tracking-tight leading-[150%] font-medium pb-6">
+      <p className=" text-[#666666] text-[0.875rem] text-center mt-4 tracking-tight leading-[150%] font-medium pb-6">
         By clicking on “Sign up” you agree to our{' '}
-        <Link href={'./terms'} className="inline-block  text-[#3365E6]">
+        <Link href={'./terms'} className="whitespace-nowrap  text-[#3365E6]">
           Terms of Use
         </Link>{' '}
         and{' '}
-        <Link href={'./privacy'} className="inline-block  text-[#3365E6]">
+        <Link href={'./privacy'} className=" whitespace-nowrap text-[#3365E6]">
           Privacy Policy
         </Link>
       </p>

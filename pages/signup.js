@@ -14,7 +14,7 @@ import CoinbaseLogo from '@/assets/coinbase.svg';
 import AdobeLogo from '@/assets/adobe.svg';
 import InvitePage from '@/components/InvitePage';
 import VerifyEmail from '@/components/VerifyEmail';
-import { motion, AnimatePresence, easeIn, easeOut } from 'framer-motion';
+import { motion, AnimatePresence, easeIn } from 'framer-motion';
 
 const SignUpPage = () => {
   const [height, setHeight] = useState(0);

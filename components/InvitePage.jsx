@@ -8,7 +8,7 @@ const InvitePage = ({ nextPanel }) => {
 
   return (
     <div className=" max-w-[520px]  pb-[2.25rem]">
-      <h1 className="text-[2.75rem] leading-[1.5] font-CabinetGrotesk-Medium">
+      <h1 className="text-[2.25rem] mobile-md:text-[2.75rem] leading-[1.5] font-CabinetGrotesk-Medium">
         clevergrad
       </h1>
       <div className="flex flex-col mt-6 gap-8 text-[0.875rem] leading-[1.5rem]">
