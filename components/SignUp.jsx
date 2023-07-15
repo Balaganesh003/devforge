@@ -84,7 +84,7 @@ const SignUp = ({ nextPanel }) => {
           PasswordError={PasswordError}
           setPasswordError={setPasswordError}
         />
-        <div className=" w-full mx-auto">
+        <div className=" w-[150px] mx-auto">
           <SignUpButton
             nextPanel={nextPanel}
             isAllValid={isAllValid}

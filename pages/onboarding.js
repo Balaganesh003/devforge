@@ -143,7 +143,7 @@ const SignUpPage = () => {
           <div className="hidden w-full pb-[4rem] md:flex justify-center">
             <button
               onClick={nextPanel}
-              className="max-w-[13.25rem]   mx-auto  bg-[#0082FB] text-white px-4 rounded font-semibold text-[0.875rem] h-[2.5rem] flex items-center gap-2 hover:bg-[#0082FB]/90 hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer">
+              className="max-w-[13.25rem]   mx-auto  bg-[#0082FB] text-white px-4 rounded-[10px] font-semibold text-[0.875rem] h-[2.5rem] flex items-center gap-2 hover:bg-[#0082FB]/90 hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer">
               {index == 3 ? 'Complete Profile' : 'Save and Continue'}
             </button>
           </div>

@@ -35,7 +35,11 @@ const InvitePage = ({ nextPanel }) => {
         />
       </div>
       <div className="mt-6">
-        <ColouredButton handelClick={nextPanel} label={'Unlock Access'} />
+        <ColouredButton
+          handelClick={nextPanel}
+          label={'Unlock Access'}
+          bgColor={'bg-[#0D99FF] hover:bg-[#0D99FF]/90'}
+        />
       </div>
     </div>
   );
