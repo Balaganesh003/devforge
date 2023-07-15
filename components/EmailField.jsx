@@ -51,7 +51,7 @@ const EmailField = ({
         className={`w-full text-[1rem] bg-white h-12 rounded py-[0.1rem] px-[0.875rem]  mb-[0.8125rem]  text-primary-text ${
           EmailError
             ? 'outline outline-2 outline-text-red'
-            : 'border border-light-gray focus:outline-black'
+            : 'border border-[#d7d7d7] focus:outline-black'
         }`}
       />
       {EmailError && (

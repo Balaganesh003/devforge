@@ -1,98 +1,42 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
+import Image from 'next/image';
+import GrayDownArrow from '@/assets/GrayDownArrow.svg';
 
-const DropDown = ({
-  label1,
-  selectedValue,
-  setSelectedValue,
-  placeholder,
-  dropdownList,
-}) => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [isOpen, setIsOpen] = useState(false);
-  const inputRef = useRef(null);
-  const dropdownRef = useRef(null);
+const DropDown = ({ options, label }) => {
+  const [selectedOption, setSelectedOption] = useState('');
 
-  const handleInputChange = (event) => {
-    const newSearchTerm = event.target.value;
-    setSearchTerm(newSearchTerm);
-    setSelectedValue('');
+  const handleOptionChange = (e) => {
+    const { value } = e.target;
+    setSelectedOption(value);
+    console.log(value);
   };
-
-  const handleDropdownItemClick = (item) => {
-    setSearchTerm(item);
-    setSelectedValue(item);
-    setIsOpen(false);
-  };
-
-  const handleInputFocus = () => {
-    setIsOpen(true);
-    inputRef.current.select();
-  };
-
-  const handleInputKeyDown = (event) => {
-    if (event.key === 'Backspace') {
-      if (selectedValue !== '') {
-        setSelectedValue(selectedValue.slice(0, -1));
-      }
-    }
-  };
-
-  const handleClickOutside = (event) => {
-    if (
-      inputRef.current &&
-      !inputRef.current.contains(event.target) &&
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target)
-    ) {
-      setIsOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
 
   return (
-    <div className="w-full">
-      <p
-        className={`text-primary-text text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem]`}>
-        {label1}
+    <div>
+      <p className={`text-[#333342] text-[0.875rem] mb-[5px] font-semibold`}>
+        {label}
       </p>
-
-      <div>
-        <div className="relative">
-          <input
-            ref={inputRef}
-            type="text"
-            name="text"
-            placeholder={placeholder}
-            value={searchTerm || selectedValue}
-            onChange={handleInputChange}
-            onFocus={handleInputFocus}
-            onKeyDown={handleInputKeyDown}
-            className={`w-full text-[1rem] bg-white h-12 rounded py-[0.1rem] px-[0.875rem]   mb-[0.25rem]  text-primary-text border border-light-gray focus:outline-black`}
-          />
-
-          {isOpen && (
-            <div className="rounded-lg overflow-hidden">
-              <div
-                ref={dropdownRef}
-                className="absolute bg-white border py-[3px] border-light-gray rounded w-full  z-[10] ">
-                {dropdownList.map((item, index) => (
-                  <p
-                    onClick={() => handleDropdownItemClick(item)}
-                    key={index}
-                    className="px-[0.875rem] text-primary-text py-[8px] text-[1rem] leading-[130%] cursor-pointer hover:bg-gray-hover z-[100]">
-                    {item}
-                  </p>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
+      <div className="relative">
+        <select
+          name="options"
+          id="options"
+          className="w-full px-4 text-[1rem] bg-white h-12 rounded py-[0.1rem] text-primary-text border border-[#d7d7d7] group focus:outline-black pr-4 appearance-none "
+          value={selectedOption}
+          onChange={handleOptionChange}>
+          {options.map((option) => (
+            <option
+              key={option.value}
+              value={option.value}
+              className="text-[14.5px]">
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <Image
+          src={GrayDownArrow}
+          className="w-3 absolute right-5 top-5 opacity-70"
+          alt="downarrow"
+        />
       </div>
     </div>
   );
