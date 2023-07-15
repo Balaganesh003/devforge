@@ -14,30 +14,13 @@ import CoinbaseLogo from '@/assets/coinbase.svg';
 import AdobeLogo from '@/assets/adobe.svg';
 import InvitePage from '@/components/InvitePage';
 import VerifyEmail from '@/components/VerifyEmail';
-import { useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, easeIn, easeOut } from 'framer-motion';
 
 const SignUpPage = () => {
   const [height, setHeight] = useState(0);
   const [index, setIndex] = useState(0);
 
   const [direction, setDirection] = useState(1);
-
-  const targetRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   const nextPanel = (e) => {
     e.preventDefault();
@@ -54,12 +37,6 @@ const SignUpPage = () => {
     if (index > 0) {
       setIndex(index - 1);
       setDirection(-1);
-    }
-  };
-
-  const handleScroll = (e) => {
-    if (isMobile) {
-      e.preventDefault();
     }
   };
 
@@ -134,7 +111,8 @@ const SignUpPage = () => {
             initial={{ opacity: 0, x: 300 * direction }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}>
+            transition={{ duration: 0.3 }}
+            ease={easeIn}>
             {index === 0 && <InvitePage nextPanel={nextPanel} />}
             {index === 1 && (
               <SignUp nextPanel={nextPanel} prevPanel={prevPanel} />
