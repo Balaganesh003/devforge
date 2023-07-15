@@ -4,7 +4,7 @@ const colorsList = ['bg-[#FFDADA]', 'bg-[#FFDA]', 'bg-[#FDAD]', 'bg-[#DADA]'];
 
 const ExperienceTrackerCard = ({ companyName, url, role, experience }) => {
   return (
-    <div className="grid grid-cols-3 bg-white  duration-200 gap-[15px]   divide-x-[1px] divide-[#d7d7d7] border-b border-[#d7d7d7] ">
+    <div className="grid grid-cols-3 bg-white last:rounded-b-lg  duration-200 gap-[15px]   divide-x-[1px] divide-[#d7d7d7] border-b border-[#d7d7d7] ">
       <p className="px-[0.9375rem] py-3 h-full items-center flex">
         {/* <Link href={url || '#'} target="_blank"> */}
         <div className="flex  truncate items-center gap-4 ">

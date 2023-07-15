@@ -15,71 +15,110 @@ const ExperienceTrackerList = [
     experience: '1 - 2 yrs',
     url: 'https://www.google.com/',
   },
+  {
+    id: 1,
+    companyName: 'Google',
+    role: 'UI UX Designer',
+    experience: '1 - 2 yrs',
+    url: 'https://www.google.com/',
+  },
+  {
+    id: 1,
+    companyName: 'Google',
+    role: 'UI UX Designer',
+    experience: '1 - 2 yrs',
+    url: 'https://www.google.com/',
+  },
+  {
+    id: 1,
+    companyName: 'Google',
+    role: 'UI UX Designer',
+    experience: '1 - 2 yrs',
+    url: 'https://www.google.com/',
+  },
+  {
+    id: 1,
+    companyName: 'Google',
+    role: 'UI UX Designer',
+    experience: '1 - 2 yrs',
+    url: 'https://www.google.com/',
+  },
+  {
+    id: 1,
+    companyName: 'Google',
+    role: 'UI UX Designer',
+    experience: '1 - 2 yrs',
+    url: 'https://www.google.com/',
+  },
+  {
+    id: 1,
+    companyName: 'Google',
+    role: 'UI UX Designer',
+    experience: '1 - 2 yrs',
+    url: 'https://www.google.com/',
+  },
+  {
+    id: 1,
+    companyName: 'Google',
+    role: 'UI UX Designer',
+    experience: '1 - 2 yrs',
+    url: 'https://www.google.com/',
+  },
+  {
+    id: 1,
+    companyName: 'Google',
+    role: 'UI UX Designer',
+    experience: '1 - 2 yrs',
+    url: 'https://www.google.com/',
+  },
+  {
+    id: 1,
+    companyName: 'Google',
+    role: 'UI UX Designer',
+    experience: '1 - 2 yrs',
+    url: 'https://www.google.com/',
+  },
+  {
+    id: 1,
+    companyName: 'Google',
+    role: 'UI UX Designer',
+    experience: '1 - 2 yrs',
+    url: 'https://www.google.com/',
+  },
+  {
+    id: 1,
+    companyName: 'Google',
+    role: 'UI UX Designer',
+    experience: '1 - 2 yrs',
+    url: 'https://www.google.com/',
+  },
+  {
+    id: 1,
+    companyName: 'Google',
+    role: 'UI UX Designer',
+    experience: '1 - 2 yrs',
+    url: 'https://www.google.com/',
+  },
 ];
 
 const ExperienceTracker = () => {
-  const router = useRouter();
-  const [experience, setExperience] = useState('');
-  const { companiesList } = useSelector((state) => state.company);
-  const [role, setRole] = useState('');
-  const [company, setCompany] = useState('');
-  const [url, setUrl] = useState('');
-  const [urlError, setUrlError] = useState(false);
-
-  const getCompanyName = () => {
-    const companyId = router.query.id[0];
-    const { companyName } = companiesList.find(
-      (company) => company.id === companyId
-    );
-    setCompany(companyName);
-  };
-
-  const experienceObj = {
-    id: `${company}-${role}`,
-    companyName: company,
-    role,
-    experience: `${experience} yrs`,
-    url,
-  };
-
-  const addExperience = () => {
-    if (!urlError && role && experience && url) {
-      ExperienceTrackerList.push(experienceObj);
-      toast.success('Experience added successfully');
-      setRole('');
-      setExperience('');
-      setUrl('');
-      setUrlError(false);
-    } else {
-      toast.error('Please fill all the fields');
-    }
-  };
-
-  useEffect(() => {
-    getCompanyName();
-  }, [router.pathname]);
-
   return (
-    <div className="mobile-lg:p-[0.9375rem] relative">
-      <Toaster />
-
-      <div className="w-full mobile-lg:border border-[#d7d7d7]   rounded-lg relative overflow-y-auto mobile-lg:h-[calc(100vh-10.5rem)]  lg:h-[calc(100vh-6rem)] bg-white border-collapse ">
-        <div className="grid border-[#d7d7d7] border-b grid-cols-3 gap-[15px] sticky top-0 bg-white divide-x-[1px] divide-[#d7d7d7]">
-          <p className=" p-[0.9375rem] ">Company</p>
-          <p className="  p-[0.9375rem] ">Role</p>
-          <p className="  p-[0.9375rem]">Experience </p>
-        </div>
-        <div className="w-full flex flex-col ">
-          {ExperienceTrackerList.map((experience) => (
-            <ExperienceTrackerCard
-              key={experience.id}
-              companyName={experience.companyName}
-              role={experience.role}
-              experience={experience.experience}
-              url={experience.url}
-            />
-          ))}
-        </div>
+    <div className="w-full mobile-lg:border border-[#d7d7d7]  rounded-lg relative  bg-white border-collapse ">
+      <div className="grid border-[#d7d7d7] bg-[#EDF3FF] border-b grid-cols-3 gap-[15px]  divide-x-[1px] divide-[#d7d7d7] rounded-t-lg text-[#4D4F9E] font-CabinetGrotesk-Bold">
+        <p className="text-[1.25rem] p-[0.9375rem] ">Company</p>
+        <p className="text-[1.25rem]  p-[0.9375rem] ">Role</p>
+        <p className=" text-[1.25rem] p-[0.9375rem]">Experience </p>
+      </div>
+      <div className="w-full flex flex-col ">
+        {ExperienceTrackerList.map((experience) => (
+          <ExperienceTrackerCard
+            key={experience.id}
+            companyName={experience.companyName}
+            role={experience.role}
+            experience={experience.experience}
+            url={experience.url}
+          />
+        ))}
       </div>
     </div>
   );
