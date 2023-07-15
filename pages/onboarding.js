@@ -50,9 +50,9 @@ const SignUpPage = () => {
         height > 582 ? 'h-screen overflow-hidden' : 'h-full'
       }`}>
       <div className="hidden  md:flex  md:w-[39.0625%] bg-[#F5F7F9] px-4 md:py-[2.75rem] sm:p-[1.5rem] lg:p-[2.75rem]   justify-center">
-        <div className="max-w-[380px]  w-full flex flex-col h-fit ">
+        <div className="max-w-[380px]  w-full flex flex-col  justify-around h-full">
           <AuthBanner />
-          <div className="w-full text-[#101724] pt-[2.25rem]">
+          <div className="w-full text-[#101724] pt-[2.25rem] ">
             <p className="text-[1.25rem]">
               Step <span>{index + 1}</span>
             </p>
