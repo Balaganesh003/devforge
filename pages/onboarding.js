@@ -125,7 +125,7 @@ const SignUpPage = () => {
           </div>
         </div>
         {/* Slides */}
-        <div className="max-w-[650px] p-[1rem] mobile-lg:p-[1.5rem] md:p-0 mx-auto">
+        <div className="max-w-[650px] p-[1rem] mobile-lg:p-[1.5rem] md:p-0 mx-auto my-auto">
           <AnimatePresence initial={false} custom={index} mode={`wait`}>
             <motion.div
               key={index}

@@ -61,8 +61,8 @@ const SignUpPage = () => {
       className={`flex h-full w-full ${
         height > 582 ? 'h-screen overflow-hidden' : 'h-full'
       }`}>
-      <div className="hidden  mobile-lg:flex  mobile-lg:w-[45%] bg-[#F5F7F9] px-4 py-[2.75rem] sm:p-[1.5rem] lg:p-[2.75rem]   justify-center">
-        <div className="max-w-[380px]  w-full flex flex-col h-fit ">
+      <div className="hidden  mobile-lg:flex  mobile-lg:w-[45%] bg-[#F5F7F9] px-4 py-[2.5rem] sm:px-[1.5rem] lg:px-[2.25rem]  justify-center">
+        <div className="max-w-[380px]  w-full flex  flex-col justify-around h-full ">
           <AuthBanner />
 
           <div className="w-full  top-0 mt-8 md:mt-11 rounded-[10px] h-fit bg-[#2D3345] relative p-[1rem] md:p-[1.5rem] ">
@@ -89,9 +89,9 @@ const SignUpPage = () => {
         </div>
       </div>
       <div
-        className={`mobile-lg:w-[55%] overflow-x-hidden w-full flex justify-center px-[1.5rem] lg:px-[2.25em] py-[2.25rem]   ${
+        className={`mobile-lg:w-[55%] overflow-x-hidden w-full flex justify-center items-center px-[1.5rem] lg:px-[2.25em] py-[2.5rem]   ${
           height > 582 ? 'min-h-screen overflow-y-auto ' : 'h-full  '
-        }  `}>
+        }  ${index == 1 && height < 700 && 'items-baseline'} `}>
         {/* Slides */}
         <AnimatePresence initial={false} custom={index} mode={`wait`}>
           <motion.div

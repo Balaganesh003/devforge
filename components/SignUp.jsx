@@ -39,7 +39,7 @@ const SignUp = ({ nextPanel }) => {
     checkAllValid();
   }, [FirstNameError, LastNameError, EmailError, PasswordError]);
   return (
-    <div className="bg-white w-full  mobile-lg:max-w-[520px] h-fit my-auto  pb-[2.75rem]">
+    <div className="bg-white w-full  mobile-lg:max-w-[520px]   my-auto">
       <h1 className="text-primary-text text-[3rem] font-CabinetGrotesk-Medium leading-[125%]">
         Sign Up
       </h1>
