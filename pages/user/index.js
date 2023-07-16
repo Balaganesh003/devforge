@@ -15,8 +15,8 @@ export default function User() {
     <div>
       <div className="w-full h-[200px] bg-white border-b border-[#d7d7d7]"></div>
       <div
-        className={`${inter.className} block w-full my-[3.25rem] mobile-xl:max-w-[64rem]    px-2 mobile-md:px-4 mobile-xl:px-6 md:px-8 mx-auto`}>
-        <div className="grid max-w-[313px] mx-auto  grid-cols-1 mobile-xl:grid-cols-2 md:grid-cols-3 md:grid-rows-3 gap-6  mt-[3.5rem] mobile-xl:max-w-[650px] md:max-w-none  w-full">
+        className={`${inter.className} block w-full my-[3.5rem] mobile-xl:max-w-[64rem]  px-2 mobile-md:px-4 mobile-xl:px-6 md:px-8 mx-auto`}>
+        <div className="grid max-w-[313px] mx-auto  grid-cols-1 mobile-xl:grid-cols-2 md:grid-cols-3 md:grid-rows-3 gap-6   mobile-xl:max-w-[650px] md:max-w-none  w-full">
           <div className="grid w-full col-span-1  grid-rows-3 row-span-3 gap-6">
             <div className=" col-span-1 row-span-2">
               {/* 1st element */}
@@ -134,7 +134,7 @@ export default function User() {
                 Register Now
               </Link>
             </div>
-            <div className="p-6 basis-[54%] border rounded-[10px] border-[#d7d7d7] w-full bg-[#01B9C1] ">
+            <div className="p-6 basis-[54%]  rounded-[10px]  w-full bg-[#01B9C1] ">
               <div className="flex h-full ">
                 <div className="pr-6">
                   <p className="text-[2.25rem] leading-[45px] text-white font-CabinetGrotesk-Bold">

@@ -42,7 +42,7 @@ const colorsList = ['bg-[#FFDADA]', 'bg-[#FFDA]', 'bg-[#FDAD]', 'bg-[#DADA]'];
 
 const ExperienceTracker = () => {
   return (
-    <div className="w-full mobile-lg:border  grid border-[#d7d7d7]  border-b grid-cols-7   divide-x-[1px] divide-[#d7d7d7] rounded-t-lg text-[#4D4F9E]  h-full  min-h-[45rem] rounded-lg relative  bg-white border-collapse ">
+    <div className="w-full mobile-lg:border  grid border-[#d7d7d7]  border-b grid-cols-7   divide-x-[1px] divide-[#d7d7d7] rounded-t-lg text-[#4D4F9E]  h-full  min-h-[calc(100vh-10rem)] rounded-lg relative  bg-white border-collapse ">
       <div className=" col-span-2  h-full   ">
         <p className="text-[1.25rem] p-[0.9375rem] rounded-tl-lg font-CabinetGrotesk-Bold border-b border-[#d7d7d7] bg-[#EDF3FF]">
           Company
