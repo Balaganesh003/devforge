@@ -90,11 +90,11 @@ const SideBar = () => {
             />
             <SideBarLinkCard
               logo={CompaniesLogo}
-              isActive={active == 'companies'}
-              text={'Companies'}
+              isActive={active == 'experiencetracker'}
+              text={'Experience Tracker'}
               handleClick={handleClick}
               rounded={false}
-              link={'user/companies'}
+              link={'user/experiencetracker'}
             />
             <SideBarLinkCard
               logo={StudentLogo}
@@ -176,11 +176,11 @@ const SideBar = () => {
               />
               <SideBarLinkCard
                 logo={CompaniesLogo}
-                isActive={active == 'companies'}
-                text={'Companies'}
+                isActive={active == 'experiencetracker'}
+                text={'Experience Tracker'}
                 handleClick={handleClick}
                 rounded={false}
-                link={'user/companies'}
+                link={'user/experiencetracker'}
               />
               <SideBarLinkCard
                 logo={StudentLogo}
