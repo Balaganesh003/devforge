@@ -75,7 +75,7 @@ const SignUpPage = () => {
             </div>
 
             <div className="z-[20] relative ">
-              <p className="text-white md:text-[1rem] tracking-tight text-[0.875rem]">
+              <p className="text-white md:text-[1rem] leading-[1.75] tracking-tight text-[0.875rem]">
                 Amazed by the idea of CleverGrad aimed at creating new skill
                 standards & introducing top 1% talent pool to companies with
                 proof of work and work experience

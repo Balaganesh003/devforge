@@ -121,14 +121,13 @@ const SideBar = () => {
               rounded={false}
               link={'user/posts'}
             />
-
             <SideBarLinkCard
               logo={ProofLogo}
-              isActive={active == 'proofs'}
-              text={'Proofs'}
+              isActive={active == 'referrals'}
+              text={'Referrals'}
               handleClick={handleClick}
               rounded={false}
-              link={'user/proofs'}
+              link={'user/referrals'}
             />
           </div>
         </div>
@@ -211,11 +210,11 @@ const SideBar = () => {
 
               <SideBarLinkCard
                 logo={ProofLogo}
-                isActive={active == 'proofs'}
-                text={'Proofs'}
+                isActive={active == 'referrals'}
+                text={'Referrals'}
                 handleClick={handleClick}
                 rounded={false}
-                link={'user/proofs'}
+                link={'user/referrals'}
               />
             </div>
           </div>

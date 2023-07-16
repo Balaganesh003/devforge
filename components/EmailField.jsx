@@ -7,6 +7,7 @@ const EmailField = ({
   label,
   errorMessage,
   Email,
+  placeholder,
   setEmail,
   EmailError,
   setEmailError,
@@ -45,6 +46,7 @@ const EmailField = ({
         type="email"
         name="email"
         id="email"
+        placeholder={placeholder}
         value={Email}
         onChange={handleInput}
         onBlur={checkisValid}
