@@ -28,7 +28,7 @@ const Proofs = () => {
       <div className="w-full h-[140px] bg-white flex items-center justify-center">
         <p className="text-[1.5rem] font-bold ">Referrals</p>
       </div>
-      <div className="max-w-[62.5rem]  px-4 md:px-6 lg:px-8 py-8">
+      <div className="max-w-[62.5rem] mx-auto px-4 md:px-6 lg:px-8 py-8">
         <div className=" max-w-[640px] mx-auto">
           <ReferralsCard />
           <div className="mt-8">
