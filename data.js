@@ -5,7 +5,6 @@ const degrees = [
   { value: 'master', label: "Master's Degree" },
   { value: 'doctorate', label: 'Doctorate Degree' },
   { value: 'diploma', label: 'Diploma' },
-  { value: 'certificate', label: 'Certificate' },
   { value: 'professional', label: 'Professional Degree' },
   { value: 'highschool', label: 'High School Diploma' },
   { value: 'mba', label: 'Master of Business Administration (MBA)' },
@@ -31,14 +30,11 @@ const degrees = [
   { value: 'llm', label: 'Master of Laws (LL.M.)' },
   { value: 'mdes', label: 'Master of Design (M.Des)' },
   { value: 'mba', label: 'Master of Business Administration (MBA)' },
-  { value: 'msc', label: 'Master of Science (M.Sc.)' },
   { value: 'ma', label: 'Master of Arts (M.A.)' },
   { value: 'mfa', label: 'Master of Fine Arts (MFA)' },
   { value: 'msw', label: 'Master of Social Work (MSW)' },
-  { value: 'msc', label: 'Master of Science (M.Sc.)' },
   { value: 'mres', label: 'Master of Research (M.Res)' },
   { value: 'mphil', label: 'Master of Philosophy (M.Phil)' },
-  { value: 'msc', label: 'Master of Science (M.Sc.)' },
 ];
 
 const universities = [
@@ -146,4 +142,6 @@ const collegeSubjects = [
   'Zoology',
 ];
 
-export { degrees, universities, collegeSubjects };
+const degreesArray = degrees.map((degree) => degree.label).slice(1);
+
+export { degrees, universities, collegeSubjects, degreesArray };

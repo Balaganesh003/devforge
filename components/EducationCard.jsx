@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { onboardingActions } from '@/store/onboarding-slice';
 import MonthYear from './MonthYear';
 import DropDown from './DropDown';
-import { universities, degrees, collegeSubjects } from '@/data';
+import { universities, degrees, collegeSubjects, degreesArray } from '@/data';
 
 const EducationCard = () => {
   const dispatch = useDispatch();
@@ -71,13 +71,18 @@ const EducationCard = () => {
 
       <div className="flex flex-col gap-6 ">
         <div className="flex-1 ">
-          <DropDown options={degrees} label="Degree" />
+          <SearchDropDown
+            placeholder="Eg : Bachelor of Business Administration(BBA)"
+            marginBottomLabel1="mb-[5px]"
+            dropdownList={degreesArray}
+            label1="Degree"
+          />
         </div>
         <div className="flex-1 flex flex-col gap-6">
           <SearchDropDown
             label1="Major"
             marginBottomLabel1="mb-[5px]"
-            placeholder="Major"
+            placeholder="Eg : Computer Science Engineering"
             dropdownList={collegeSubjects}
           />
           {fields.map((field, index) => (
