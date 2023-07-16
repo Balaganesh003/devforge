@@ -4,8 +4,10 @@ import { motion, AnimatePresence, easeIn } from 'framer-motion';
 import BlackDownArrow from '@/assets/BlackDownArrow.svg';
 import AuthBanner from '@/components/AuthBanner';
 import Education from '@/components/Education';
+import { useRouter } from 'next/router';
 
 const SignUpPage = () => {
+  const router = useRouter();
   const [height, setHeight] = useState(0);
   const [index, setIndex] = useState(0);
 
@@ -27,6 +29,10 @@ const SignUpPage = () => {
       setIndex(index - 1);
       setDirection(-1);
     }
+  };
+
+  const gotoUser = (e) => {
+    router.push('/user');
   };
 
   useEffect(() => {
@@ -142,7 +148,7 @@ const SignUpPage = () => {
           </AnimatePresence>
           <div className="hidden w-full pb-[4rem] md:flex justify-center">
             <button
-              onClick={nextPanel}
+              onClick={index == 3 ? gotoUser : nextPanel}
               className="max-w-[13.25rem]   mx-auto  bg-[#0082FB] text-white px-4 rounded-[10px] font-semibold text-[0.875rem] h-[2.5rem] flex items-center gap-2 hover:bg-[#0082FB]/90 hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer">
               {index == 3 ? 'Complete Profile' : 'Save and Continue'}
             </button>
