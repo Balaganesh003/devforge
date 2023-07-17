@@ -19,10 +19,12 @@ import LogoEducation from '@/assets/education.svg';
 import ProfileModal from '@/components/ProfileModal';
 import ProfileModalLayout from '@/components/ProfileModalLayout';
 import SocialLinksModal from '@/components/SocialLinkModal';
+import EducationModal from '@/components/EducationModal';
 
 const Profile = () => {
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [showSocialLinksModal, setShowSocialLinksModal] = useState(false);
+  const [showEducationModal, setShowEducationModal] = useState(false);
 
   return (
     <div>
@@ -180,7 +182,9 @@ const Profile = () => {
             </p>
           </div>
           {/* Edit */}
-          <button className="absolute right-5 top-5">
+          <button
+            onClick={() => setShowEducationModal(true)}
+            className="absolute right-5 top-5">
             <Image src={PencilLogo} alt="edit" width={24} height={24} />
           </button>
         </div>
@@ -212,6 +216,12 @@ const Profile = () => {
         label={'Edit Social Links'}
         setIsModalOpen={setShowSocialLinksModal}
         isModalOpen={showSocialLinksModal}
+      />
+
+      <EducationModal
+        label={'Edit Education'}
+        setIsModalOpen={setShowEducationModal}
+        isModalOpen={showEducationModal}
       />
     </div>
   );

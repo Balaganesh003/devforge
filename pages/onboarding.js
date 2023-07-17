@@ -89,7 +89,7 @@ const SignUpPage = () => {
         </div>
       </div>
       <div
-        className={`md:w-[60.9375%] overflow-x-hidden  w-full flex flex-col md:flex-row md:justify-center  md:px-[1.5rem] lg:px-[2.25rem]  md:py-[2.25rem]   ${
+        className={`md:w-[60.9375%] overflow-x-hidden  w-full flex flex-col md:flex-row md:justify-center  md:px-[1.5rem] lg:px-[2.25rem]  md:py-[2.5rem]   ${
           height > 582 ? 'min-h-screen overflow-y-auto ' : 'min-h-full'
         }  `}>
         {/* Mobile nav bar */}
@@ -140,13 +140,17 @@ const SignUpPage = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               ease={easeIn}>
-              {index === 0 && <Education />}
+              {index === 0 && (
+                <div className="pt-[2.25rem]">
+                  <Education />
+                </div>
+              )}
               {index === 1 && <div>page 2</div>}
               {index === 2 && <div>page 3</div>}
               {index === 3 && <div>page 4</div>}
             </motion.div>
           </AnimatePresence>
-          <div className="hidden w-full pb-[4rem] md:flex justify-center">
+          <div className="hidden w-full  md:flex justify-center">
             <button
               onClick={index == 3 ? gotoUser : nextPanel}
               className="max-w-[13.25rem]   mx-auto  bg-[#0082FB] text-white px-4 rounded-[10px] font-semibold text-[0.875rem] h-[2.5rem] flex items-center gap-2 hover:bg-[#0082FB]/90 hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer">
