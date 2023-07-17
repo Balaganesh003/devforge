@@ -25,7 +25,7 @@ const ProgressCard = ({ referral }) => {
       </div>
       {show && (
         <div className="p-2 flex flex-col mobile-xl:flex-row w-full gap-2 text-[#666666]">
-          <div className="w-full p-4 pt-8 bg-white border rounded shadow-xl">
+          <div className="w-full p-4 pt-8 bg-white border rounded shadow-card">
             <p className="text-[1.125rem] font-semibold text-black">
               Users Profile Progress
             </p>
@@ -42,7 +42,7 @@ const ProgressCard = ({ referral }) => {
                 className={`before:absolute before:left-0 before:top-0  before:h-[8px] before:bg-[#3365e6] before:rounded-full ${referral.progressCSS}`}></div>
             </div>
           </div>
-          <div className="border w-full rounded overflow-hidden border-[#d7d7d7] shadow-xl">
+          <div className="border w-full rounded overflow-hidden border-[#d7d7d7] shadow-card">
             <div className="bg-white border-b rounded-t border-[#d7d7d7]">
               <div className="flex px-4 py-2 items-center gap-4">
                 <div className="w-5 h-5 border border-[#d7d7d7] rounded-full">
@@ -99,7 +99,7 @@ const ProgressCard = ({ referral }) => {
                 </span>
               </div>
             </div>
-            <div className="bg-[#F9FAFB] border-b  border-[#d7d7d7]">
+            <div className="bg-[#F9FAFB] ">
               <div className="flex px-4 py-2 items-center gap-4">
                 <div className="w-5 h-5 border border-[#d7d7d7] rounded-full">
                   {/* <Image

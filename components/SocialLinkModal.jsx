@@ -2,16 +2,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import plusLogo from '@/assets/PlusLogo.svg';
 import SocialLinkCard from './SocialLinkCard';
-import LogoLinkedin from '@/assets/linkedin.svg';
-import LogoTwitter from '@/assets/twitter.svg';
-import LogoGithub from '@/assets/github.svg';
-import LogoInstagram from '@/assets/instagram.svg';
-import LogoTelegram from '@/assets/telegram.svg';
-import LogoMedium from '@/assets/medium.svg';
-import LogoYoutube from '@/assets/youtube.svg';
-import LogoTiktok from '@/assets/tiktok.svg';
-import LogoDribble from '@/assets/dribble.svg';
-import LogoBehance from '@/assets/behance.svg';
 import CrossLogoWhite from '@/assets/crossLogoWhite.svg';
 
 const SocialLinksModal = ({ setIsModalOpen, isModalOpen, label }) => {
