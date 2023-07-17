@@ -11,7 +11,8 @@ const referralsData = [
     position: 'Software Engineer',
     link: 'https://google.com',
     date: 'July 3,2021',
-    progress: 50,
+    progress: 20,
+    progressCSS: `before:w-[20%]`,
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ const referralsData = [
     position: 'Talent Acquisition Coordinator',
     link: 'https://google.com',
     date: 'July 13,2021',
-    progress: 50,
+    progress: 10,
+    progressCSS: `before:w-[10%]`,
   },
 ];
 

@@ -9,7 +9,7 @@ const ProgressCard = ({ referral }) => {
     <div className="border-b border-[#d7d7d7] last:border-none  duration-500">
       <div
         onClick={() => setShow(!show)}
-        className="flex border-b border-[#d7d7d7] last:border-none last:rounded-b-[12px] justify-between gap-3 bg-white p-4">
+        className="flex border-b cursor-pointer border-[#d7d7d7] last:border-none last:rounded-b-[12px] justify-between gap-3 bg-white p-4">
         <div className="flex gap-2">
           <Image
             src={referral.logo}
@@ -34,11 +34,12 @@ const ProgressCard = ({ referral }) => {
                 PROFILE completed
               </div>
               <div className="text-[#3365e6] text-[12px] leading-[1.5] font-semibold">
-                20%
+                {referral.progress}%
               </div>
             </div>
             <div className="w-full h-[8px] bg-[#BFDBFE] rounded-full mt-2 relative">
-              <div className="before:absolute before:left-0 before:top-0 before:w-[60%] before:h-[8px] before:bg-[#3365e6] before:rounded-full"></div>
+              <div
+                className={`before:absolute before:left-0 before:top-0  before:h-[8px] before:bg-[#3365e6] before:rounded-full ${referral.progressCSS}`}></div>
             </div>
           </div>
           <div className="border w-full rounded overflow-hidden border-[#d7d7d7] shadow-xl">
