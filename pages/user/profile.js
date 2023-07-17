@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LogoRank from '@/assets/rank.svg';
 import LogoBadge from '@/assets/badge.svg';
 import LogoCoin from '@/assets/coin.svg';
@@ -16,8 +16,13 @@ import LogoDribble from '@/assets/dribble.svg';
 import LogoBehance from '@/assets/behance.svg';
 import LogoMailStar from '@/assets/mailstar.svg';
 import LogoEducation from '@/assets/education.svg';
+import ModalLayout from '@/components/ModalLayout';
+import ProfileModal from '@/components/ProfileModal';
+import ProfileModalLayout from '@/components/ProfileModalLayout';
 
 const Profile = () => {
+  const [showProfileModal, setShowProfileModal] = useState(false);
+
   return (
     <div>
       <div className="h-[200px] w-full bg-white border-b border-[#d7d7d7]"></div>
@@ -35,7 +40,9 @@ const Profile = () => {
                 A startup enthusiast exploring creator economy
               </p>
               {/* Edit */}
-              <button className="absolute right-5 top-5">
+              <button
+                onClick={() => setShowProfileModal(true)}
+                className="absolute right-5 top-5">
                 <Image src={PencilLogo} alt="edit" width={24} height={24} />
               </button>
             </div>
@@ -190,6 +197,12 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      {/* Profile Modal */}
+      <ProfileModalLayout
+        setIsModalOpen={setShowProfileModal}
+        isModalOpen={showProfileModal}>
+        <ProfileModal />
+      </ProfileModalLayout>
     </div>
   );
 };
