@@ -87,7 +87,7 @@ const ProfileModal = () => {
         </div>
         <div className="w-full">
           <SearchDropDown
-            label1={'City'}
+            label1={'Current Location'}
             marginBottomLabel1={'mb-[5px]'}
             dropdownList={cities}
           />

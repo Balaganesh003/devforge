@@ -1,68 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import CrossLogoWhite from '@/assets/crossLogoWhite.svg';
-import CanalLogo from '@/assets/CanalLogo.png';
-import DegreedLogo from '@/assets/degreedLogo.png';
-import DiscordLogo from '@/assets/DiscordLogo.jpeg';
-import ReactTimeago from 'react-timeago';
-import SaveOutlineButton from '@/components/SaveOutlineButton';
-import RightArrow from '@/assets/RightArrow.svg';
-import RecommendedCard from './RecommendedCard';
-import UpcomingSlide from './UpcomingSlide';
-import { useDispatch, useSelector } from 'react-redux';
-import { postsActions } from '@/store/posts-slice';
-import { useEffect } from 'react';
-import ColouredButton from './ColouredButton';
 
-const datadummy = {
-  id: 1,
-  role: 'Senior Software Engineer - Front End - Bengaluru',
-  company: 'Degreed',
-  location: 'Bengaluru, Ka',
-  type: 'Full Time',
-  remote: true,
-  logo: DegreedLogo,
-  no_of_applicants: 12,
-  posted_on: '2023-04-20T04:05:25.008Z',
-};
-
-const upcomingEvents = [
-  {
-    isImage: false,
-    title: 'Sentry Info Session | Code. Learn. Grow',
-    subtitle: 'Sentry • Webinar',
-    month: 'May',
-    date: '20',
-  },
-  {
-    isImage: false,
-    title: 'Sentry Info Session | Code. Learn. Grow',
-    subtitle: 'Sentry • Webinar',
-    month: 'May',
-    date: '20',
-  },
-];
-
-const upcomingWebinars = [
-  {
-    isImage: true,
-    title: 'Sentry Info Session | Code. Learn. Grow',
-    subtitle: 'Sentry • Webinar',
-    imageUrl:
-      'https://jumpstart-static.s3.amazonaws.com/backend/organizations/organization/29-waf2mTZaYRYuEy5hdFQ.png',
-  },
-  {
-    isImage: true,
-    title: 'Sentry Info Session | Code. Learn. Grow',
-    subtitle: 'Sentry • Webinar',
-    imageUrl:
-      'https://jumpstart-static.s3.amazonaws.com/backend/organizations/organization/29-waf2mTZaYRYuEy5hdFQ.png',
-  },
-];
-
-const JobsAndCompaniesModal = ({ isModalOpen, setIsModalOpen, children }) => {
-  const dispatch = useDispatch();
-
+const ProfileModalLayout = ({
+  isModalOpen,
+  setIsModalOpen,
+  children,
+  label,
+}) => {
   const handelClose = () => {
     setIsModalOpen(false);
   };
@@ -102,7 +47,12 @@ const JobsAndCompaniesModal = ({ isModalOpen, setIsModalOpen, children }) => {
             </div>
           </div>
           <div className="h-full w-full px-[0.9375rem] overflow-hidden">
-            <div className="w-full md:px-3 mt-[20px] h-full  ">{children}</div>
+            <div className="w-full md:px-3  h-full  ">
+              <h1 className="text-[20px] mb-[18px] text-[#666] text-center font-sans font-semibold">
+                {label}
+              </h1>
+              {children}
+            </div>
           </div>
         </div>
       </div>
@@ -110,4 +60,4 @@ const JobsAndCompaniesModal = ({ isModalOpen, setIsModalOpen, children }) => {
   );
 };
 
-export default JobsAndCompaniesModal;
+export default ProfileModalLayout;
