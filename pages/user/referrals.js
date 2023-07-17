@@ -1,8 +1,6 @@
 import ReferralsCard from '@/components/ReferralsCard';
 import React from 'react';
 import GoogleLogo from '@/assets/google.svg';
-import Image from 'next/image';
-import Completed from '@/assets/completed.svg';
 import ProgressCard from '@/components/ProgressCard';
 
 const referralsData = [
