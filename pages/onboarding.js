@@ -136,14 +136,14 @@ const SignUpPage = () => {
           </div>
           <div className="flex-1  flex justify-end">
             <button
-              onClick={nextPanel}
+              onClick={index == 3 ? gotoUser : nextPanel}
               className="py-[10px] w-fit  px-8 text-[0.875rem] rounded font-semibold bg-[#0082FB]  hover:bg-[#0082FB]/90 hover:-translate-y-0.5 text-white hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer">
               Next
             </button>
           </div>
         </div>
         {/* Slides */}
-        <div className="max-w-[650px] w-full mt-[4rem] md:my-auto p-[1rem] mobile-lg:p-[1.5rem] md:p-0 mx-auto my-auto">
+        <div className="max-w-[650px] w-full mt-[5rem] md:my-auto p-[1rem] mobile-lg:p-[1.5rem] md:p-0 mx-auto my-auto">
           <AnimatePresence initial={false} custom={index} mode={`wait`}>
             <motion.div
               key={index}
