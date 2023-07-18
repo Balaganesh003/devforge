@@ -37,9 +37,7 @@ const EmailField = ({
 
   return (
     <div>
-      <label
-        htmlFor="email"
-        className="text-primary-text text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem]">
+      <label className="text-primary-text text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem]">
         {label}
       </label>
       <input

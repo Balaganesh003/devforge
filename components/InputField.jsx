@@ -42,12 +42,13 @@ const InputField = ({
         value={inputValue}
         onChange={handleInput}
         onBlur={checkIsEmpty}
-        className={`w-full text-[1rem]  bg-white h-12 rounded py-[0.1rem] px-[0.875rem]  mb-[0.8125rem]  text-primary-text ${
+        className={`w-full text-[1rem] bg-white h-12 rounded py-[0.1rem] px-[0.875rem] mb-[0.8125rem] text-primary-text ${
           isEmpty
             ? 'outline outline-2 outline-text-red'
             : 'border border-[#d7d7d7] focus:outline-black'
         }`}
       />
+
       {isEmpty && (
         <p className="text-[0.75rem] leading-[125%] font-normal text-text-red flex items-center mt-[0.15rem]  ">
           <Image

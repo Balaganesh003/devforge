@@ -18,7 +18,7 @@ const Education = () => {
   };
 
   return (
-    <div className="w-full h-full mx-auto  pb-[2.75rem]">
+    <div className="w-full h-full mx-auto ">
       <div>
         <div className="flex flex-col gap-[2.75rem]">
           {schools.map((school, index) => (

@@ -178,3 +178,22 @@ body {
     clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
   }
 }
+
+.react-tel-input .form-control {
+  width: 100% !important;
+  font-size: 16px !important;
+  height: 48px !important;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid #d7d7d7 !important;
+}
+
+.react-tel-input .special-label {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.react-tel-input .form-control:focus {
+  border: 1px solid #0e0e0e !important;
+  box-shadow: 0 0 0 1px #0e0e0e !important;
+}
