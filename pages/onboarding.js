@@ -6,6 +6,7 @@ import AuthBanner from '@/components/AuthBanner';
 import Education from '@/components/Education';
 import { useRouter } from 'next/router';
 import ProfileDetails from '@/components/ProfileDetails';
+import SocialDetails from '@/components/SocialDetails';
 
 const SignUpPage = () => {
   const router = useRouter();
@@ -141,13 +142,9 @@ const SignUpPage = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               ease={easeIn}>
-              {index === 0 && (
-                <div className="">
-                  <Education />
-                </div>
-              )}
+              {index === 0 && <Education />}
               {index === 1 && <ProfileDetails />}
-              {index === 2 && <div>page 3</div>}
+              {index === 2 && <SocialDetails />}
               {index === 3 && <div>page 4</div>}
             </motion.div>
           </AnimatePresence>
