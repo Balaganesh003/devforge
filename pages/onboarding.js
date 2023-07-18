@@ -7,6 +7,7 @@ import Education from '@/components/Education';
 import { useRouter } from 'next/router';
 import ProfileDetails from '@/components/ProfileDetails';
 import SocialDetails from '@/components/SocialDetails';
+import Verification from '@/components/Verification';
 
 const SignUpPage = () => {
   const router = useRouter();
@@ -145,7 +146,7 @@ const SignUpPage = () => {
               {index === 0 && <Education />}
               {index === 1 && <ProfileDetails />}
               {index === 2 && <SocialDetails />}
-              {index === 3 && <div>page 4</div>}
+              {index === 3 && <Verification />}
             </motion.div>
           </AnimatePresence>
           <div className="hidden w-full  md:flex justify-center">
