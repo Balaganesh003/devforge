@@ -32,7 +32,7 @@ const InputField = ({
 
   return (
     <div>
-      <label className="text-primary-text text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem]">
+      <label className="text-primary-text  text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem]">
         {label}
       </label>
       <input
@@ -42,7 +42,7 @@ const InputField = ({
         value={inputValue}
         onChange={handleInput}
         onBlur={checkIsEmpty}
-        className={`w-full text-[1rem] bg-white h-12 rounded py-[0.1rem] px-[0.875rem] mb-[0.8125rem] text-primary-text ${
+        className={`w-full text-[0.9375rem] tracking-[-0.005em] bg-white h-11 rounded py-[0.1rem] px-[0.875rem] mb-[0.8125rem] text-primary-text ${
           isEmpty
             ? 'outline outline-2 outline-text-red'
             : 'border border-[#d7d7d7] focus:outline-black'
@@ -50,7 +50,7 @@ const InputField = ({
       />
 
       {isEmpty && (
-        <p className="text-[0.75rem] leading-[125%] font-normal text-text-red flex items-center mt-[0.15rem]  ">
+        <p className="text-[0.875rem] leading-[125%] font-normal text-text-red flex items-center mt-[0.15rem]  ">
           <Image
             src={ErrorIcon}
             alt="Error Icon"

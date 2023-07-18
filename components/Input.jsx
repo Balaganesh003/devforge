@@ -16,7 +16,7 @@ const Input = ({ label, inputValue, setInputValue, placeholder }) => {
         value={inputValue}
         onChange={handleInput}
         placeholder={placeholder}
-        className={`w-full text-[1rem] bg-white h-12 rounded py-[0.1rem] px-[0.875rem]  mb-[0.8125rem]  text-primary-text  border border-[#d7d7d7] focus:outline-black focus:border-black
+        className={`w-full text-[0.9375rem] tracking-[-0.005em] bg-white h-11 rounded py-[0.1rem] px-[0.875rem]  mb-[0.8125rem]  text-primary-text  border border-[#d7d7d7] focus:outline-black focus:border-black
         `}
       />
     </div>

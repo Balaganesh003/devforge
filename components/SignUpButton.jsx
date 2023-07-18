@@ -6,7 +6,7 @@ const SignUpButton = ({ isAllValid, label, nextPanel }) => {
       disabled={!isAllValid}
       onClick={nextPanel}
       type="button"
-      className={`mt-5 py-[9px] w-full h-[40px] text-[0.875rem] rounded-[5px]  font-semibold  ${
+      className={`mt-5 py-[9px] w-full h-[40px] text-[0.9375rem] rounded-[5px]  font-medium  ${
         isAllValid
           ? 'bg-[#3365E6] text-white hover:bg-[#3365E6]/90 hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer'
           : 'bg-primary text-light-gray cursor-default'

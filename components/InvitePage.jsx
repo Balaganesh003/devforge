@@ -7,11 +7,11 @@ const InvitePage = ({ nextPanel }) => {
   const [inviteCodeError, setInviteCodeError] = useState('');
 
   return (
-    <div className=" max-w-[520px]  pb-[2.5rem]">
-      <h1 className="text-[2.25rem] mobile-md:text-[2.75rem] leading-[1.5] font-CabinetGrotesk-Medium">
+    <div className=" max-w-[520px] mt-14 pb-[2.5rem]">
+      <h1 className="text-[2.25rem] tracking-[-0.005em]  leading-[1.5] font-CabinetGrotesk-Medium">
         clevergrad
       </h1>
-      <div className="flex flex-col mt-6 gap-8 text-[0.9375rem] tracking-normal leading-[1.75]">
+      <div className="flex flex-col mt-4 gap-6 text-[0.9375rem] tracking-normal leading-[1.75]">
         <p>
           CleverGrad is working on ideas aimed at changing the way students
           explore their dream careers & get discovered by their dream companies.

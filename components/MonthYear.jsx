@@ -32,7 +32,7 @@ const MonthYear = ({ period, setPeriod, label }) => {
         placeholder="MM/YYYY"
         value={period}
         onChange={(e) => handleInputChange(e)}
-        className={`w-full text-[1rem] bg-white h-12 rounded py-[0.1rem] pl-[0.875rem] pr-[2.5rem]  mb-[0.8125rem]  text-primary-text border border-[#d7d7d7] focus:outline-black`}
+        className={`w-full text-[0.9375rem] tracking-[-0.005em] bg-white h-11 rounded py-[0.1rem] pl-[0.875rem] pr-[2.5rem]  mb-[0.8125rem]  text-primary-text border border-[#d7d7d7] focus:outline-black`}
       />
     </div>
   );

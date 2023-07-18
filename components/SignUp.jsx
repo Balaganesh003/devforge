@@ -39,8 +39,8 @@ const SignUp = ({ nextPanel }) => {
     checkAllValid();
   }, [FirstNameError, LastNameError, EmailError, PasswordError]);
   return (
-    <div className="bg-white w-full  mobile-lg:max-w-[520px]   my-auto">
-      <h1 className="text-primary-text text-[3rem] font-CabinetGrotesk-Medium leading-[125%]">
+    <div className="bg-white w-full  mobile-lg:max-w-[520px] mt-[2.25rem]  my-auto">
+      <h1 className="text-primary-text text-[2.25rem] tracking-[-0.005em] font-CabinetGrotesk-Medium leading-[125%]">
         Sign Up
       </h1>
       <p className="text-primary-text my-[1rem] text-base">
@@ -92,23 +92,27 @@ const SignUp = ({ nextPanel }) => {
           />
         </div>
       </form>
-      <p className=" text-[#666666] text-[0.875rem] text-center mt-4 tracking-tight leading-[150%] font-medium pb-6">
+      <p className=" text-[#666666] text-[0.9375rem] text-center mt-4 tracking-[-0.005em] leading-[150%] font-normal  pb-6">
         By clicking on “Sign up” you agree to our{' '}
-        <Link href={'./terms'} className="whitespace-nowrap  text-[#3365E6]">
+        <Link
+          href={'./terms'}
+          className="whitespace-nowrap font-medium text-link">
           Terms of Use
         </Link>{' '}
         and{' '}
-        <Link href={'./privacy'} className=" whitespace-nowrap text-[#3365E6]">
+        <Link
+          href={'./privacy'}
+          className=" whitespace-nowrap font-medium text-link">
           Privacy Policy
         </Link>
       </p>
       <p
-        className={` text-secondary-text  tracking-tight text-[0.875rem] text-center  leading-[150%] font-normal  mb-2 `}>
+        className={` text-secondary-text   text-[0.9375rem] text-center  leading-[150%] font-normal tracking-[-0.005em]  mb-2 `}>
         <span className="mr-[1px]">Already have an Untapped account?</span>
 
         <Link
           href="/signin"
-          className="text-link inline-block ml-[2px] font-semibold leading-[130%] cursor-pointer underline">
+          className="text-link inline-block ml-[2px] font-medium leading-[130%] cursor-pointer underline">
           Log in
         </Link>
       </p>

@@ -13,7 +13,7 @@ module.exports = {
         secondary: '#E8F0FE',
         link: '#3365e6',
         'create-button': '#4774e9',
-        'primary-text': '#0e0e0e',
+        'primary-text': '#0E0E0E',
         primary: '#FAFAFA',
         'gray-hover': '#f2f2f2',
         'gray-border': '#dadada',

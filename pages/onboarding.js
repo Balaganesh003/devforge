@@ -65,7 +65,7 @@ const SignUpPage = () => {
             <p className="text-[1.25rem]">
               Step <span>{index + 1}</span>
             </p>
-            <h1 className="text-[#101724] font-bold text-[1.5rem] mt-2">
+            <h1 className="text-[#101724] font-CabinetGrotesk-Bold  text-[1.5rem] mt-2">
               {index === 0 && 'Add your Education'}
               {index === 1 && 'Complete your profile'}
               {index === 2 && 'Add your socials'}
@@ -143,7 +143,7 @@ const SignUpPage = () => {
           </div>
         </div>
         {/* Slides */}
-        <div className="max-w-[650px] w-full mt-[5rem] md:my-auto p-[1rem] mobile-lg:p-[1.5rem] md:p-0 mx-auto my-auto">
+        <div className="max-w-[650px] w-full mt-[5rem]  md:my-auto p-[1rem] mobile-lg:p-[1.5rem] md:p-0 mx-auto my-auto">
           <AnimatePresence initial={false} custom={index} mode={`wait`}>
             <motion.div
               key={index}
@@ -161,7 +161,7 @@ const SignUpPage = () => {
           <div className="hidden w-full  md:flex justify-center">
             <button
               onClick={index == 3 ? gotoUser : nextPanel}
-              className="max-w-[13.25rem] mt-[2.75rem]  mx-auto  bg-[#0082FB] text-white px-4 rounded-[10px] font-semibold text-[0.875rem] h-[2.5rem] flex items-center gap-2 hover:bg-[#0082FB]/90 hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer">
+              className="w-[180px] mt-[2.75rem]  mx-auto  bg-[#0082FB] text-white px-4 rounded-[5px] font-medium text-[0.875rem] h-[2.5rem]  justify-center flex items-center  hover:bg-[#0082FB]/90 hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer">
               {index == 3 ? 'Complete Profile' : 'Save and Continue'}
             </button>
           </div>

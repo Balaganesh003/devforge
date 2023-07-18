@@ -46,7 +46,7 @@ const PasswordFieldSignIn = ({
           value={inputValue}
           onChange={handleInput}
           onBlur={checkIsEmpty}
-          className={`w-full text-[1rem] bg-white h-12 rounded py-[0.1rem] px-[0.875rem] pr-[3.125rem]  mb-[0.8125rem]  text-primary-text ${
+          className={`w-full text-[0.9375rem] tracking-[-0.005em] bg-white h-11 rounded py-[0.1rem] px-[0.875rem] pr-[3.125rem]  mb-[0.8125rem]  text-primary-text ${
             isEmpty
               ? 'outline outline-2 outline-text-red'
               : 'border border-[#d7d7d7] focus:outline-black'
@@ -75,7 +75,7 @@ const PasswordFieldSignIn = ({
           )}
         </div>
         {isEmpty && (
-          <p className="text-[0.75rem] leading-[125%] font-normal text-text-red flex items-center mt-[0.15rem]  ">
+          <p className="text-[0.875rem] leading-[125%] font-normal text-text-red flex items-center mt-[0.15rem]  ">
             <Image
               src={ErrorIcon}
               alt="Error Icon"

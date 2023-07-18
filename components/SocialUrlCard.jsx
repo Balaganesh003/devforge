@@ -47,8 +47,8 @@ const SocialUrlCard = ({
           <Image
             src={logo}
             alt="Error Icon"
-            width={32}
-            height={32}
+            width={28}
+            height={28}
             className=" object-cover rounded-full"
           />
         </div>
@@ -62,7 +62,7 @@ const SocialUrlCard = ({
           placeholder={placeholder}
           onChange={handleInput}
           onBlur={checkisValid}
-          className="w-full text-sm focus:outline-none bg-white h-12 py-[0.1rem] px-[0.875rem]  text-primary-text rounded-r-lg"
+          className="w-full text-sm focus:outline-none bg-white h-11 py-[0.1rem] px-[0.875rem]  text-primary-text rounded-r-lg"
         />
       </div>
 

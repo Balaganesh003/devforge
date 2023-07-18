@@ -103,7 +103,7 @@ const SearchDropDown = ({
             onChange={handleInputChange}
             onFocus={handleInputFocus}
             onKeyDown={handleInputKeyDown}
-            className={`w-full text-[1rem] bg-white h-12 rounded py-[0.1rem] pl-[0.875rem] pr-[2.5rem]  mb-[0.25rem]  text-primary-text border border-[#d7d7d7] focus:outline-black`}
+            className={`w-full  bg-white text-[0.9375rem] h-11 rounded py-[0.1rem] pl-[0.875rem] pr-[2.5rem]  mb-[0.25rem]  text-primary-text border border-[#d7d7d7] focus:outline-black`}
           />
           <div className="absolute top-[14px] right-3">
             <Image

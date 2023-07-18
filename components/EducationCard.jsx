@@ -5,9 +5,13 @@ import { onboardingActions } from '@/store/onboarding-slice';
 import MonthYear from './MonthYear';
 import DropDown from './DropDown';
 import { universities, degrees, collegeSubjects, degreesArray } from '@/data';
+import Input from './Input';
 
 const EducationCard = () => {
   const dispatch = useDispatch();
+
+  const [collage, setCollage] = useState('');
+  const [degree, setDegree] = useState('');
 
   const { startPeriod, endPeriod } = useSelector((state) => state.onboarding);
 
@@ -44,11 +48,11 @@ const EducationCard = () => {
   return (
     <div className="w-full ">
       <div className="mb-4">
-        <SearchDropDown
-          label1="College/University"
-          marginBottomLabel1="mb-[5px]"
+        <Input
+          label="College/University"
           placeholder="Eg : Harvard University"
-          dropdownList={universities}
+          inputValue={collage}
+          setInputValue={setCollage}
         />
       </div>
 
@@ -71,28 +75,30 @@ const EducationCard = () => {
 
       <div className="flex flex-col gap-6 ">
         <div className="flex-1 ">
-          <SearchDropDown
+          <Input
             placeholder="Eg : Bachelor of Business Administration(BBA)"
-            marginBottomLabel1="mb-[5px]"
-            dropdownList={degreesArray}
-            label1="Degree"
+            label="Degree"
+            inputValue={degree}
+            setInputValue={setDegree}
           />
         </div>
         <div className="flex-1 flex flex-col gap-6">
-          <SearchDropDown
-            label1="Major"
-            marginBottomLabel1="mb-[5px]"
+          <Input
+            label="Major"
             placeholder="Eg : Computer Science Engineering"
-            dropdownList={collegeSubjects}
           />
           {fields.map((field, index) => (
-            <SearchDropDown
-              key={index}
-              label1={`Additional ${field.type}`}
-              marginBottomLabel1="mb-[5px]"
-              placeholder={`Add ${field.type}`}
-              dropdownList={collegeSubjects}
-            />
+            <div key={index} className="relative">
+              <Input
+                label={`Additional ${field.type}`}
+                placeholder={`Add ${field.type}`}
+              />
+              <button
+                className="absolute top-0 right-0  leading-[130%] text-text-red  text-[0.875rem] "
+                onClick={() => removeSchool(index)}>
+                <span className="ml-1 leading-[130%]">Remove {field.type}</span>
+              </button>
+            </div>
           ))}
         </div>
       </div>
