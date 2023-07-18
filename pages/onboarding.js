@@ -66,11 +66,20 @@ const SignUpPage = () => {
               Step <span>{index + 1}</span>
             </p>
             <h1 className="text-[#101724] font-bold text-[1.5rem] mt-2">
-              Add your Education
+              {index === 0 && 'Add your Education'}
+              {index === 1 && 'Complete your profile'}
+              {index === 2 && 'Add your socials'}
+              {index === 3 && 'Add your socials'}
             </h1>
             <p className="text-[#525863] text-[1rem] leading-[1.75rem] mt-4 tracking-tight ">
-              Add your current educational qualification to let us know about
-              your college, degree and graduation year
+              {index === 0 &&
+                ' Add your current educational qualification to let us know about your college, degree and graduation year'}
+              {index === 1 &&
+                ' A catchy one liner about you that grabs attention & your contact details'}
+              {index === 2 &&
+                ' Add atleast three social handles that help us verify your profile'}
+              {index === 3 &&
+                ' Add documents that help us verify your profile. This is a one time process and will not be shared with anyone.'}
             </p>
             <div className="flex gap-2 mt-[1.75rem]">
               <div
