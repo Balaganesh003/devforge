@@ -23,7 +23,7 @@ const MonthYear = ({ period, setPeriod, label }) => {
 
   return (
     <div>
-      <p className={`text-[#333342] text-[0.875rem] mb-[5px] font-semibold`}>
+      <p className={`text-[#0e0e0e] text-[0.875rem] mb-[5px] font-semibold`}>
         {label}
       </p>
       <input
@@ -32,7 +32,7 @@ const MonthYear = ({ period, setPeriod, label }) => {
         placeholder="MM/YYYY"
         value={period}
         onChange={(e) => handleInputChange(e)}
-        className={`w-full text-[0.9375rem] tracking-[-0.005em] bg-white h-11 rounded py-[0.1rem] pl-[0.875rem] pr-[2.5rem]  mb-[0.8125rem]  text-primary-text border border-[#d7d7d7] focus:outline-black`}
+        className={`w-full text-[0.9375rem] tracking-[-0.005em] bg-white h-11 rounded py-[0.1rem] pl-[0.875rem] pr-[2.5rem]  mb-[0.8125rem]  text-primary-text border border-[#d7d7d7] outline-none focus:border-black focus:shadow-field  transition-field ease-in-out-expo duration-[0.25s]`}
       />
     </div>
   );

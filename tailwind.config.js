@@ -67,6 +67,7 @@ module.exports = {
         nav: '0 2px 8px rgba(0, 0, 0, 0.16)',
         card: '0 2px 10px rgba(45, 42, 61, 0.1)',
         field: '0 0 0 1px #0e0e0e',
+        error: '0 0 0 1px #cc3341',
       },
 
       fontFamily: {
@@ -107,6 +108,17 @@ module.exports = {
           '80.1%': { opacity: 0 },
           '100%': { opacity: 0 },
         },
+      },
+
+      transitionProperty: {
+        width: 'width',
+        height: 'height',
+        spacing: 'margin, padding',
+        transform: 'transform',
+        opacity: 'opacity',
+        boxShadow: 'box-shadow',
+        border: 'border-color',
+        field: 'border-color, box-shadow',
       },
     },
   },

@@ -52,7 +52,7 @@ const SearchDropDown = ({
     const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
     return parts.map((part, index) =>
       part.toLowerCase() === highlight.toLowerCase() ? (
-        <strong key={index} className="text-[#333342] font-semibold">
+        <strong key={index} className="text-[#0e0e0e] font-semibold">
           {part}
         </strong>
       ) : (
@@ -82,7 +82,7 @@ const SearchDropDown = ({
   return (
     <div className="">
       <p
-        className={`text-[#333342] text-[0.875rem]  ${
+        className={`text-[#0e0e0e] text-[0.875rem]  ${
           marginBottomLabel1 ? marginBottomLabel1 : 'mb-[10px]'
         } font-semibold`}>
         {label1}

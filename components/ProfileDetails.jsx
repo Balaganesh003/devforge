@@ -5,12 +5,7 @@ import EmailField from './EmailField';
 import Input from './Input';
 import MobileNumberFeild from './MobileNumberFeild';
 
-const genders = [
-  { label: 'Select Pronoun', value: '' },
-  { label: 'He/Him', value: 'he' },
-  { label: 'She/Her', value: 'she' },
-  { label: 'They/Them', value: 'they' },
-];
+const genders = ['He/Him', 'She/Her', 'They/Them'];
 
 const ProfileDetails = () => {
   const [userName, setUserName] = useState('');
@@ -75,17 +70,15 @@ const ProfileDetails = () => {
           <div className="w-full basis-[50%]">
             <DropDown
               label={'Pronoun'}
-              options={genders}
-              selectedValue={''}
-              setSelectedValue={''}
+              dropdownList={genders}
+              placeholder={'Select Pronoun'}
             />
           </div>
           <div className="w-full basis-[50%]">
             <DropDown
               label={'Pronoun'}
-              options={genders}
-              selectedValue={''}
-              setSelectedValue={''}
+              dropdownList={genders}
+              placeholder={'Select Pronoun'}
             />
           </div>
         </div>
@@ -94,6 +87,7 @@ const ProfileDetails = () => {
             label={'Tagline'}
             inputValue={tagline}
             setInputValue={setTagline}
+            placeholder={'Tagline'}
           />
         </div>
         <div className="w-full ">
@@ -101,7 +95,7 @@ const ProfileDetails = () => {
             About Me
           </label>
           <textarea
-            className="w-full h-[100px] resize-none border border-[#d7d7d7] rounded p-4"
+            className="w-full h-[100px] resize-none border border-[#d7d7d7] outline-none focus:border-black transition-field duration-[0.25s] focus:shadow-field ease-in-out-expo rounded p-4"
             placeholder="About Me"></textarea>
         </div>
       </div>

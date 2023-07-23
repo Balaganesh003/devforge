@@ -48,10 +48,10 @@ const EmailField = ({
         value={Email}
         onChange={handleInput}
         onBlur={checkisValid}
-        className={`w-full text-[0.9375rem] tracking-[-0.005em] bg-white h-11 rounded py-[0.1rem] px-[0.875rem]  mb-[0.8125rem]  text-primary-text ${
+        className={`w-full text-[0.9375rem]  transition-field ease-in-out-expo duration-[0.25s] outline-none border tracking-[-0.005em] bg-white h-11 rounded py-[0.1rem] px-[0.875rem] mb-[0.8125rem] text-primary-text ${
           EmailError
-            ? 'outline outline-2 outline-text-red'
-            : 'border border-[#d7d7d7] focus:outline-black'
+            ? ' border-text-red shadow-error'
+            : ' border-[#d7d7d7] focus:shadow-field focus:border-black'
         }`}
       />
       {EmailError && (
