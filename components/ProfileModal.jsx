@@ -9,12 +9,7 @@ import { BiUpArrowCircle } from 'react-icons/bi';
 import Avatar from './Avatar';
 import SearchDropDown from './SearchDropDown';
 
-const genders = [
-  { label: 'Select Pronoun', value: '' },
-  { label: 'He/Him', value: 'he' },
-  { label: 'She/Her', value: 'she' },
-  { label: 'They/Them', value: 'they' },
-];
+const genders = ['He/Him', 'She/Her', 'They/Them'];
 
 const cities = [
   'New York, NY, USA',
@@ -68,7 +63,7 @@ const ProfileModal = () => {
           <div className="w-full basis-[40%]">
             <DropDown
               label={'Pronoun'}
-              options={genders}
+              dropdownList={genders}
               selectedValue={''}
               setSelectedValue={''}
             />
