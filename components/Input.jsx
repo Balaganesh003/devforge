@@ -7,7 +7,7 @@ const Input = ({ label, inputValue, setInputValue, placeholder }) => {
 
   return (
     <div className="w-full">
-      <label className="text-primary-text text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem] capitalize">
+      <label className="text-primary-text  text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem]">
         {label}
       </label>
       <input

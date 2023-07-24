@@ -18,7 +18,7 @@ const Education = () => {
   };
 
   return (
-    <div className="w-full h-full mx-auto mt-[3rem]">
+    <div className="w-full h-full mx-auto ">
       <div>
         <div className="flex flex-col gap-[2.75rem]">
           {schools.map((school, index) => (
@@ -34,7 +34,7 @@ const Education = () => {
             </div>
           ))}
         </div>
-        <div className="">
+        <div className="mt-[13px]">
           <button
             className="text-[0.875rem] px-[1rem] p-[0.5rem] rounded-full leading-[130%] text-[#0064E1] font-medium border border-[#0064E1] flex items-center"
             onClick={addSchool}>

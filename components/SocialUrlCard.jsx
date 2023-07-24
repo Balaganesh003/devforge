@@ -3,7 +3,6 @@ import Image from 'next/image';
 import ErrorIcon from '../assets/exclamatory.svg';
 
 const SocialUrlCard = ({
-  label,
   errorMessage,
   logo,
   Url,
@@ -34,16 +33,11 @@ const SocialUrlCard = ({
   };
   return (
     <div>
-      <label
-        htmlFor="email"
-        className="text-primary-text text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem]">
-        {label}
-      </label>
       <div
         class={`flex ${
           handelFocus ? 'shadow-field border-[#0e0e0e]' : 'border-[#d7d7d7]'
-        }  transition-all duration-300 rounded-lg border  mb-[0.8125rem]`}>
-        <div class="w-12 border-r bg-[#F5F5F5] rounded-l-lg flex-shrink-0 flex items-center justify-center">
+        }  transition-all duration-300 rounded border  mb-[0.8125rem]`}>
+        <div class="w-12 border-r bg-[#F5F5F5] rounded-l flex-shrink-0 flex items-center justify-center">
           <Image
             src={logo}
             alt="Error Icon"
@@ -62,7 +56,7 @@ const SocialUrlCard = ({
           placeholder={placeholder}
           onChange={handleInput}
           onBlur={checkisValid}
-          className="w-full text-sm focus:outline-none bg-white h-11 py-[0.1rem] px-[0.875rem]  text-primary-text rounded-r-lg"
+          className="w-full text-sm focus:outline-none bg-white h-11 py-[0.1rem] px-[0.875rem]  text-primary-text rounded-r"
         />
       </div>
 

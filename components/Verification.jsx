@@ -15,7 +15,7 @@ const Verification = () => {
     }
   };
   return (
-    <div className="h-[200px]">
+    <div className="h-[200px] mb-[2.25rem]">
       <label className="text-primary-text text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem]">
         Add your documents
       </label>

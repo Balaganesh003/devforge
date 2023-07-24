@@ -116,9 +116,9 @@ const SignUpPage = () => {
               }`}
             />
           </div>
-          <div className="flex gap-1 flex-1 justify-center">
+          <div className="flex gap-1 flex-1 justify-center ">
             <div
-              className={`w-4 h-[3px] rounded-full  ${
+              className={`w-4 h-[3px] rounded-full   ${
                 index >= 0 ? 'bg-[#111727]' : 'bg-[#d7d7d7]'
               } `}></div>
             <div
@@ -126,11 +126,11 @@ const SignUpPage = () => {
                 index >= 1 ? 'bg-[#111727]' : 'bg-[#d7d7d7]'
               } `}></div>
             <div
-              className={`w-4 h-[3px] rounded-full ${
+              className={`w-4 h-[3px] rounded-full  ${
                 index >= 2 ? 'bg-[#111727]' : 'bg-[#d7d7d7]'
               } `}></div>
             <div
-              className={`w-4 h-[3px] rounded-full ${
+              className={`w-4 h-[3px] rounded-full  ${
                 index >= 3 ? 'bg-[#111727]' : 'bg-[#d7d7d7]'
               } `}></div>
           </div>
@@ -143,7 +143,7 @@ const SignUpPage = () => {
           </div>
         </div>
         {/* Slides */}
-        <div className="max-w-[650px] w-full mt-[5rem]  md:my-auto p-[1rem] mobile-lg:p-[1.5rem] md:p-0 mx-auto my-auto">
+        <div className="max-w-[650px] w-full md:pt-[2.5rem]  md:my-auto p-[1rem] pt-[6rem] mobile-lg:p-[1.5rem] mobile-lg:pt-[6rem] mx-auto my-auto">
           <AnimatePresence initial={false} custom={index} mode={`wait`}>
             <motion.div
               key={index}

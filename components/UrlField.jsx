@@ -45,7 +45,7 @@ const UrlField = ({
         placeholder={placeholder}
         onChange={handleInput}
         onBlur={checkisValid}
-        className={`w-full text-[0.9375rem] tracking-[-0.005em] bg-white h-11 rounded py-[0.1rem] px-[0.875rem] mb-[0.8125rem]  text-primary-text border border-[#d7d7d7] focus:outline-black`}
+        className={`w-full text-[0.9375rem] tracking-[-0.005em] bg-white h-11 rounded py-[0.1rem] px-[0.875rem] mb-[0.8125rem]  text-primary-text border border-[#d7d7d7] focus:shadow-field focus:border-black transition-field duration-[0.25s] ease-in-out-expo outline-none`}
       />
       {UrlError && (
         <p className="text-[0.875rem] leading-[125%] font-normal text-text-red flex items-center mt-[0.15rem]  ">
@@ -54,7 +54,7 @@ const UrlField = ({
             alt="Error Icon"
             width={16}
             height={16}
-            className="bg-text-red w-5 h-5 rounded-full"
+            className="bg-text-red w-5 h-5 rounded"
           />
           <span className="pl-[0.625rem]">
             {errorMessage ? errorMessage : 'Please enter a valid URL'}

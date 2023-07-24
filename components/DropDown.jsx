@@ -43,9 +43,9 @@ const DropDown = ({ label, placeholder, dropdownList }) => {
 
   return (
     <div className="">
-      <p className={`text-[#0e0e0e] text-[0.875rem] mb-[5px]  font-semibold`}>
+      <label className="text-primary-text  text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem]">
         {label}
-      </p>
+      </label>
 
       <div>
         <div className="relative">

@@ -28,7 +28,7 @@ const ProfileDetails = () => {
 
   return (
     <div className="w-full max-w-[522px] mx-auto">
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-[13px]">
         <InputField
           label={'User Name'}
           placeholder={'User Name'}
@@ -39,7 +39,7 @@ const ProfileDetails = () => {
           setIsEmpty={setUserNameError}
         />
 
-        <div className="w-full flex flex-col mobile-lg:flex-row gap-6 mb-[13px]">
+        <div className="w-full flex flex-col mobile-lg:flex-row gap-6 mt-[1px] mb-[13px]">
           <div className="w-full basis-[50%]">
             <MobileNumberFeild
               label={'Mobile Number'}
@@ -66,7 +66,7 @@ const ProfileDetails = () => {
             setEmailError={setAlternateEmailError}
           />
         </div>
-        <div className="w-full flex flex-col mobile-lg:flex-row gap-6 mb-[13px]">
+        <div className="w-full flex flex-col mobile-lg:flex-row gap-6 mb-[9px]">
           <div className="w-full basis-[50%]">
             <DropDown
               label={'Pronoun'}
@@ -90,7 +90,7 @@ const ProfileDetails = () => {
             placeholder={'Tagline'}
           />
         </div>
-        <div className="w-full ">
+        <div className="w-full">
           <label className="text-primary-text text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem]">
             About Me
           </label>

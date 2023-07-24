@@ -4,7 +4,7 @@ import 'react-phone-input-2/lib/material.css';
 
 const MobileNumberFeild = ({ label, phone, setPhone }) => {
   return (
-    <div>
+    <div className="">
       <label className="text-primary-text text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem]">
         {label}
       </label>

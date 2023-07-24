@@ -51,7 +51,7 @@ const SocialLinkCard = ({ item, deleteLink, index }) => {
       <div className="relative flex-shrink-0">
         <div
           onClick={() => setShowDropDown(!showDropDown)}
-          className=" h-[48px] bg-white rounded flex items-center px-2 gap-2 mb-[15px] relative  border border-[#d7d7d7] ">
+          className=" h-11 bg-white cursor-pointer rounded flex items-center px-2 gap-2 mb-[13px] relative  border border-[#d7d7d7] ">
           <Image
             src={linkType?.logo || Website}
             alt="Bookmarklogo"
@@ -96,7 +96,7 @@ const SocialLinkCard = ({ item, deleteLink, index }) => {
       </div>
       <div
         onClick={() => deleteLink(index)}
-        className=" rounded-full h-[48px] pr-3 flex items-center flex-shrink-0 mb-[15px] cursor-pointer group -mr-3">
+        className=" rounded-full h-[48px] pr-3 flex items-center flex-shrink-0 mb-[15px] cursor-pointer group -mr-3 transition-all  ease-in-out-expo">
         <Image
           src={DeleteRed}
           alt="Bookmarklogo"

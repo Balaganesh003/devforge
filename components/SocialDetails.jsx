@@ -69,12 +69,8 @@ const SocialDetails = () => {
 
   return (
     <div className="max-w-[520px] mx-auto">
-      <div>
-        <div></div>
-      </div>
-      <div>
+      <div className="flex flex-col gap-[16px]">
         <SocialUrlCard
-          label={'Instagram'}
           errorMessage={'Please enter a valid URL'}
           Url={instagramUrl}
           logo={LogoInstagram}
@@ -85,7 +81,6 @@ const SocialDetails = () => {
         />
 
         <SocialUrlCard
-          label={'Twitter'}
           errorMessage={'Please enter a valid URL'}
           Url={twitterUrl}
           logo={LogoTwitter}
@@ -96,7 +91,6 @@ const SocialDetails = () => {
         />
 
         <SocialUrlCard
-          label={'LinkedIn'}
           errorMessage={'Please enter a valid URL'}
           Url={linkedinUrl}
           setUrl={setLinkedinUrl}
@@ -107,7 +101,6 @@ const SocialDetails = () => {
         />
 
         <SocialUrlCard
-          label={'GitHub'}
           errorMessage={'Please enter a valid URL'}
           Url={githubUrl}
           logo={LogoGithub}
@@ -117,19 +110,20 @@ const SocialDetails = () => {
           placeholder={'https://www.github.com/'}
         />
       </div>
-      <div className="flex flex-col gap-6 mt-[2.5rem]">
+      <div className="flex flex-col mt-[4px]">
         {allLinks.map((item, i) => (
-          <SocialLinkCard
-            key={i}
-            item={item}
-            index={item.id}
-            deleteLink={deleteLink}
-          />
+          <div key={i} className="w-full mt-[9px]">
+            <SocialLinkCard
+              item={item}
+              index={item.id}
+              deleteLink={deleteLink}
+            />
+          </div>
         ))}
       </div>
       <div
         onClick={() => addotherLinks()}
-        className="flex gap-1 items-center pl-[14px] mt-[2.75rem] pr-[16px] max-h-[3rem] h-[2.5rem] border border-black rounded hover:-translate-y-0.5   hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer justify-center ">
+        className="flex gap-1 items-center mt-[12px] max-h-[3rem] h-[2.5rem] border border-black rounded hover:-translate-y-0.5   hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer justify-center ">
         <Image
           src={plusLogo}
           alt="Bookmarklogo"
