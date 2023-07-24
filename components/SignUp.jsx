@@ -28,6 +28,8 @@ const SignUp = ({ nextPanel }) => {
         LastName &&
         Email &&
         Password
+        ? true
+        : false
     );
   };
 
@@ -37,7 +39,16 @@ const SignUp = ({ nextPanel }) => {
       return;
     }
     checkAllValid();
-  }, [FirstNameError, LastNameError, EmailError, PasswordError]);
+  }, [
+    FirstNameError,
+    LastNameError,
+    EmailError,
+    PasswordError,
+    FirstName,
+    LastName,
+    Email,
+    Password,
+  ]);
   return (
     <div className="bg-white w-full  mobile-lg:max-w-[520px] mt-[2.25rem]  my-auto">
       <h1 className="text-primary-text text-[2.25rem] tracking-[-0.005em] font-CabinetGrotesk-Medium leading-[125%]">
