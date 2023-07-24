@@ -109,7 +109,7 @@ const Profile = () => {
                 <Image src={PencilLogo} alt="edit" width={24} height={24} />
               </button>
             </div>
-            <div className="p-6 md:col-span-6  bg-white border rounded-[10px] items-center flex gap-[2%] border-[#d7d7d7]">
+            <div className="p-4 lg:p-6 md:col-span-6  bg-white border rounded-[10px] items-center flex gap-[2%] border-[#d7d7d7]">
               <Image src={LogoBadge} alt="rank" width={96} height={96} />
               <p className="text-[#FF8D1F] text-[1rem] leading-[1.5]">
                 You haven’t earned any badges yet
@@ -189,7 +189,7 @@ const Profile = () => {
           </button>
         </div>
         {/* 4th row */}
-        <div className="p-[3rem] bg-white border border-[#d7d7d7] rounded-[10px] mt-6 flex items-end justify-center">
+        <div className="p-[1rem] md:p-[2rem] lg:p-[3rem] bg-white border border-[#d7d7d7] rounded-[10px] mt-6 flex items-end justify-center">
           <div className="flex flex-col items-center">
             <Image src={LogoMailStar} alt="rank" width={96} height={96} />
             <h4 className="text-[1.5rem] text-center font-CabinetGrotesk-Medium  mt-4">
