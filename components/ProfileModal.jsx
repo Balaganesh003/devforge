@@ -64,6 +64,7 @@ const ProfileModal = () => {
             <DropDown
               label={'Pronoun'}
               dropdownList={genders}
+              placeholder={'Pronoun'}
               selectedValue={''}
               setSelectedValue={''}
             />
