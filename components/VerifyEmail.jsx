@@ -1,9 +1,9 @@
 import React from 'react';
-import InputField from './InputField';
 import ColouredButton from './ColouredButton';
 import { useRouter } from 'next/router';
+import Otp from './Otp';
 
-const VerifyEmail = ({ nextPanel }) => {
+const VerifyEmail = () => {
   const router = useRouter();
   const GotoObarding = () => {
     router.push('/onboarding');
@@ -11,7 +11,7 @@ const VerifyEmail = ({ nextPanel }) => {
 
   return (
     <div className=" max-w-[520px]">
-      <h1 className="text-[2.25rem] tracking-[-0.005em] mobile-md:text-[2.75rem] leading-[1.5] font-CabinetGrotesk-Medium">
+      <h1 className="text-[2.25rem] tracking-[-0.005em]  leading-[1.5] font-CabinetGrotesk-Medium">
         Verify your email
       </h1>
       <div className="flex flex-col mt-6 gap-6 text-[0.9375rem] tracking-[-0.005em] leading-[1.5rem]">
@@ -22,7 +22,9 @@ const VerifyEmail = ({ nextPanel }) => {
         <p>We just sent a verification link to xxx@gmail.com</p>
         <p>Check your inbox and open the link to verify your email</p>
       </div>
-
+      <div className="pt-[13px]">
+        <Otp />
+      </div>
       <div className="mt-6">
         <ColouredButton handelClick={GotoObarding} label={'Resend Email'} />
       </div>
