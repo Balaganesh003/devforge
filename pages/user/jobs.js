@@ -1,5 +1,4 @@
 import React from 'react';
-import JobsAndCompanies from '@/components/JobsAndCompanies';
 import CanalLogo from '@/assets/CanalLogo.png';
 import DegreedLogo from '@/assets/degreedLogo.png';
 import DiscordLogo from '@/assets/DiscordLogo.jpeg';
@@ -8,6 +7,7 @@ import ClockLogo from '@/assets/ClockLogo.svg';
 import BookmarkLogo from '@/assets/BookmarkLogo.svg';
 import BlackTick from '@/assets/BlackTick.svg';
 import JobsCard from '@/components/JobsCard';
+import JobsPage from '@/components/JobsPage';
 
 const JobsFilter = [
   {
@@ -151,7 +151,7 @@ const JobsList = [
 const Jobs = () => {
   return (
     <div>
-      <JobsAndCompanies
+      <JobsPage
         DropdownList={RecommendedDropdown}
         Filters={JobsFilter}
         CardList={JobsList}

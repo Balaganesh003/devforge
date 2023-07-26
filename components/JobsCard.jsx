@@ -28,45 +28,33 @@ const JobsCard = ({
       className="w-full  bg-white p-[0.9375rem] rounded border border-gray-border hover:shadow-card text-primary-text cursor-pointer group overflow-hidden ">
       {/* Logo and applicants */}
       <div className="flex justify-between flex-col flex-grow-1 h-full">
-        <div>
-          <div className="flex justify-between mb-[10px]">
-            <Image
-              src={logo ? logo : CompanyLogo}
-              alt="Company Logo"
-              width={200}
-              height={200}
-              className="w-[5.625rem] h-[5.625rem] min-w-[5.625rem] flex-shrink-0 rounded"
-            />
+        <div className="h-full">
+          {/* Job Title */}
+          <div className="flex flex-col justify-between h-full">
             <div>
-              <p className="text-[0.75rem] leading-[1rem] opacity-0 font-normal text-gray-text group-hover:opacity-[100%] transition-all duration-300">
-                {no_of_applicants} Applicants
+              <p className="text-[1rem] mb-2 leading-[1.375rem] font-medium text-primary-text">
+                {role}
+              </p>
+              <p className="mb-[12px] text-[0.9375rem] leading-[1.5] font-normal ">
+                Research different programs and initiatives by universities
+                across the world
               </p>
             </div>
-          </div>
-          {/* Job Title */}
-          <div>
-            <p className="text-[1rem] mb-2 leading-[1.375rem] font-medium text-primary-text">
-              {role}
-            </p>
-            <p className="mb-[12px] text-[0.875rem] leading-[1rem] font-normal ">
-              {company}
-            </p>
-            <div className="mb-3 text-ellipsis text-[0.75rem] leading-[1rem] text-primary-text">
-              <span className="captilize">{type}</span>
-              <span className="mx-[3px]">•</span>
-              <span className="captilize">
-                {location} {`${remote && ' Remote'}`}
-              </span>
+
+            <div className="mb-3 bg-[#FFF2E7] text-[#EF7B56] font-CabinetGrotesk-Medium text-ellipsis text-[0.9375rem] leading-[1.5] px-3 py-1 w-fit rounded-[5px]">
+              250 ST
             </div>
           </div>
         </div>
         <div>
           <hr className="border-gray-border   -ml-[15px] -mr-[15px] my-[15px]" />
+
           <div className="flex justify-between gap-3 h-fit">
             <SaveOutlineButton />
-            <div className="flex gap-1 items-center px-[16px]  max-h-[3rem] h-[2.5rem] border border-black rounded hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer">
-              <button className="text-[0.875rem] leading-[130%]  text-primary-text font-semibold">
-                Learn More
+
+            <div className="flex gap-1 items-center px-[16px] bg-[#0081F1] border-[#0081F1] max-h-[3rem] h-[2.5rem] border  rounded hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer">
+              <button className="text-[0.875rem] leading-[130%]  text-white font-semibold">
+                Apply Now
               </button>
             </div>
           </div>
