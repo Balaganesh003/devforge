@@ -1,275 +1,201 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import toast, { Toaster } from 'react-hot-toast';
 import CrossLogoWhite from '@/assets/crossLogoWhite.svg';
-import crossLogoGray from '@/assets/crossLogoGray.svg';
-import { useDispatch } from 'react-redux';
-import InputField from '@/components/InputField';
-import DropDown from './DropDown';
-import Input from './Input';
-import UrlField from './UrlField';
-import TiptapEditor from '@/components/TiptapEditor';
-import ColouredButton from './ColouredButton';
-import { companyActions } from '@/store/company-slice';
+import CanalLogo from '@/assets/CanalLogo.png';
+import DegreedLogo from '@/assets/degreedLogo.png';
+import DiscordLogo from '@/assets/DiscordLogo.jpeg';
+import ReactTimeago from 'react-timeago';
+import SaveOutlineButton from '@/components/SaveOutlineButton';
+import RightArrow from '@/assets/RightArrow.svg';
+import RecommendedCard from './RecommendedCard';
+import UpcomingSlide from './UpcomingSlide';
+import { useDispatch, useSelector } from 'react-redux';
+import { postsActions } from '@/store/posts-slice';
+import { useEffect } from 'react';
 
-const companySizeOptions = [
-  '< 10 employees',
-  '10-50 employees',
-  '51-100 employees',
-  '101-500 employees',
-  '501-1000 employees',
-  '1001-10000 employees',
-  '10000+ employees',
+const datadummy = {
+  id: 1,
+  role: 'Senior Software Engineer - Front End - Bengaluru',
+  company: 'Degreed',
+  location: 'Bengaluru, Ka',
+  type: 'Full Time',
+  remote: true,
+  logo: DegreedLogo,
+  no_of_applicants: 12,
+  posted_on: '2023-04-20T04:05:25.008Z',
+};
+
+const upcomingEvents = [
+  {
+    isImage: false,
+    title: 'Sentry Info Session | Code. Learn. Grow',
+    subtitle: 'Sentry • Webinar',
+    month: 'May',
+    date: '20',
+  },
+  {
+    isImage: false,
+    title: 'Sentry Info Session | Code. Learn. Grow',
+    subtitle: 'Sentry • Webinar',
+    month: 'May',
+    date: '20',
+  },
 ];
 
-const CompaniesModal = ({ handelModalClose, isModalOpen }) => {
+const upcomingWebinars = [
+  {
+    isImage: true,
+    title: 'Sentry Info Session | Code. Learn. Grow',
+    subtitle: 'Sentry • Webinar',
+    imageUrl:
+      'https://jumpstart-static.s3.amazonaws.com/backend/organizations/organization/29-waf2mTZaYRYuEy5hdFQ.png',
+  },
+  {
+    isImage: true,
+    title: 'Sentry Info Session | Code. Learn. Grow',
+    subtitle: 'Sentry • Webinar',
+    imageUrl:
+      'https://jumpstart-static.s3.amazonaws.com/backend/organizations/organization/29-waf2mTZaYRYuEy5hdFQ.png',
+  },
+];
+
+const CompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
   const dispatch = useDispatch();
 
-  const [companyName, setCompanyName] = useState('');
-  const [companyNameError, setCompanyNameError] = useState(false);
-  const [companyWebsite, setCompanyWebsite] = useState('');
-  const [companyWebsiteError, setCompanyWebsiteError] = useState(false);
-  const [companyDescription, setCompanyDescription] = useState('');
-  const [companyLogo, setCompanyLogo] = useState('');
-  const [companySize, setCompanySize] = useState('');
-  const [companyTagline, setCompanyTagline] = useState('');
-  const [companyLinkedinUrl, setCompanyLinkedinUrl] = useState('');
-  const [companyLinkedinUrlError, setCompanyLinkedinUrlError] = useState(false);
-  const [companyCarreerUrl, setCompanyCarreerUrl] = useState('');
-  const [companyCarreerUrlError, setCompanyCarreerUrlError] = useState(false);
-  const [companyAstCareerUrl, setCompanyAstCareerUrl] = useState('');
-  const [companyAstCareerUrlError, setCompanyAstCareerUrlError] =
-    useState(false);
-  const [companyKeyWords, setCompanyKeyWords] = useState('');
-  const [aboutCompany, setAboutCompany] = useState('');
+  const data = useSelector((state) => state.posts?.selectedCard);
+
+  const { role, company, location, type, remote, logo, posted_on } =
+    data || datadummy;
+
+  useEffect(() => {}, [data]);
 
   const handelClose = () => {
-    handelClear();
-    handelModalClose();
-  };
-
-  const companyObject = {
-    id: `${Math.floor(Math.random() * 1000000000000000)}`,
-    companyName,
-    companyWebsite,
-    companyDescription,
-    companyLogo,
-    companySize,
-    companyTagline,
-    companyLinkedinUrl,
-    companyCarreerUrl,
-    companyAstCareerUrl,
-    companyKeyWords,
-    aboutCompany,
-  };
-
-  const handleFileSelect = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setCompanyLogo(e.target.result);
-        console.log(e.target.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handelClear = () => {
-    setCompanyName('');
-    setCompanyWebsite('');
-    setCompanyDescription('');
-    setCompanyLogo('');
-    setCompanySize('');
-    setCompanyTagline('');
-    setCompanyLinkedinUrl('');
-    setCompanyCarreerUrl('');
-    setCompanyAstCareerUrl('');
-    setCompanyKeyWords('');
-    setAboutCompany('');
-    setCompanyNameError(false);
-    setCompanyWebsiteError(false);
-    setCompanyLinkedinUrlError(false);
-    setCompanyCarreerUrlError(false);
-    setCompanyAstCareerUrlError(false);
-  };
-
-  const handleSave = () => {
-    if (
-      companyName === '' ||
-      companyNameError === true ||
-      companyWebsiteError === true ||
-      companyLinkedinUrlError === true ||
-      companyCarreerUrlError === true ||
-      companyAstCareerUrlError === true ||
-      companyLogo === ''
-    ) {
-      toast.error('Company name and Logo is required');
-      return;
-    } else {
-      dispatch(companyActions.addCompany(companyObject));
-      toast.success('Company added successfully');
-      handelClear();
-      handelModalClose();
-    }
+    setIsModalOpen(false);
+    dispatch(postsActions.setSelectedCard(null));
   };
 
   return (
     <div
-      className={`min-w-screen min-h-screen w-full h-full fixed top-0 left-0 bg-black/50  z-[200] flex items-center justify-center transform mobile-lg:p-[3rem] sm:px-[6rem] ${
+      className={`min-w-screen min-h-screen w-full h-full fixed top-0 left-0 bg-black/50  z-[200] flex items-center justify-center transform  mobile-lg:px-[6rem] ${
         isModalOpen ? ' scale-[100%] opacity-[100]' : ' scale-0 opacity-0'
       }`}>
-      <Toaster />
       <div
         className={`block mobile-lg:rounded-lg min-h-screen mobile-lg:min-h-fit bg-white mobile-lg:max-w-[64rem] w-full transform duration-[300ms]   ${
           isModalOpen ? ' scale-[100%] opacity-[100]' : ' scale-0 opacity-0'
         } overflow-x-hidden`}>
-        <div className="block mobile-lg:rounded-lg  bg-primary mobile-lg:max-w-[64rem] w-full  max-h-screen overflow-y-auto relative min-h-[5rem] px-2 mobile-md:px-4 mobile-lg:px-6 md:px-8 py-8">
-          {/* CloseLogo */}
-          <div
-            onClick={() => handelClose()}
-            className="p-[9px] bg-black/[15%] rounded-full absolute  top-[24px]  right-[24px] cursor-pointer group hover:scale-[125%] hover:bg-black/10 transition-all duration-300">
-            <Image
-              src={CrossLogoWhite}
-              alt="Cross Logo"
-              className={` w-[14px] h-[14px]`}
-            />
-          </div>
-          {/* content */}
-          <div>
-            <h1 className="text-[1.25rem] mb-[15px] leading-[1.375rem] font-semibold text-primary-text">
-              About the company
-            </h1>
-            {/* Logo and company name */}
-            <div className="flex w-full flex-col md:flex-row gap-8 items-center">
-              <div className="border  flex-shrink-0 border-gray-border  w-[9rem] h-[9rem]  text-center rounded cursor-pointer relative ">
-                <div className="w-full h-full flex items-center  justify-center absolute top-0 left-0">
-                  <Image
-                    src={companyLogo || crossLogoGray}
-                    alt="Drag and drop"
-                    width={64}
-                    height={64}
-                    className={`   ${
-                      companyLogo
-                        ? 'rotate-0 h-full w-full object-contain  bg-white'
-                        : 'rotate-45 h-[4rem] w-[4rem]'
-                    }`}
-                  />
-                </div>
-                <input
-                  type="file"
-                  id="resumeInput"
-                  className="w-full h-full  absolute top-0 left-0 cursor-pointer opacity-0"
-                  onChange={handleFileSelect}
+        <div className="block mobile-lg:rounded-lg  bg-primary mobile-lg:max-w-[64rem] w-full  max-h-screen overflow-y-auto relative">
+          <div className="h-full w-full bg-white sticky top-0 border border-light-gray p-[0.9375rem] mb-[0.9375rem] rounded-md z-[10]">
+            {/* CloseLogo */}
+            <div
+              onClick={() => handelClose()}
+              className="p-[9px] bg-black/[15%] rounded-full absolute  top-[14px]  right-[10px] cursor-pointer group hover:scale-[125%] hover:bg-black/10 transition-all duration-300">
+              <Image
+                src={CrossLogoWhite}
+                alt="Cross Logo"
+                className={` w-[14px] h-[14px]`}
+              />
+            </div>
+            {/* header */}
+            <div className="flex min-h-[6.25rem] w-full gap-4">
+              <div className="flex-shrink-0">
+                <Image
+                  src={logo}
+                  className="w-[100px] h-[100px] object-cover rounded-md"
+                  alt="logo"
                 />
               </div>
-              <div className="flex flex-grow flex-col w-full">
-                <div className="flex lg:gap-8 flex-col lg:flex-row">
-                  <div className="w-full flex-1 basis-[65%]">
-                    <InputField
-                      label={'Company name'}
-                      placeholder={'Company name'}
-                      errorMessage={'Company Name is required'}
-                      inputValue={companyName}
-                      setInputValue={setCompanyName}
-                      isEmpty={companyNameError}
-                      setIsEmpty={setCompanyNameError}
-                    />
-                  </div>
-                  <div className="w-full flex-1 basis-[45%]">
-                    <DropDown
-                      label1={'Team Size'}
-                      placeholder={'Team Size'}
-                      dropdownList={companySizeOptions}
-                      selectedValue={companySize}
-                      setSelectedValue={setCompanySize}
-                    />
-                  </div>
+              <div className="flex flex-col">
+                <p className="text-[1rem] mb-[5px] leading-[1.375rem] font-medium text-primary-text">
+                  {role || 'Senior Software Engineer - Front End - Bengaluru'}
+                </p>
+                <p className="mb-[0.6rem] text-[0.875rem] leading-[1rem] font-normal ">
+                  {company}
+                </p>
+                <div className="mb-3 text-ellipsis text-[0.75rem] leading-[1rem] text-primary-text">
+                  <span className="captilize">{type || 'Full time'}</span>
+                  <span className="mx-[3px]">•</span>
+                  <span className="captilize">
+                    {location}, {`${remote && 'Remote'}`}
+                  </span>
                 </div>
-                <div className="flex w-full">
-                  <Input
-                    label={'tagline'}
-                    placeholder={'Tagline'}
-                    inputValue={companyTagline}
-                    setInputValue={setCompanyTagline}
+                <div className="flex gap-1 mb-2">
+                  <span className="text-[0.75rem] text-secondary-text font-normal">
+                    Posted
+                  </span>
+                  <ReactTimeago
+                    date={posted_on || '2023-04-20T04:05:25.008Z'}
+                    className="text-[0.75rem] text-secondary-text font-normal"
                   />
                 </div>
               </div>
             </div>
-            {/* company urls */}
-            <div className="grid md:grid-cols-2 gap-x-8">
-              <UrlField
-                label={'Company website'}
-                errorMessage={'Invalid Url'}
-                placeholder={'Company website'}
-                Url={companyWebsite}
-                setUrl={setCompanyWebsite}
-                UrlError={companyWebsiteError}
-                setUrlError={setCompanyWebsiteError}
-              />
-              <UrlField
-                label={'Company Linkedin'}
-                errorMessage={'Invalid Url'}
-                placeholder={'Company Linkedin'}
-                Url={companyLinkedinUrl}
-                setUrl={setCompanyLinkedinUrl}
-                UrlError={companyLinkedinUrlError}
-                setUrlError={setCompanyLinkedinUrlError}
-              />
-              <UrlField
-                label={'Carreers page'}
-                placeholder={'Carreers page'}
-                errorMessage={'Invalid Url'}
-                Url={companyCarreerUrl}
-                setUrl={setCompanyCarreerUrl}
-                UrlError={companyCarreerUrlError}
-                setUrlError={setCompanyCarreerUrlError}
-              />
-              <UrlField
-                label={'AST Carreers page'}
-                errorMessage={'Invalid Url'}
-                placeholder={'AST Carreers page'}
-                Url={companyAstCareerUrl}
-                setUrl={setCompanyAstCareerUrl}
-                UrlError={companyAstCareerUrlError}
-                setUrlError={setCompanyAstCareerUrlError}
-              />
+            <hr className="h-[1px] bg-light-gray my-[0.9375rem] -mx-[0.9375rem]" />
+            {/* Buttons */}
+            <div className="flex items-center justify-between">
+              <div className="flex gap-4">
+                <SaveOutlineButton />
+                <SaveOutlineButton isShare={true} />
+              </div>
+              <div className="">
+                <button className="max-w-[13.25rem]   mx-auto  bg-primary-button px-4 rounded font-semibold text-[0.875rem] h-[2.5rem] flex items-center gap-2 hover:bg-secondary-button hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer ">
+                  <span>Apply</span>
+                  <Image
+                    src={RightArrow}
+                    alt="back"
+                    className="h-[0.875rem] w-fit"
+                  />
+                </button>
+              </div>
             </div>
-            {/* Key words */}
-            <div>
-              <Input
-                label={'Keywords'}
-                placeholder={'Keywords'}
-                inputValue={companyKeyWords}
-                setInputValue={setCompanyKeyWords}
-              />
-            </div>
-            {/* company description */}
-            <div className="mb-[15px]">
-              <label className="text-primary-text text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem]">
-                About Company
-              </label>
-              <TiptapEditor
-                setEditorContent={setAboutCompany}
-                editorContent={aboutCompany}
-              />
-            </div>
-            <div className="mb-[25px]">
-              <label className="text-primary-text text-[0.875rem] leading-[150%] font-semibold inline-block mb-[0.375rem]">
-                Company Description
-              </label>
-              <TiptapEditor
-                setEditorContent={setCompanyDescription}
-                editorContent={companyDescription}
-              />
-            </div>
-            {/* Save Button */}
-            <div className="flex justify-end">
-              <ColouredButton
-                label={'Save'}
-                className=""
-                handelClick={handleSave}
-              />
+          </div>
+          <div className="h-full w-full tablet-lg:px-[0.9375rem] overflow-hidden">
+            <div className="max-w-[1000px] tablet-lg:px-3 mt-[20px] h-full flex flex-col tablet-lg:flex-row ">
+              <div className="h-full flex-grow flex-shrink basis-[66%] min-w-[21.875rem] tablet-lg:mr-[10px] ">
+                {/* Job description */}
+                <div className="h-full p-[15px] mb-[15px] bg-white border border-light-gray rounded-lg">
+                  <p className="uppercase mb-[15px] text-ellipsis leading-[1.125rem] font-medium text-secondary-text text-[0.8125rem]">
+                    JOB DESCRIPTION
+                  </p>
+                  <div>
+                    <p className="leading-[1.25rem] break-words text-[0.875rem] text-primary-text mb-[1.25rem]">
+                      Degreed is the upskilling platform that connects learning
+                      to opportunities. We integrate everything people use to
+                      learn and build their careers—skill insights, LMSs,
+                      courses, videos, articles, and projects—and match everyone
+                      to growth opportunities that fit their unique skills,
+                      roles, and goals. Degreed exists to discover, empower and
+                      recognize the next generation of the world&apos;s
+                      expertise.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Apply */}
+                <div className="p-[2rem] bg-dark-green mb-[15px] overflow-hidden rounded-md border border-gray-hover text-white">
+                  <h3 className="text-[1.125rem] font-semibold leading-[125%] mb-[15px]">
+                    Not sure if you should apply?
+                  </h3>
+                  <p className="leading-[150%] break-words text-[1rem]  mb-6">
+                    Many people, especially those from underserved groups,
+                    don&apos;t apply because they&apos;re not 100% qualified. If
+                    you match at least 50% of the requirements, we encourage you
+                    to apply.
+                  </p>
+                  <button className=" w-full justify-center text-primary-text  mx-auto  bg-primary-button px-4 rounded font-semibold text-[0.875rem] h-[2.5rem] flex items-center gap-2 hover:bg-secondary-button hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer">
+                    <span>Apply</span>
+                    <Image
+                      src={RightArrow}
+                      alt="back"
+                      className="h-[0.875rem] w-fit"
+                    />
+                  </button>
+                </div>
+              </div>
+              {/* Right */}
+              <div className=" flex-shrink h-full basis-[32%] min-w-[15rem] tablet-lg:ml-[10px]">
+                <UpcomingSlide title={'events'} cardList={upcomingEvents} />
+                <UpcomingSlide title={'Webinars'} cardList={upcomingWebinars} />
+              </div>
             </div>
           </div>
         </div>

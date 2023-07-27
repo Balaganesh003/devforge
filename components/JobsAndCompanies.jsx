@@ -5,7 +5,7 @@ import Image from 'next/image';
 import BlackDownTriangle from '@/assets/BlackDownTriangle.svg';
 import CrossLogoWhite from '@/assets/crossLogoWhite.svg';
 import SearchLogo from '@/assets/SearchLogo.svg';
-import JobsAndCompaniesModal from './JobsAndCompaniesModal';
+import CompaniesModal from './CompaniesModal';
 
 const JobsAndCompanies = ({
   DropdownList,
@@ -146,7 +146,7 @@ const JobsAndCompanies = ({
       </div>
       {/* Modal */}
 
-      <JobsAndCompaniesModal
+      <CompaniesModal
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
       />
