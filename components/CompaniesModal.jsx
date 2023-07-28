@@ -12,6 +12,13 @@ import UpcomingSlide from './UpcomingSlide';
 import { useDispatch, useSelector } from 'react-redux';
 import { postsActions } from '@/store/posts-slice';
 import { useEffect } from 'react';
+import Link from 'next/link';
+import LogoLinkedin from '@/assets/linkedin.svg';
+import LogoTwitter from '@/assets/twitter.svg';
+import LogoInstagram from '@/assets/instagram.svg';
+import ApplyImg from '@/assets/apply.svg';
+import { BsFillPersonFill } from 'react-icons/bs';
+import { FaSackDollar } from 'react-icons/fa6';
 
 const datadummy = {
   id: 1,
@@ -96,7 +103,7 @@ const CompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
               />
             </div>
             {/* header */}
-            <div className="flex min-h-[6.25rem] w-full gap-4">
+            <div className="flex min-h-[6.25rem] w-full gap-4 items-center">
               <div className="flex-shrink-0">
                 <Image
                   src={logo}
@@ -105,27 +112,25 @@ const CompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
                 />
               </div>
               <div className="flex flex-col">
-                <p className="text-[1rem] mb-[5px] leading-[1.375rem] font-medium text-primary-text">
-                  {role || 'Senior Software Engineer - Front End - Bengaluru'}
-                </p>
-                <p className="mb-[0.6rem] text-[0.875rem] leading-[1rem] font-normal ">
+                <p className="text-[1rem] mb-[6px] leading-[1.375rem] font-medium text-primary-text">
                   {company}
                 </p>
-                <div className="mb-3 text-ellipsis text-[0.75rem] leading-[1rem] text-primary-text">
-                  <span className="captilize">{type || 'Full time'}</span>
-                  <span className="mx-[3px]">•</span>
-                  <span className="captilize">
-                    {location}, {`${remote && 'Remote'}`}
-                  </span>
-                </div>
-                <div className="flex gap-1 mb-2">
-                  <span className="text-[0.75rem] text-secondary-text font-normal">
-                    Posted
-                  </span>
-                  <ReactTimeago
-                    date={posted_on || '2023-04-20T04:05:25.008Z'}
-                    className="text-[0.75rem] text-secondary-text font-normal"
-                  />
+                <p className="mb-[0.9375rem] text-[0.875rem] leading-[1rem] font-normal ">
+                  Creating conversations between brands and communities
+                </p>
+                <div className="flex items-center text-[#6e6e6e]">
+                  <div className=" flex gap-1 items-end mr-4">
+                    <BsFillPersonFill className="text-[0.875rem] " />
+                    <span className="leading-[1] text-[12px]">
+                      100-200 Employees
+                    </span>
+                  </div>
+                  <div className=" flex gap-1 items-center mr-4">
+                    <FaSackDollar className="text-[0.75rem] " />
+                    <span className="leading-[1] text-[12px]">
+                      $13M Funding
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -157,7 +162,7 @@ const CompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
                     JOB DESCRIPTION
                   </p>
                   <div>
-                    <p className="leading-[1.25rem] break-words text-[0.875rem] text-primary-text mb-[1.25rem]">
+                    <p className="leading-[1.25rem] break-words text-[0.875rem] text-primary-text">
                       Degreed is the upskilling platform that connects learning
                       to opportunities. We integrate everything people use to
                       learn and build their careers—skill insights, LMSs,
@@ -171,30 +176,73 @@ const CompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
                 </div>
 
                 {/* Apply */}
-                <div className="p-[2rem] bg-dark-green mb-[15px] overflow-hidden rounded-md border border-gray-hover text-white">
-                  <h3 className="text-[1.125rem] font-semibold leading-[125%] mb-[15px]">
-                    Not sure if you should apply?
-                  </h3>
-                  <p className="leading-[150%] break-words text-[1rem]  mb-6">
-                    Many people, especially those from underserved groups,
-                    don&apos;t apply because they&apos;re not 100% qualified. If
-                    you match at least 50% of the requirements, we encourage you
-                    to apply.
+                <div className="h-full p-[15px] mb-[15px] bg-white border border-light-gray rounded-lg">
+                  <p className="uppercase mb-[15px] text-ellipsis leading-[1.125rem] font-medium text-secondary-text text-[0.8125rem]">
+                    KEY MEMBERS
                   </p>
-                  <button className=" w-full justify-center text-primary-text  mx-auto  bg-primary-button px-4 rounded font-semibold text-[0.875rem] h-[2.5rem] flex items-center gap-2 hover:bg-secondary-button hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer">
-                    <span>Apply</span>
-                    <Image
-                      src={RightArrow}
-                      alt="back"
-                      className="h-[0.875rem] w-fit"
-                    />
-                  </button>
+                  <div className="flex gap-4 w-full">
+                    <div className="border border-[#d7d7d7] p-[15px] rounded-lg w-full"></div>
+                    <div className="border border-[#d7d7d7] p-[15px] rounded-lg w-full"></div>
+                  </div>
                 </div>
               </div>
               {/* Right */}
               <div className=" flex-shrink h-full basis-[32%] min-w-[15rem] tablet-lg:ml-[10px]">
-                <UpcomingSlide title={'events'} cardList={upcomingEvents} />
-                <UpcomingSlide title={'Webinars'} cardList={upcomingWebinars} />
+                <div className="p-[15px]  bg-white border border-[#d7d7d7] rounded-lg mb-[15px]">
+                  <p className="uppercase mb-[15px] text-ellipsis leading-[1.125rem] font-medium text-secondary-text text-[0.8125rem] ">
+                    Socials
+                  </p>
+                  <div>
+                    <span className="text-[0.875rem] leading-[22px]">
+                      Website:&nbsp;
+                    </span>
+                    <Link href="https://www.canal.io/">
+                      <span className="text-[0.875rem] leading-[22px] text-primary-text cursor-pointer">
+                        canal.io
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="flex gap-2 mt-[15px] flex-wrap">
+                    <Link
+                      href="https://www.linkedin.com/company/canal-io/"
+                      className="">
+                      <Image src={LogoLinkedin} alt="Linkedin" />
+                    </Link>
+                    <Link href="https://twitter.com/canal_io">
+                      <Image src={LogoTwitter} alt="Twitter" />
+                    </Link>
+                    <Link href="https://twitter.com/canal_io">
+                      <Image src={LogoInstagram} alt="Github" />
+                    </Link>
+                  </div>
+                </div>
+                <div className="p-[15px]  bg-white border border-[#d7d7d7] rounded-lg mb-[15px]">
+                  <p className="uppercase mb-[15px] text-ellipsis leading-[1.125rem] font-medium text-secondary-text text-[0.8125rem] ">
+                    TAGS
+                  </p>
+                  <div className="flex gap-2 mt-[15px] flex-wrap">
+                    <RecommendedCard text={'Saas'} />
+                    <RecommendedCard text={'Community Management'} />
+                  </div>
+                </div>
+                <div className="  bg-white border border-[#d7d7d7] rounded-lg mb-[15px]">
+                  <Image
+                    src={ApplyImg}
+                    alt="Apply"
+                    className="w-full h-full rounded-t-lg"
+                  />
+                  <div className="p-[15px]">
+                    <h3 className="text-[1.125rem] font-semibold leading-[1.5] mb-1">
+                      Interested in a Career at Convosight
+                    </h3>
+                    <p className="leading-[150%] break-words text-[1rem]  ">
+                      Click here to let the team know.
+                    </p>
+                  </div>
+                  <button className=" px-3 py-1 mx-[15px] mb-[15px] bg-[#de5209] h-7 text-white text-sm font-medium leading-6 rounded outline-none">
+                    <span>View more</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
