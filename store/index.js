@@ -3,6 +3,7 @@ import companySlice from './company-slice';
 import uiSlice from './ui-slice';
 import postsSlice from './posts-slice';
 import onboardingSlice from './onboarding-slice';
+import profileSlice from './profile-slice';
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     ui: uiSlice.reducer,
     posts: postsSlice.reducer,
     onboarding: onboardingSlice.reducer,
+    profile: profileSlice.reducer,
   },
 });
 

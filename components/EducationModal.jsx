@@ -1,28 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import plusLogo from '@/assets/PlusLogo.svg';
-import SocialLinkCard from './SocialLinkCard';
 import CrossLogoWhite from '@/assets/crossLogoWhite.svg';
 import Education from './Education';
 
-const EducationModal = ({ setIsModalOpen, isModalOpen, label, children }) => {
-  const [allLinks, setAllLinks] = useState([
-    { name: '', logo: null, link: '' },
-  ]);
-
-  const handelSave = () => {
-    setIsModalOpen(false);
-  };
-
-  const add = () => {
-    setAllLinks([...allLinks, { name: '', logo: null, link: '' }]);
-  };
-
-  const deleteLink = (index) => {
-    const newLinks = [...allLinks];
-    setAllLinks(newLinks.filter((item, i) => i !== index));
-  };
-
+const EducationModal = ({ setIsModalOpen, isModalOpen, label }) => {
   return (
     <div
       className={`min-w-screen min-h-screen w-full h-full fixed top-0 left-0 bg-black/50  z-[200] flex items-center justify-center transform  mobile-lg:px-[6rem] ${
@@ -62,7 +43,7 @@ const EducationModal = ({ setIsModalOpen, isModalOpen, label, children }) => {
             </div>
           </div>
           <div className="h-full w-full px-[0.9375rem] overflow-hidden">
-            <div className="w-full md:px-3  h-full  ">
+            <div className="w-full md:px-3  h-full pb-6 ">
               <h1 className="text-[18px] my-[18px] text-[#666] text-center font-sans font-semibold">
                 {label}
               </h1>
