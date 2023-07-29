@@ -57,7 +57,7 @@ export default function User() {
           </div>
           <div className="col-span-1  mx-auto row-span-3 min-h-[37.5rem] ">
             {/* 3rd element */}
-            <Link href="/user/startup">
+            <Link href="/user/companies">
               <div className="flex bg-white flex-col cursor-pointer overflow-hidden  rounded-[10px]  border border-[#d7d7d7]  w-full h-full  relative">
                 <h1 className="text-[2.75rem] pt-11 px-6  font-CabinetGrotesk-Medium text-[#9260FF] leading-[1.25]">
                   Your dream companies
@@ -80,7 +80,7 @@ export default function User() {
               <div className="bg-white w-full h-full rounded-lg text-[2rem] p-6 flex justify-center items-center ">
                 <p className=" break-words font-CabinetGrotesk-Medium ">
                   A recap of dream
-                  <Link href="/user/referrals" className="ml-2">
+                  <Link href="/user/jobs" className="ml-2">
                     <Image
                       src={Arrow}
                       alt="Arrow"

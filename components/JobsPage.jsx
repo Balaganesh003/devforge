@@ -43,7 +43,11 @@ const JobsPage = ({
           <div className="sm:max-w-[62.5rem]   overflow-x-auto flex  ">
             <div className="flex  flex-nowrap sm:flex-wrap">
               {Filters.map((filter) => (
-                <FilterCard key={filter.id} name={filter.name} />
+                <FilterCard
+                  key={filter.id}
+                  name={filter.name}
+                  link={`/user/jobs/${filter.name.toLowerCase()}`}
+                />
               ))}
               {isDropDown && (
                 <div className="px-[14.5px] ml-auto py-[6px] my-[4px] mr-[2px] border border-black rounded w-fit h-[35px] flex-shrink-0">
