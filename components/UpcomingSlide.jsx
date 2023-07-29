@@ -3,7 +3,7 @@ import UpcomingCard from './UpcomingCard';
 
 const UpcomingSlide = ({ title, cardList }) => {
   return (
-    <div className="p-[15px]  bg-white border border-[#d7d7d7] rounded-lg mb-[15px]">
+    <div className="p-[15px]  bg-white border border-light-gray rounded-lg mb-[15px]">
       <p className="uppercase mb-[15px] text-ellipsis leading-[1.125rem] font-medium text-secondary-text text-[0.8125rem] ">
         Upcomming {title}
       </p>
