@@ -17,6 +17,7 @@ import VerifyEmail from '@/components/VerifyEmail';
 import { motion, AnimatePresence, easeIn } from 'framer-motion';
 import AuthBanner from '@/components/AuthBanner';
 import { useRouter } from 'next/router';
+import toast, { Toaster } from 'react-hot-toast';
 
 const SignUpPage = () => {
   const [height, setHeight] = useState(0);
@@ -30,6 +31,7 @@ const SignUpPage = () => {
   const GotoObarding = () => {
     setIsLoading(true);
     setTimeout(() => {
+      toast.success('Verification Successful!');
       router.push('/onboarding');
       setIsLoading(false);
     }, 3000);
@@ -41,9 +43,13 @@ const SignUpPage = () => {
     setIsLoading(true);
     setTimeout(() => {
       if (index < 2) {
+        index === 0 && toast.success('Invite Code Verified!');
+        index === 1 && toast.success('Sign Up Successful!');
+
         setIndex(index + 1);
         setDirection(1);
       }
+
       setIsLoading(false);
     }, 3000);
   };
@@ -77,6 +83,7 @@ const SignUpPage = () => {
       className={`flex h-full font-sans w-full ${
         height > 582 ? 'h-screen overflow-hidden' : 'h-full'
       }`}>
+      <Toaster />
       <div className="hidden  mobile-lg:flex  mobile-lg:w-[45%] bg-[#F5F7F9] px-4 py-[2.5rem] sm:px-[1.5rem] lg:px-[2.25rem]  justify-center">
         <div className="max-w-[380px]  w-full flex  flex-col justify-around h-full ">
           <AuthBanner />

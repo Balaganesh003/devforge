@@ -9,6 +9,7 @@ import ProfileDetails from '@/components/ProfileDetails';
 import SocialDetails from '@/components/SocialDetails';
 import Verification from '@/components/Verification';
 import Dualring from '@/assets/dualring.svg';
+import toast, { Toaster } from 'react-hot-toast';
 
 const SignUpPage = () => {
   const router = useRouter();
@@ -24,6 +25,9 @@ const SignUpPage = () => {
     setIsLoading(true);
     setTimeout(() => {
       if (index < 3) {
+        index === 0 && toast.success('Added Education details successfully');
+        index === 1 && toast.success('Added Profile details successfully');
+        index === 2 && toast.success('Added Social details successfully');
         setIndex(index + 1);
         setDirection(1);
       }
@@ -44,6 +48,7 @@ const SignUpPage = () => {
     e.preventDefault();
     setIsLoading(true);
     setTimeout(() => {
+      toast.success('Profile Created Successfully!');
       router.push('/user');
       setIsLoading(false);
     }, 3000);
@@ -69,6 +74,7 @@ const SignUpPage = () => {
       className={`flex  h-full w-full ${
         height > 582 ? 'h-screen overflow-hidden' : 'h-full'
       }`}>
+      <Toaster />
       <div className="hidden  md:flex  md:w-[39.0625%] bg-[#F5F7F9] px-4 md:py-[2.75rem] sm:p-[1.5rem] lg:p-[2.75rem]    justify-center">
         <div className="max-w-[380px]  w-full flex flex-col  justify-around h-full">
           <AuthBanner />
