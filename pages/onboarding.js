@@ -8,21 +8,27 @@ import { useRouter } from 'next/router';
 import ProfileDetails from '@/components/ProfileDetails';
 import SocialDetails from '@/components/SocialDetails';
 import Verification from '@/components/Verification';
+import Dualring from '@/assets/dualring.svg';
 
 const SignUpPage = () => {
   const router = useRouter();
   const [height, setHeight] = useState(0);
   const [index, setIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [direction, setDirection] = useState(1);
 
   const nextPanel = (e) => {
     e.preventDefault();
 
-    if (index < 3) {
-      setIndex(index + 1);
-      setDirection(1);
-    }
+    setIsLoading(true);
+    setTimeout(() => {
+      if (index < 3) {
+        setIndex(index + 1);
+        setDirection(1);
+      }
+      setIsLoading(false);
+    }, 3000);
   };
 
   const prevPanel = (e) => {
@@ -35,7 +41,12 @@ const SignUpPage = () => {
   };
 
   const gotoUser = (e) => {
-    router.push('/user');
+    e.preventDefault();
+    setIsLoading(true);
+    setTimeout(() => {
+      router.push('/user');
+      setIsLoading(false);
+    }, 3000);
   };
 
   useEffect(() => {
@@ -161,8 +172,20 @@ const SignUpPage = () => {
           <div className="hidden w-full  md:flex justify-center">
             <button
               onClick={index == 3 ? gotoUser : nextPanel}
-              className="w-[180px] mt-[2.75rem]  mx-auto  bg-[#0082FB] text-white px-4 rounded-[5px] font-medium text-[0.875rem] h-[2.5rem]  justify-center flex items-center  hover:bg-[#0082FB]/90 hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer">
-              {index == 3 ? 'Complete Profile' : 'Save and Continue'}
+              className="w-[180px] mt-[2.75rem]  mx-auto  bg-[#0082FB] text-white px-4 rounded-[5px] font-medium text-[0.875rem] h-[2.5rem]  justify-center flex items-center  hover:bg-[#0082FB]/90 hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer relative">
+              {isLoading ? (
+                <Image
+                  src={Dualring}
+                  alt="dualring"
+                  width={24}
+                  height={24}
+                  className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2"
+                />
+              ) : index == 3 ? (
+                'Complete Profile'
+              ) : (
+                'Save and Continue'
+              )}
             </button>
           </div>
         </div>

@@ -16,20 +16,36 @@ import InvitePage from '@/components/InvitePage';
 import VerifyEmail from '@/components/VerifyEmail';
 import { motion, AnimatePresence, easeIn } from 'framer-motion';
 import AuthBanner from '@/components/AuthBanner';
+import { useRouter } from 'next/router';
 
 const SignUpPage = () => {
   const [height, setHeight] = useState(0);
   const [index, setIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [direction, setDirection] = useState(1);
+
+  const router = useRouter();
+
+  const GotoObarding = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      router.push('/onboarding');
+      setIsLoading(false);
+    }, 3000);
+  };
 
   const nextPanel = (e) => {
     e.preventDefault();
 
-    if (index < 2) {
-      setIndex(index + 1);
-      setDirection(1);
-    }
+    setIsLoading(true);
+    setTimeout(() => {
+      if (index < 2) {
+        setIndex(index + 1);
+        setDirection(1);
+      }
+      setIsLoading(false);
+    }, 3000);
   };
 
   const prevPanel = (e) => {
@@ -101,12 +117,22 @@ const SignUpPage = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             ease={easeIn}>
-            {index === 0 && <InvitePage nextPanel={nextPanel} />}
+            {index === 0 && (
+              <InvitePage nextPanel={nextPanel} isLoading={isLoading} />
+            )}
             {index === 1 && (
-              <SignUp nextPanel={nextPanel} prevPanel={prevPanel} />
+              <SignUp
+                nextPanel={nextPanel}
+                prevPanel={prevPanel}
+                isLoading={isLoading}
+              />
             )}
             {index === 2 && (
-              <VerifyEmail nextPanel={nextPanel} prevPanel={prevPanel} />
+              <VerifyEmail
+                nextPanel={GotoObarding}
+                prevPanel={prevPanel}
+                isLoading={isLoading}
+              />
             )}
           </motion.div>
         </AnimatePresence>

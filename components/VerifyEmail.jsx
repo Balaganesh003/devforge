@@ -1,14 +1,8 @@
 import React from 'react';
 import ColouredButton from './ColouredButton';
-import { useRouter } from 'next/router';
 import Otp from './Otp';
 
-const VerifyEmail = () => {
-  const router = useRouter();
-  const GotoObarding = () => {
-    router.push('/onboarding');
-  };
-
+const VerifyEmail = ({ isLoading, nextPanel }) => {
   return (
     <div className=" max-w-[520px]">
       <h1 className="text-[2.25rem] tracking-[-0.005em]  leading-[1.5] font-CabinetGrotesk-Medium">
@@ -26,7 +20,11 @@ const VerifyEmail = () => {
         <Otp />
       </div>
       <div className="mt-6">
-        <ColouredButton handelClick={GotoObarding} label={'Resend Email'} />
+        <ColouredButton
+          handelClick={nextPanel}
+          label={'Resend Email'}
+          isLoading={isLoading}
+        />
       </div>
       <div className="mt-8">
         <p className="text-[0.875rem] text-[#666666] leading-[1.5rem]  ">

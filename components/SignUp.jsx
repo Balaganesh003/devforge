@@ -5,7 +5,7 @@ import EmailField from '@/components/EmailField';
 import PasswordField from '@/components/PasswordField';
 import SignUpButton from '@/components/SignUpButton';
 
-const SignUp = ({ nextPanel }) => {
+const SignUp = ({ nextPanel, isLoading }) => {
   const [FirstName, setFirstName] = useState('');
   const [FirstNameError, setFirstNameError] = useState(false);
   const [LastName, setLastName] = useState('');
@@ -97,6 +97,7 @@ const SignUp = ({ nextPanel }) => {
         />
         <div className=" w-[150px] mx-auto">
           <SignUpButton
+            isLoading={isLoading}
             nextPanel={nextPanel}
             isAllValid={isAllValid}
             label={'Sign up'}

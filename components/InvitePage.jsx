@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import InputField from './InputField';
 import ColouredButton from './ColouredButton';
 
-const InvitePage = ({ nextPanel }) => {
+const InvitePage = ({ nextPanel, isLoading }) => {
   const [inviteCode, setInviteCode] = useState('');
   const [inviteCodeError, setInviteCodeError] = useState('');
 
@@ -36,6 +36,7 @@ const InvitePage = ({ nextPanel }) => {
       </div>
       <div className="mt-6">
         <ColouredButton
+          isLoading={isLoading}
           handelClick={nextPanel}
           label={'Unlock Access'}
           bgColor={'bg-[#0D99FF] hover:bg-[#0D99FF]/90'}
