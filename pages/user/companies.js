@@ -1,9 +1,9 @@
 import React from 'react';
 import CompanyCard from '@/components/CompanyCard';
-import JobsAndCompanies from '@/components/JobsAndCompanies';
 import MongoDbLogo from '@/assets/MongoDb.png';
 import JpMorganLogo from '@/assets/JpMorgan.png';
 import QualcommLogo from '@/assets/qualcomm.jpeg';
+import CompaniesPage from '@/components/CompaniesPage';
 
 const CompanyFilter = [
   {
@@ -90,7 +90,7 @@ const CompaniesList = [
 const companies = () => {
   return (
     <div>
-      <JobsAndCompanies
+      <CompaniesPage
         Filters={CompanyFilter}
         CardList={CompaniesList}
         CardName={CompanyCard}

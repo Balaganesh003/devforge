@@ -129,6 +129,22 @@ const SideBar = () => {
               rounded={false}
               link={'user/referrals'}
             />
+            <SideBarLinkCard
+              logo={ProofLogo}
+              isActive={active == 'companies'}
+              text={'Companies'}
+              handleClick={handleClick}
+              rounded={false}
+              link={'user/companies'}
+            />
+            <SideBarLinkCard
+              logo={ProofLogo}
+              isActive={active == 'jobs'}
+              text={'Jobs'}
+              handleClick={handleClick}
+              rounded={false}
+              link={'user/jobs'}
+            />
           </div>
         </div>
       </div>
@@ -215,6 +231,22 @@ const SideBar = () => {
                 handleClick={handleClick}
                 rounded={false}
                 link={'user/referrals'}
+              />
+              <SideBarLinkCard
+                logo={ProofLogo}
+                isActive={active == 'companies'}
+                text={'Companies'}
+                handleClick={handleClick}
+                rounded={false}
+                link={'user/companies'}
+              />
+              <SideBarLinkCard
+                logo={ProofLogo}
+                isActive={active == 'jobs'}
+                text={'Jobs'}
+                handleClick={handleClick}
+                rounded={false}
+                link={'user/jobs'}
               />
             </div>
           </div>

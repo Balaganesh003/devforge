@@ -108,10 +108,10 @@ const JobsAndCompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
                 <p className="text-[1rem] mb-[5px] leading-[1.375rem] font-medium text-primary-text">
                   {role || 'Senior Software Engineer - Front End - Bengaluru'}
                 </p>
-                <p className="mb-[0.6rem] text-[0.875rem] leading-[1rem] font-normal ">
+                <p className="mb-[0.6rem] text-[0.875rem] leading-[1.5] font-normal ">
                   {company}
                 </p>
-                <div className="mb-3 text-ellipsis text-[0.75rem] leading-[1rem] text-primary-text">
+                <div className="mb-3 text-ellipsis text-[0.75rem] leading-[1.5] text-primary-text">
                   <span className="captilize">{type || 'Full time'}</span>
                   <span className="mx-[3px]">•</span>
                   <span className="captilize">
@@ -150,7 +150,7 @@ const JobsAndCompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
           </div>
           <div className="h-full w-full tablet-lg:px-[0.9375rem] overflow-hidden">
             <div className="max-w-[1000px] tablet-lg:px-3 mt-[20px] h-full flex flex-col tablet-lg:flex-row ">
-              <div className="h-full flex-grow flex-shrink basis-[66%] min-w-[21.875rem] tablet-lg:mr-[10px] ">
+              <div className="h-full flex-grow flex-shrink basis-[68%] min-w-[21.875rem] tablet-lg:mr-[10px] ">
                 {/* Recommended */}
                 <div className="flex flex-col h-full p-[15px] mb-[15px] bg-white border border-light-gray rounded-lg">
                   <div className="mb-[15px]">
@@ -198,7 +198,7 @@ const JobsAndCompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
                       passionate about taking new challenges with a continuous
                       improvement mindset.
                     </p>
-                    <p className="leading-[1.25rem] break-words text-[0.875rem] text-primary-text mb-[1.25rem]">
+                    <p className="leading-[1.5] break-words text-[0.875rem] text-primary-text mb-[1.25rem]">
                       <strong>
                         <u>
                           This role will be based onsite in Bengaluru, India.
@@ -213,23 +213,23 @@ const JobsAndCompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
                         gatherings.
                       </strong>
                     </p>
-                    <ul className="list-disc  mb-[1.25rem]">
-                      <li className="leading-[1.25rem] break-words text-[0.875rem] text-primary-text ">
+                    <ul className="list-disc ml-[1.25rem]  mb-[1.25rem]">
+                      <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                         Deliver end-to-end implementation of new user-facing
                         features and/or enhancements to existing features
                       </li>
-                      <li className="leading-[1.25rem] break-words text-[0.875rem] text-primary-text ">
+                      <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                         You will implement beautiful layouts using SASS / CSS3
                         and HTML
                       </li>
-                      <li className="leading-[1.25rem] break-words text-[0.875rem] text-primary-text ">
+                      <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                         Craft Angular components and services with an eye for
                         modularity
                       </li>
-                      <li className="leading-[1.25rem] break-words text-[0.875rem] text-primary-text ">
+                      <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                         Continually improve the quality of UI code
                       </li>
-                      <li className="leading-[1.25rem] break-words text-[0.875rem] text-primary-text ">
+                      <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                         Collaborate with product owners to ensure
                         features/changes meet business requirements and fulfil
                         the Degreed strategy
@@ -247,36 +247,36 @@ const JobsAndCompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
                       all the qualifications or a partial set, we want to hear
                       from you
                     </p>
-                    <ul className="list-disc  mb-[1.25rem]">
-                      <li className="leading-[1rem] break-words text-[0.875rem] text-primary-text ">
+                    <ul className="list-disc ml-[1.25rem] mt-[1.25rem]  mb-[1.25rem]">
+                      <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                         Bachelor&apos;s degree in Computer Science or equivalent
                         experience
                       </li>
-                      <li className="leading-[1rem] break-words text-[0.875rem] text-primary-text ">
+                      <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                         You will have at least 5+ years experience in developing
                         front-end software
                       </li>
-                      <li className="leading-[1rem] break-words text-[0.875rem] text-primary-text ">
+                      <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                         At least 3 years Angular experience required - latest
                         version preferred but not required
                       </li>
-                      <li className="leading-[1rem] break-words text-[0.875rem] text-primary-text ">
+                      <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                         3+ years of experience in front-end development
                       </li>
-                      <li className="leading-[1rem] break-words text-[0.875rem] text-primary-text ">
+                      <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                         Experienced with:
                       </li>
                       <ul className="list-disc">
-                        <li className="leading-[1rem] break-words text-[0.875rem] text-primary-text ">
+                        <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                           Angular v12+
                         </li>
-                        <li className="leading-[1rem] break-words text-[0.875rem] text-primary-text ">
+                        <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                           RxJS v6+
                         </li>
-                        <li className="leading-[1rem] break-words text-[0.875rem] text-primary-text ">
+                        <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                           Unit testing with Jest
                         </li>
-                        <li className="leading-[1rem] break-words text-[0.875rem] text-primary-text ">
+                        <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                           NgBootstrap v10+
                         </li>
                       </ul>
@@ -284,19 +284,19 @@ const JobsAndCompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
                     <h3 className="text-[1.125rem] font-medium leading-[150%] mb-2">
                       <strong>What sets you Apart</strong>
                     </h3>
-                    <ul className="list-disc  mb-[1.25rem]">
-                      <li className="leading-[1rem] break-words text-[0.875rem] text-primary-text ">
+                    <ul className="list-disc ml-[1.25rem] mb-[1.25rem]">
+                      <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                         Data visualization experience (especially with
                         HighCharts) a plus
                       </li>
-                      <li className="leading-[1rem] break-words text-[0.875rem] text-primary-text ">
+                      <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                         ARIA attributes and screen reader technologies
                       </li>
-                      <li className="leading-[1rem] break-words text-[0.875rem] text-primary-text">
+                      <li className="leading-[1.5] break-words text-[0.875rem] text-primary-text">
                         Cypress experience
                       </li>
                     </ul>
-                    <p className="leading-[1.25rem] break-words text-[0.875rem] text-primary-text ">
+                    <p className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                       <strong>Work Environment & Physical Demands</strong>
                     </p>
                     <p className="leading-[1.25rem] break-words text-[0.875rem] text-primary-text ">
@@ -325,12 +325,12 @@ const JobsAndCompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
                     About {company}
                   </p>
                   <div className="mt-3 pb-3 border-b border-gray-hover">
-                    <p className="leading-[1.25rem] break-words text-[0.875rem] text-primary-text ">
+                    <p className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                       Industry: Enterprise Software, EdTech
                     </p>
                   </div>
                   <div className="mt-3 pb-3 border-b border-gray-hover">
-                    <p className="leading-[1.25rem] break-words text-[0.875rem] text-primary-text ">
+                    <p className="leading-[1.5] break-words text-[0.875rem] text-primary-text ">
                       Company size: 201-500 employees
                     </p>
                   </div>

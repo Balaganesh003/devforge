@@ -5,7 +5,7 @@ import Image from 'next/image';
 import BlackDownTriangle from '@/assets/BlackDownTriangle.svg';
 import CrossLogoWhite from '@/assets/crossLogoWhite.svg';
 import SearchLogo from '@/assets/SearchLogo.svg';
-import JobsAndCompaniesModal from './JobsAndCompaniesModal';
+import JobsAndCompaniesModal from './JobsModal';
 
 const JobsPage = ({
   DropdownList,
