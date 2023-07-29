@@ -59,7 +59,7 @@ const ProfileModal = () => {
           setIsEmpty={setUserNameError}
         />
 
-        <div className="w-full flex gap-6">
+        <div className="w-full flex gap-6 mt-[4px]">
           <div className="w-full basis-[40%]">
             <DropDown
               label={'Pronoun'}
@@ -81,14 +81,14 @@ const ProfileModal = () => {
             />
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full mt-[7px]">
           <SearchDropDown
             label1={'Current Location'}
             marginBottomLabel1={'mb-[5px]'}
             dropdownList={cities}
           />
         </div>
-        <div className="w-full">
+        <div className="w-full mt-[12px]">
           <Input label={'Tagline'} />
         </div>
       </div>

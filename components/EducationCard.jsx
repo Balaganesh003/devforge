@@ -9,6 +9,7 @@ const EducationCard = () => {
 
   const [collage, setCollage] = useState('');
   const [degree, setDegree] = useState('');
+  const [major, setMajor] = useState('');
 
   const { startPeriod, endPeriod } = useSelector((state) => state.onboarding);
 
@@ -83,14 +84,26 @@ const EducationCard = () => {
           setInputValue={setDegree}
         />
       </div>
-      <div className="flex-1 flex flex-col ">
-        <Input label="Major" placeholder="Eg : Computer Science Engineering" />
+      <div className="flex-1 flex flex-col">
+        <Input
+          label="Major"
+          placeholder="Eg : Computer Science Engineering"
+          inputValue={major}
+          setInputValue={setMajor}
+        />
         <div>
           {fields.map((field, index) => (
             <div key={index} className="relative mt-[13px]">
               <Input
                 label={`Additional ${field.type}`}
                 placeholder={`Add ${field.type}`}
+                inputValue={field.value} // Pass inputValue
+                setInputValue={(value) => {
+                  // Pass setInputValue as a function with the value and type
+                  const updatedFields = [...fields];
+                  updatedFields[index].value = value;
+                  setFields(updatedFields);
+                }}
               />
               <button
                 className="absolute top-0 right-0  leading-[130%] text-text-red  text-[0.875rem] "
@@ -99,19 +112,19 @@ const EducationCard = () => {
               </button>
             </div>
           ))}
-          <div className="flex w-full justify-end gap-3 ">
-            <button
-              className="text-[0.875rem] leading-[130%] text-[#0064E1] font-medium"
-              onClick={() => addField('Major')}>
-              Add a major
-            </button>
-            <button
-              className="text-[0.875rem] leading-[130%] text-[#0064E1] font-medium"
-              onClick={() => addField('Minor')}>
-              Add a minor
-            </button>
-          </div>
         </div>
+      </div>
+      <div className="flex w-full justify-end gap-3 ">
+        <button
+          className="text-[0.875rem] leading-[130%] text-[#0064E1] font-medium"
+          onClick={() => addField('Major')}>
+          Add a major
+        </button>
+        <button
+          className="text-[0.875rem] leading-[130%] text-[#0064E1] font-medium"
+          onClick={() => addField('Minor')}>
+          Add a minor
+        </button>
       </div>
     </div>
   );
