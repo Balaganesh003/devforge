@@ -8,6 +8,7 @@ const UpcomingCard = ({ isImage, imageUrl, title, subtitle, month, date }) => {
         {isImage && imageUrl ? (
           <Image
             src={imageUrl && imageUrl}
+            priority={true}
             width={40}
             height={40}
             className="w-full h-full rounded-lg flex-shrink-0"
