@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import SearchDropDown from '@/components/SearchDropDown';
 import { useSelector, useDispatch } from 'react-redux';
 import { onboardingActions } from '@/store/onboarding-slice';
 import MonthYear from './MonthYear';
-import DropDown from './DropDown';
-import { universities, degrees, collegeSubjects, degreesArray } from '@/data';
 import Input from './Input';
 
 const EducationCard = () => {
@@ -42,6 +39,12 @@ const EducationCard = () => {
       return;
 
     setFields([...fields, { type }]);
+  };
+
+  const removeField = (index) => {
+    const updatedFields = [...fields];
+    updatedFields.splice(index, 1);
+    setFields(updatedFields);
   };
 
   return (
@@ -91,7 +94,7 @@ const EducationCard = () => {
               />
               <button
                 className="absolute top-0 right-0  leading-[130%] text-text-red  text-[0.875rem] "
-                onClick={() => removeSchool(index)}>
+                onClick={() => removeField(index)}>
                 <span className="ml-1 leading-[130%]">Remove {field.type}</span>
               </button>
             </div>

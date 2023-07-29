@@ -22,7 +22,7 @@ const VerifyEmail = ({ isLoading, nextPanel }) => {
       <div className="mt-6">
         <ColouredButton
           handelClick={nextPanel}
-          label={'Resend Email'}
+          label={'Verify'}
           isLoading={isLoading}
         />
       </div>
