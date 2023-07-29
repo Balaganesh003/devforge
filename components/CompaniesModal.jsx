@@ -19,6 +19,8 @@ import LogoInstagram from '@/assets/instagram.svg';
 import ApplyImg from '@/assets/apply.svg';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { FaSackDollar } from 'react-icons/fa6';
+import Twoicons from '@/assets/twoicons.svg';
+import { AiFillCaretDown } from 'react-icons/ai';
 
 const datadummy = {
   id: 1,
@@ -134,28 +136,10 @@ const CompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
                 </div>
               </div>
             </div>
-            <hr className="h-[1px] bg-light-gray my-[0.9375rem] -mx-[0.9375rem]" />
-            {/* Buttons */}
-            <div className="flex items-center justify-between">
-              <div className="flex gap-4">
-                <SaveOutlineButton />
-                <SaveOutlineButton isShare={true} />
-              </div>
-              <div className="">
-                <button className="max-w-[13.25rem]   mx-auto  bg-primary-button px-4 rounded font-semibold text-[0.875rem] h-[2.5rem] flex items-center gap-2 hover:bg-secondary-button hover:-translate-y-0.5  hover:shadow-button ease-in-out-expo transform transition-transform duration-150 cursor-pointer ">
-                  <span>Apply</span>
-                  <Image
-                    src={RightArrow}
-                    alt="back"
-                    className="h-[0.875rem] w-fit"
-                  />
-                </button>
-              </div>
-            </div>
           </div>
           <div className="h-full w-full tablet-lg:px-[0.9375rem] overflow-hidden">
             <div className="max-w-[1000px] tablet-lg:px-3 mt-[20px] h-full flex flex-col tablet-lg:flex-row ">
-              <div className="h-full flex-grow flex-shrink basis-[66%] min-w-[21.875rem] tablet-lg:mr-[10px] ">
+              <div className="h-full flex-grow flex-shrink basis-[68%] min-w-[21.875rem] tablet-lg:mr-[10px] ">
                 {/* Job description */}
                 <div className="h-full p-[15px] mb-[15px] bg-white border border-light-gray rounded-lg">
                   <p className="uppercase mb-[15px] text-ellipsis leading-[1.125rem] font-medium text-secondary-text text-[0.8125rem]">
@@ -181,8 +165,37 @@ const CompaniesModal = ({ isModalOpen, setIsModalOpen }) => {
                     KEY MEMBERS
                   </p>
                   <div className="flex gap-4 w-full">
-                    <div className="border border-[#d7d7d7] p-[15px] rounded-lg w-full"></div>
-                    <div className="border border-[#d7d7d7] p-[15px] rounded-lg w-full"></div>
+                    <div className="border border-[#d7d7d7] p-[15px] rounded-lg w-full relative">
+                      <div className="absolute top-2 right-3 group">
+                        <Image
+                          src={Twoicons}
+                          alt="Twoicons"
+                          className="h-6 w-fit"
+                        />
+                        <div className="absolute bg-[#555] group-hover:opacity-[100%] opacity-0 text-[14px] py-2 rounded text-center text-[#fff] -top-[50px] -right-20 w-[13rem]">
+                          Invites to unlock refferal
+                          <AiFillCaretDown className="absolute group-hover:opacity-[100%] opacity-0 text-[32px] top-[60%] left-1/2 -translate-x-1/2 text-[#555]" />
+                        </div>
+                      </div>
+                      <div className="mb-2 mt-[15px]">
+                        <div className="w-[5rem] h-[5rem] mx-auto rounded-full border border-[#d7d7d7]"></div>
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <h4 class="font-medium text-base leading-snug mb-2 ">
+                          Tade Oyerinde
+                        </h4>
+                        <p class="leading-4 text-sm">
+                          Founder &amp; CEO at Campuswire
+                        </p>
+                      </div>
+                    </div>
+                    <div className="border border-[#d7d7d7]  rounded-lg w-full">
+                      <div className="w-full  h-1/2 bg-[#E9ECEF] animate-pulse"></div>
+                      <div className="p-[15px]">
+                        <div className="h-5 w-[90%] rounded bg-[#E9ECEF] animate-pulse mb-2"></div>
+                        <div className="h-4 w-[60%] rounded bg-[#E9ECEF] animate-pulse mb-2"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
