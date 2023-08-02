@@ -71,20 +71,17 @@ module.exports = {
       },
 
       fontFamily: {
-        'CabinetGrotesk-Variable': ['CabinetGrotesk-Variable', 'sans-serif'],
-        'CabinetGrotesk-Thin': ['CabinetGrotesk-Thin', 'sans-serif'],
-        'CabinetGrotesk-Extralight': [
-          'CabinetGrotesk-Extralight',
-          'sans-serif',
-        ],
-        'CabinetGrotesk-Light': ['CabinetGrotesk-Light', 'sans-serif'],
-        'CabinetGrotesk-Regular': ['CabinetGrotesk-Regular', 'sans-serif'],
-        'CabinetGrotesk-Medium': ['CabinetGrotesk-Medium', 'sans-serif'],
-        'CabinetGrotesk-Bold': ['CabinetGrotesk-Bold', 'sans-serif'],
-        'CabinetGrotesk-Extrabold': ['CabinetGrotesk-Extrabold', 'sans-serif'],
-        'CabinetGrotesk-Black': ['CabinetGrotesk-Black', 'sans-serif'],
-        'HelveticaNeueLTStd-Lt': ['HelveticaNeueLTStd-Lt', 'sans-serif'],
-        sans: ['Inter', 'sans-serif'],
+        'CabinetGrotesk-Variable': ['CabinetGrotesk-Variable'],
+        'CabinetGrotesk-Thin': ['CabinetGrotesk-Thin'],
+        'CabinetGrotesk-Extralight': ['CabinetGrotesk-Extralight'],
+        'CabinetGrotesk-Light': ['CabinetGrotesk-Light'],
+        'CabinetGrotesk-Regular': ['CabinetGrotesk-Regular'],
+        'CabinetGrotesk-Medium': ['CabinetGrotesk-Medium'],
+        'CabinetGrotesk-Bold': ['CabinetGrotesk-Bold'],
+        'CabinetGrotesk-Extrabold': ['CabinetGrotesk-Extrabold'],
+        'CabinetGrotesk-Black': ['CabinetGrotesk-Black'],
+        'HelveticaNeueLTStd-Lt': ['HelveticaNeueLTStd-Lt'],
+        sans: ['Inter'],
       },
 
       animation: {
