@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import plusLogo from '@/assets/PlusLogo.svg';
 
-import ErrorIcon from '../assets/exclamatory.svg';
 import SocialUrlCard from './SocialUrlCard';
 import LogoLinkedin from '@/assets/linkedin.svg';
 import LogoTwitter from '@/assets/twitter.svg';
