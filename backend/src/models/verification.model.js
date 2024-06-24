@@ -6,4 +6,4 @@ const VerificationSchema = mongoose.Schema({
     expiryTime : {type : Date,default : Date.now()+360000}
 })
 
-export const Verification = mongoose.model('Verification',VerificationSchema);
+export const Verification = mongoose.model('Verification',VerificationSchema); 

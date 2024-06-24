@@ -2,6 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import {config} from 'dotenv'
+import userRouter from './routes/user.routes.js'
 const app = express()
 config()
 
