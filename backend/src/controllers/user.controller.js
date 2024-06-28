@@ -4,13 +4,12 @@ import bcrypt from 'bcryptjs'
 
 const createUser = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
-  User.find({ email }).then((res) => {
-    if (res.length) {
-      res
-        .status(409)
-        .json({ status: "failed", message: "User already exists" });
-    }
-  });
+
+  try{
+  const existingUser = await User.findOne({ email });
+  if(existingUser){
+    return res.status(409).json({message : "This email has already been registered"})
+  }
   const hashedPassword = await bcrypt.hash(password,10);
   const newUser = new User({
     firstName,
@@ -18,16 +17,13 @@ const createUser = async (req, res) => {
     email,
     password : hashedPassword,
   });
-  await newUser
-    .save()
-    .then((result) => {
-      sendVerificationEmail(result, res);
-      res.json({ message: "User created ", result });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.json({ err, message: "Error while creating new User" });
-    });
+  const result = await newUser.save()
+  sendVerificationEmail(result,res);
+  return res.json({ message: "User created ", result });
+  }catch(err){
+    console.log(err);
+    return res.status(500).json({message : "Error while creating user"});
+  }
 };
 
 export { createUser };
