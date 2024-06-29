@@ -121,7 +121,7 @@ const Swapper = () => {
                   <span
                     src={SpinnerLogo}
                     alt="spinner"
-                    className={`loader absolute left-[0px] top-1/2 -translate-y-1/2   transition-all duration-1000 h-[1.5rem] inline-block mr-4 ${
+                    className={`loader-spin absolute left-[0px] top-1/2 -translate-y-1/2   transition-all duration-1000 h-[1.5rem] inline-block mr-4   ${
                       active === item.id ? 'animate-fade-in' : 'hidden'
                     }`}
                   />
