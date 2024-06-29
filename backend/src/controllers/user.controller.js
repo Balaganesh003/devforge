@@ -13,14 +13,15 @@ const signJWT = (payload) => {
   return jwt.sign(payload, process.env.JWT_SECRET, {});
 };
 
-const verifyJWT = (token) => {
-  try {
-    return jwt.verify(token, process.env.JWT_SECRET,{});
-  } catch (err) {
-    console.error('JWT verification failed:', err);
-    return null; // Or handle the error as needed
-  }
-};
+// const verifyJWT = (token) => {
+//   try {
+//     return jwt.verify(token, process.env.JWT_SECRET,{});
+//   } catch (err) {
+//     console.error('JWT verification failed:', err);
+//     return null; // Or handle the error as needed
+//   }
+// };
+
 const createUser = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
 
@@ -60,12 +61,10 @@ const createUser = async (req, res) => {
 
 const verifyUser = async (req, res) => {
   const { otp } = req.body;
-  const token = req.cookies?.jwt;
-  if(!token){
-    return res.status(403).json({message : "No jwt"})
+  const user = req.user;
+  if(!user){
+    return res.status(403).json({message : "JWT token error"});
   }
-  const user = verifyJWT(token);
-
   const verificationDoc = await Verification.findOne({userId : user.userId});
   const isOtpCorrect = bcrypt.compareSync(otp,verificationDoc.otp);
   if(!isOtpCorrect){
@@ -79,7 +78,7 @@ const verifyUser = async (req, res) => {
   const userDoc = await User.findById({_id : user.userId});
   userDoc.isVerified = 1;
   await userDoc.save();
-  res.json({message : "Verified"});
+  return res.json({message : "Verified"});
 };
 
 export { createUser, verifyUser };
