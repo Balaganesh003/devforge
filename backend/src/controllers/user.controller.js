@@ -60,6 +60,7 @@ const createUser = async (req, res) => {
 };
 
 const verifyUser = async (req, res) => {
+  console.log("verify")
   const { otp } = req.body;
   const user = req.user;
   if(!user){
@@ -81,4 +82,19 @@ const verifyUser = async (req, res) => {
   return res.json({message : "Verified"});
 };
 
-export { createUser, verifyUser };
+const resendVerificationMail = async(req,res)=>{
+  const user = req.user;
+  const verificationDoc = await Verification.findOne({userId : user.userId});
+  if(!verificationDoc){
+    return res.json({message : "User has already been verified"});
+  }
+  await Verification.deleteOne({_id : verificationDoc._id});
+  const userDoc = await User.findById({_id : user.userId});
+  if(!userDoc){
+    return res.json({message :"user Document is not in DB"});
+  }
+  sendVerificationEmail(userDoc,res);
+  return res.json({message : "verification email has been resent"});
+}
+
+export { createUser, verifyUser , resendVerificationMail};
