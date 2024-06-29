@@ -97,4 +97,28 @@ const resendVerificationMail = async(req,res)=>{
   return res.json({message : "verification email has been resent"});
 }
 
-export { createUser, verifyUser , resendVerificationMail};
+const login = async(req,res)=>{
+  const {email,password} = req.body;
+  const userDoc = await User.findOne({email})
+  if(!userDoc){
+    return res.status(403).json({message : "No user by that email"});
+  }
+  const isAuthenticated  = bcrypt.compareSync(password,userDoc.password);
+  if(!isAuthenticated){
+    return res.status(403).json({message : "User is not authenticated"});
+  }
+  const token = signJWT({
+    userId: userDoc._id,
+    firstName: userDoc.firstName,
+    lastName: userDoc.lastName,
+    userEmail: userDoc.email,
+  });
+  res.cookie('jwt', token, {
+    httpOnly: true,
+    secure: false,
+    sameSite: 'none',
+  });
+  return res.json({ message: "User logged in", userDoc});
+} 
+
+export { createUser, verifyUser , resendVerificationMail, login};
