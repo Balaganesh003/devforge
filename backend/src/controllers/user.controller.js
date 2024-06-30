@@ -101,7 +101,7 @@ const login = async(req,res)=>{
   const {email,password} = req.body;
   const userDoc = await User.findOne({email})
   if(!userDoc){
-    return res.status(403).json({message : "No user by that email"});
+    return res.status(404).json({message : "No user by that email"});
   }
   const isAuthenticated  = bcrypt.compareSync(password,userDoc.password);
   if(!isAuthenticated){

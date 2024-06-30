@@ -1,11 +1,23 @@
-import express from 'express'
-import mongoose from 'mongoose'
-import cors from 'cors'
-import {config} from 'dotenv'
-import userRouter from './routes/user.routes.js'
-import cookieParser from 'cookie-parser'
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import {config} from 'dotenv';
+import userRouter from './routes/user.routes.js';
+import cookieParser from 'cookie-parser';
+import swaggerUi from 'swagger-ui-express';
+// import swaggerDocument from './swagger-output.json';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
+
+const swaggerDocument = require('./swagger-output.json');
+//   const swaggerDocument = await import("./swagger-output.json",{
+//   assert : {type : "json"}
+// })
+
+
 const app = express()
 app.use(cookieParser())
+app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerDocument));
 config()
 
 

@@ -1,0 +1,161 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "DevForge Backend API",
+    "description": "Contains user routes",
+    "version": "1.0.0"
+  },
+  "host": "localhost:8081",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  
+  "paths": {
+    "/api/user/createUser": {
+      "post": {
+        "description": "Create a new user",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "John"
+                },
+                "lastName": {
+                  "example": "Doe"
+                },
+                "email": {
+                  "example": "johndoe@email.com"
+                },
+                "password": {
+                  "example": "password@123"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User created",
+            "headers" : {
+              "Set-Cookie": {
+                "type": "string",
+                "description": "Set-Cookie header with JWT token",
+                "example": "jwt=<token>; Path=/; HttpOnly; Secure; SameSite=None"
+              }
+            }
+          },
+          "409": {
+            "description": "Email already exists"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/user/login": {
+      "post": {
+        "description": "Login with email and password",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "johndoe@email.com"
+                },
+                "password": {
+                  "example": "password@123"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Login Successful",
+            "headers" : {
+              "Set-Cookie": {
+                "type": "string",
+                "description": "Set-Cookie header with JWT token",
+                "example": "jwt=<token>; Path=/; HttpOnly; Secure; SameSite=None"
+              }
+            }
+          },
+          "403": {
+            "description": "Password does not match the email"
+          },
+          "404": {
+            "description": "Email Not Found"
+          }
+        }
+      }
+    },
+    "/api/user/verifyUser": {
+      "post": {
+        "description": "Verifies a user using email OTP",
+        "parameters": [
+          {
+            "name": "Authorization",
+          "in": "header",
+          "required": true,
+          "type": "string",
+          "description": "JWT token",
+          "example": "Bearer <JWT token>"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "otp": {
+                  "example": "123456"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User verified"
+            
+          },
+          "403": {
+            "description": "Incorrect OTP or JWT error"
+          }
+        }
+      }
+    },
+    "/api/user/resendVerificationMail": {
+      "post": {
+        "description": "Resends the verification email after logged in",
+        "parameters" : [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "JWT token",
+            "example": "Bearer <JWT token>"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User verified"
+          },
+          "403": {
+            "description": "Incorrect OTP or JWT error"
+          }
+        }
+      }
+    }
+  }
+}
