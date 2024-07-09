@@ -9,12 +9,11 @@ const verifyJWT = (req,res,next) => {
     try {
       const user = jwt.verify(token, process.env.JWT_SECRET,{});
       req.user = user;
-      next
+      next();
     } catch (err) {
       console.error('JWT verification failed:', err);
       return null; // Or handle the error as needed
     }
-    next()
   };
 
 export {verifyJWT};

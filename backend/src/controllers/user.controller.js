@@ -60,7 +60,6 @@ const createUser = async (req, res) => {
 };
 
 const verifyUser = async (req, res) => {
-  console.log("verify")
   const { otp } = req.body;
   const user = req.user;
   if(!user){
@@ -71,7 +70,6 @@ const verifyUser = async (req, res) => {
   if(!isOtpCorrect){
     return res.status(403).json({message : "Incorrect OTP"})
   }
-  console.log(verificationDoc.expiryTime,Date.now())
   if(Date.now()>verificationDoc.expiryTime){
     return res.json({message : "OTP timed out"})
   }
@@ -121,4 +119,14 @@ const login = async(req,res)=>{
   return res.json({ message: "User logged in", userDoc});
 } 
 
-export { createUser, verifyUser , resendVerificationMail, login};
+const logout = (req,res)=>{
+  res.clearCookie('jwt',{
+    httpOnly : true,
+    secure : false,
+    sameSite : 'none'
+  })
+  res.status(200).json({message : "Logged out successfully"});
+}
+
+
+export { createUser, verifyUser , resendVerificationMail, login,logout};
