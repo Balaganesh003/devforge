@@ -20,7 +20,7 @@ export const createCompany = async(req,res)=>{
         // sendVerificationEmail(result, res);
         const token = signJWT({
             companyId: result._id,
-            comapnyName : result.companyName,
+            companyName : result.companyName,
             companyEmail: result.email,
         });
         res.cookie('jwt', token, {

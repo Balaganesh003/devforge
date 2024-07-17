@@ -12,7 +12,7 @@ const verifyJWT = (req,res,next) => {
       next();
     } catch (err) {
       console.error('JWT verification failed:', err);
-      return null; // Or handle the error as needed
+      return res.status(403).json({message : "internal error while processing jwt"}); // Or handle the error as needed
     }
   };
 

@@ -26,7 +26,7 @@ const UserProfileSchema = mongoose.Schema({
   aboutMe : {type : String},
   socialLinks : [{type : String}],
   resumeLink : {type : String , required : true},
-  appliedJobs : [{type : mongoose.Schema.ObjectId,ref : 'job'}]
+  appliedJobs : [{type : mongoose.Schema.ObjectId,ref : 'job', default : []}]
 });
 
 export const UserProfile = mongoose.model("user_profiles", UserProfileSchema);
