@@ -20,26 +20,18 @@ const sendMail = (mailOptions) => {
   });
 };
 
-export const sendVerificationEmail = async (result, res) => {
-  const otp = Math.floor(Math.random() * 900000 + 100000);
-  console.log(otp);
+export const sendVerificationEmail = async (result, res, emailBody, emailSubject) => {
 
   const mailOptions = {
     from: "destrobroxd@gmail.com",
     to: result.email,
-    subject: "Verification Code for DevForge",
-    html: `<p>Your Verification code for DevForge is <b>${otp}</b>.It will expire in 60 mins</p>`,
+    subject: emailSubject,
+    html: emailBody,
   };
 
+  // "Verification Code for DevForge"
+  // `<p>Your Verification code for DevForge is <b>${otp}</b>.It will expire in 60 mins</p>`
   sendMail(mailOptions);
 
-  const hashedOtp = await bcrypt.hash(otp.toString(), 10);
-
-  const newVeri = Verification({
-    userId: result._id,
-    otp: hashedOtp,
-  });
-  await newVeri.save().catch((err) => {
-    console.log(err);
-  });
+  
 };

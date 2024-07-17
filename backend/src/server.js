@@ -3,16 +3,15 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import {config} from 'dotenv';
 import userRouter from './routes/user.routes.js';
+import userProfileRouter from './routes/user_profile.routes.js'
+import companyRouter from "./routes/company.routes.js"
+import companyProfileRouter from "./routes/company_profile.routes.js"
+import jobRouter from "./routes/job.routes.js"
 import cookieParser from 'cookie-parser';
 import swaggerUi from 'swagger-ui-express';
-// import swaggerDocument from './swagger-output.json';
 import {createRequire} from 'node:module';
 const require = createRequire(import.meta.url);
-
 const swaggerDocument = require('./swagger-output.json');
-//   const swaggerDocument = await import("./swagger-output.json",{
-//   assert : {type : "json"}
-// })
 
 
 const app = express()
@@ -49,7 +48,11 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
-app.use("/api/user",userRouter)
+app.use("/api/user",userRouter);
+app.use("/api/userProfile",userProfileRouter)
+app.use("/api/company", companyRouter)
+app.use("/api/companyProfile", companyProfileRouter)
+app.use("/api/job",jobRouter)
 
 app.listen(process.env.PORT,()=>{
     console.log(`app running at ${process.env.PORT}`)
