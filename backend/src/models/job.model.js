@@ -8,6 +8,6 @@ const JobSchema = mongoose.Schema({
     recommendedSkills : [{type : String}],
     appliedCandidates : [{type : mongoose.Schema.ObjectId,ref : 'user_profiles'}],
     salaryRange : {type: String,required:true}
-})
+});
 
 export const Job = mongoose.model('job',JobSchema)

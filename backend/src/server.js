@@ -4,6 +4,8 @@ import cors from 'cors';
 import {config} from 'dotenv';
 import userRouter from './routes/user.routes.js';
 import userProfileRouter from './routes/user_profile.routes.js'
+import companyRouter from "./routes/company.routes.js"
+import companyProfileRouter from "./routes/company_profile.routes.js"
 import cookieParser from 'cookie-parser';
 import swaggerUi from 'swagger-ui-express';
 import {createRequire} from 'node:module';
@@ -47,6 +49,8 @@ mongoose
 
 app.use("/api/user",userRouter);
 app.use("/api/userProfile",userProfileRouter)
+app.use("/api/company", companyRouter)
+app.use("/api/companyProfile", companyProfileRouter)
 
 app.listen(process.env.PORT,()=>{
     console.log(`app running at ${process.env.PORT}`)
