@@ -1,3 +1,5 @@
+import { CompanyProfile } from "../models/company_profile.model.js";
+import { Job } from "../models/job.model.js";
 import { UserProfile } from "../models/user_profile.model.js";
 
 export const createUserProfile = async (req, res) => {
@@ -50,3 +52,4 @@ export const getUserProfile = async(req,res)=>{
         return res.status(500).json({message : ""})
     }
 }
+

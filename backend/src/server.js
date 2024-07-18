@@ -10,6 +10,11 @@ import jobRouter from "./routes/job.routes.js"
 import cookieParser from 'cookie-parser';
 import swaggerUi from 'swagger-ui-express';
 import {createRequire} from 'node:module';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { isAuthenticatedCompany } from './middlewares/isAuthenticatedCompany.js';
+import { verifyJWT } from './middlewares/jwt.js';
+
 const require = createRequire(import.meta.url);
 const swaggerDocument = require('./swagger-output.json');
 
@@ -43,11 +48,20 @@ const corsOptions = {
 app.use(express.json());
 app.use(cors(corsOptions));
 
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log(err));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
+const rootDir = path.resolve(__dirname, "../")
+
+mongoose
+.connect(process.env.MONGO_URI)
+.then(() => console.log("MongoDB connected"))
+.catch((err) => console.log(err));
+
+app.get("/",(req,res)=>{
+  res.send("Test ok");
+})
+app.use('/exports',verifyJWT, isAuthenticatedCompany, express.static(path.join(rootDir, 'exports')));
 app.use("/api/user",userRouter);
 app.use("/api/userProfile",userProfileRouter)
 app.use("/api/company", companyRouter)
