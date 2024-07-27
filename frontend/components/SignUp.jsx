@@ -4,6 +4,9 @@ import InputField from '@/components/InputField';
 import EmailField from '@/components/EmailField';
 import PasswordField from '@/components/PasswordField';
 import SignUpButton from '@/components/SignUpButton';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = ({ nextPanel, isLoading }) => {
   const [FirstName, setFirstName] = useState('');
@@ -33,6 +36,40 @@ const SignUp = ({ nextPanel, isLoading }) => {
     );
   };
 
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(
+        'http://localhost:8000/api/user/createUser',
+        {
+          firstName: FirstName,
+          lastName: LastName,
+          email: Email,
+          password: Password,
+        }
+      );
+
+      if (res.status === 200) {
+        nextPanel(e);
+        toast.success('Sign up successful!');
+      } else {
+        toast.error('Something went wrong');
+      }
+    } catch (error) {
+      if (error.response) {
+        // Server responded with a status other than 2xx
+        if (error.response.status === 409) {
+          toast.error('This email is already registered.');
+        } else {
+          toast.error('Something went wrong. Please try again later.');
+        }
+      } else {
+        // Network error or no response from server
+        toast.error('Network error. Please check your internet connection.');
+      }
+    }
+  };
+
   useEffect(() => {
     if (isFirstload) {
       setIsFirstLoad(false);
@@ -51,6 +88,7 @@ const SignUp = ({ nextPanel, isLoading }) => {
   ]);
   return (
     <div className="bg-white w-full  mobile-lg:max-w-[520px] mt-[2.25rem]  my-auto">
+      <ToastContainer />
       <h1 className="text-primary-text text-[2.25rem] tracking-[-0.005em] font-CabinetGrotesk-Medium leading-[125%]">
         Sign Up
       </h1>
@@ -98,7 +136,7 @@ const SignUp = ({ nextPanel, isLoading }) => {
         <div className=" w-[150px] mx-auto">
           <SignUpButton
             isLoading={isLoading}
-            nextPanel={nextPanel}
+            nextPanel={handleSignUp}
             isAllValid={isAllValid}
             label={'Sign up'}
           />

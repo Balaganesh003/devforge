@@ -67,7 +67,7 @@ const createUser = async (req, res) => {
       secure: false,
       sameSite: "none",
     });
-    return res.json({ message: "User created ", result });
+    return res.status(200).json({ message: "User created ", result });
   } catch (err) {
     console.log(err);
     return res.status(500).json({ message: "Error while creating user" });
@@ -92,7 +92,7 @@ const verifyUser = async (req, res) => {
   const userDoc = await User.findById({ _id: user.userId });
   userDoc.isVerified = 1;
   await userDoc.save();
-  return res.json({ message: "Verified" });
+  return res.status(200).json({ message: "Verified" });
 };
 
 const resendVerificationMail = async (req, res) => {

@@ -1,10 +1,57 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import ColouredButton from './ColouredButton';
 import Otp from './Otp';
+import { toast, ToastContainer } from 'react-toastify';
+import axios from 'axios';
 
 const VerifyEmail = ({ isLoading, nextPanel }) => {
+  const [otp, setOtp] = useState(Array(6).fill(''));
+  const otpInputRefs = useRef([]);
+
+  const handelOtpSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.post(
+        'http://localhost:8000/api/user/verifyUser',
+        {
+          otp: otp.join(''),
+        }
+      );
+
+      const data = await res.json();
+
+      console.log(data);
+
+      if (res.status === 200) {
+        // Successfully verified OTP
+        toast.success('OTP verified successfully!');
+        nextPanel(e);
+      } else {
+        // Handle specific errors based on server response
+        switch (data.message) {
+          case 'JWT token error':
+            toast.error('Authentication error. Please log in again.');
+            break;
+          case 'Incorrect OTP':
+            toast.error('Incorrect OTP. Please try again.');
+            break;
+          case 'OTP timed out':
+            toast.error('OTP has expired. Please request a new one.');
+            break;
+          default:
+            toast.error('Something went wrong. Please try again later.');
+            break;
+        }
+      }
+    } catch (error) {
+      // Handle network or other errors
+      toast.error('Network error. Please check your internet connection.');
+    }
+  };
   return (
     <div className=" max-w-[520px]">
+      <ToastContainer />
       <h1 className="text-[2.25rem] tracking-[-0.005em]  leading-[1.5] font-CabinetGrotesk-Medium">
         Verify your email
       </h1>
@@ -17,11 +64,11 @@ const VerifyEmail = ({ isLoading, nextPanel }) => {
         <p>Check your inbox and open the link to verify your email</p>
       </div>
       <div className="pt-[13px]">
-        <Otp />
+        <Otp otp={otp} setOtp={setOtp} otpInputRefs={otpInputRefs} />
       </div>
       <div className="mt-6">
         <ColouredButton
-          handelClick={nextPanel}
+          handelClick={handelOtpSubmit}
           label={'Verify'}
           isLoading={isLoading}
         />

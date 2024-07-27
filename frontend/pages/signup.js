@@ -17,7 +17,6 @@ import VerifyEmail from '@/components/VerifyEmail';
 import { motion, AnimatePresence, easeIn } from 'framer-motion';
 import AuthBanner from '@/components/AuthBanner';
 import { useRouter } from 'next/router';
-import toast, { Toaster } from 'react-hot-toast';
 
 const SignUpPage = () => {
   const [height, setHeight] = useState(0);
@@ -31,7 +30,6 @@ const SignUpPage = () => {
   const GotoObarding = () => {
     setIsLoading(true);
     setTimeout(() => {
-      toast.success('Verification Successful!');
       router.push('/onboarding');
       setIsLoading(false);
     }, 3000);
@@ -43,8 +41,8 @@ const SignUpPage = () => {
     setIsLoading(true);
     setTimeout(() => {
       if (index < 2) {
-        index === 0 && toast.success('Invite Code Verified!');
-        index === 1 && toast.success('Sign Up Successful!');
+        // index === 0 && toast.success('Invite Code Verified!');
+        // index === 0 && toast.success('Sign Up Successful!');
 
         setIndex(index + 1);
         setDirection(1);
@@ -83,7 +81,6 @@ const SignUpPage = () => {
       className={`flex h-full font-sans w-full ${
         height > 582 ? 'h-screen overflow-hidden' : 'h-full'
       }`}>
-      <Toaster />
       <div className="hidden  mobile-lg:flex  mobile-lg:w-[45%] bg-[#F5F7F9] px-4 py-[2.5rem] sm:px-[1.5rem] lg:px-[2.25rem]  justify-center">
         <div className="max-w-[380px]  w-full flex  flex-col justify-around h-full ">
           <AuthBanner />
@@ -114,7 +111,7 @@ const SignUpPage = () => {
       <div
         className={`mobile-lg:w-[55%] overflow-x-hidden w-full  flex justify-center items-center px-[1.5rem] lg:px-[2.25em] py-[2.5rem]  ${
           height > 582 ? 'min-h-screen overflow-y-auto ' : 'h-full  '
-        }  ${index == 1 && height < 700 && 'items-baseline'} `}>
+        }  ${index == 0 && height < 700 && 'items-baseline'} `}>
         {/* Slides */}
         <AnimatePresence initial={false} custom={index} mode={`wait`}>
           <motion.div
@@ -124,9 +121,9 @@ const SignUpPage = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             ease={easeIn}>
-            {index === 0 && (
+            {/* {index === 0 && (
               <InvitePage nextPanel={nextPanel} isLoading={isLoading} />
-            )}
+            )} */}
             {index === 1 && (
               <SignUp
                 nextPanel={nextPanel}
@@ -134,7 +131,7 @@ const SignUpPage = () => {
                 isLoading={isLoading}
               />
             )}
-            {index === 2 && (
+            {index === 0 && (
               <VerifyEmail
                 nextPanel={GotoObarding}
                 prevPanel={prevPanel}
