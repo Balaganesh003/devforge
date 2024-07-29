@@ -64,11 +64,11 @@ const createUser = async (req, res) => {
     });
 
 
-    res.cookie("jwt", token, {
-      httpOnly: true,
-      secure: false,
-      sameSite: "None",
-    });
+    res.cookie('jwt', token,{
+      httpOnly :true,
+      secure : true,
+      sameSite : 'None'
+  });
     return res.status(200).json({ message: "User created ", result });
 
   } catch (err) {
@@ -83,7 +83,11 @@ const verifyUser = async (req, res) => {
   if (!user) {
     return res.status(403).json({ message: "JWT token error" });
   }
+  console.log({user})
   const verificationDoc = await Verification.findOne({ userId: user.userId });
+  if(!verificationDoc){
+    return res.status(403).json({ message: "no verification doc" });
+  }
   const isOtpCorrect = bcrypt.compareSync(otp, verificationDoc.otp);
   if (!isOtpCorrect) {
     return res.status(403).json({ message: "Incorrect OTP" });
