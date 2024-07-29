@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 
 const verifyJWT = (req,res,next) => {
     const token = req.cookies?.jwt;
-    console.log(token)
+    console.log({token})
     if(!token){
         return res.status(403).json({message : "No JWT token"})
     }
