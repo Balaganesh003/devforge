@@ -1,9 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 
-const Otp = () => {
-  const [otp, setOtp] = useState(Array(6).fill(''));
-  const otpInputRefs = useRef([]);
-
+const Otp = ({ otp, setOtp, otpInputRefs }) => {
   const handleChange = (e, index) => {
     const value = e.target.value;
     if (value.length <= 1) {

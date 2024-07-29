@@ -26,7 +26,7 @@ app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerDocument));
 config()
 
 
-const allowedOrigins = ["http://localhost:5173", "*"];
+const allowedOrigins = ["http://localhost:5173", "*" , "http://localhost:3000"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.indexOf(origin) !== -1 || allowedOrigins.includes("*")) {
@@ -37,13 +37,13 @@ const corsOptions = {
   },
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  // allowedHeaders: [
-  //   "Content-Type",
-  //   "Authorization",
-  //   "Access-Control-Allow-Credentials",
-  //   "*"
-  // ],
-  optionsSuccessStatus: 200, 
+//   allowedHeaders: [
+//     "Content-Type",
+//     "Authorization",
+//     "Access-Control-Allow-Credentials",
+//   ],
+  optionsSuccessStatus: 200,
+
 };
 
 
