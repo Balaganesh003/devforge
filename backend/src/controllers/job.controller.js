@@ -2,16 +2,16 @@ import { CompanyProfile } from "../models/company_profile.model.js";
 import { Job } from "../models/job.model.js";
 import { User } from "../models/user.model.js";
 import { UserProfile } from "../models/user_profile.model.js";
-import ExcelJS from 'exceljs';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import ExcelJS from "exceljs";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 // Convert import.meta.url to a path and get the directory name
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const rootDir = path.resolve(__dirname,"../../")
+const rootDir = path.resolve(__dirname, "../../");
 
 export const createJob = async (req, res) => {
   const user = req.user;
@@ -28,11 +28,9 @@ export const createJob = async (req, res) => {
       companyId: user.companyId,
     });
     if (!companyProfile) {
-      return res
-        .status(403)
-        .json({
-          message: "Please complete company profile to create a job posting",
-        });
+      return res.status(403).json({
+        message: "Please complete company profile to create a job posting",
+      });
     }
     const newJob = await Job.create({
       companyId: user.companyId,
@@ -102,8 +100,10 @@ export const applyForJob = async (req, res) => {
         .status(403)
         .json({ message: "Create a profile to apply for jobs" });
     }
-    if(userProfileDoc.appliedJobs.includes(jobId)){
-      return res.status(403).json({message : "You have already applied for the job"});
+    if (userProfileDoc.appliedJobs.includes(jobId)) {
+      return res
+        .status(403)
+        .json({ message: "You have already applied for the job" });
     }
     await Job.findOneAndUpdate(
       { _id: jobId },
@@ -225,5 +225,32 @@ export const getUserProfilesByJobId = async (req, res) => {
   } catch (err) {
     console.log(err);
     return res.status(500).json({ message: "internal server error" });
+  }
+};
+
+export const downloadSheetByJobId = async (req, res) => {
+  const { jobId } = req.params;
+  const user = req.user;
+  try {
+    if (!user.companyId) {
+      return res
+        .status(403)
+        .json({ message: "Only authenticated companies can download sheets" });
+    }
+    const jobDoc = await Job.findById(jobId);
+    if (jobDoc.companyId != user.companyId) {
+      return res
+        .status(403)
+        .json({ message: "Only authenticated companies can download sheets" });
+    }
+	const filePath = path.join(rootDir, 'exports', jobId, 'userProfiles.xlsx');
+	console.log(filePath);
+	if(!fs.existsSync(filePath)){
+		return res.status(401).json({message : "sheet does not exist"});
+	}
+	res.download(filePath,"userProfiles.xlsx")
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ message: "Internal server error" });
   }
 };

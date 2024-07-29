@@ -23,10 +23,10 @@ export const createCompany = async(req,res)=>{
             companyName : result.companyName,
             companyEmail: result.email,
         });
-        res.cookie('jwt', token, {
-            httpOnly: true,
-            secure: false,
-            sameSite: 'none',
+        res.cookie('jwt', token,{
+            httpOnly :true,
+            secure : true,
+            sameSite : 'None'
         });
         return res.json({ message: "User created ", result });
     }catch(err){
@@ -51,6 +51,10 @@ export const login = async (req, res) => {
       companyName : companyDoc.companyName,
       companyEmail: companyDoc.email,
     });
-    res.cookie("jwt", token);
+    res.cookie('jwt', token,{
+        httpOnly :true,
+        secure : true,
+        sameSite : 'None'
+    });
     return res.json({ message: "company logged in", companyDoc });
   };

@@ -62,11 +62,11 @@ const createUser = async (req, res) => {
       lastName: result.lastName,
       userEmail: result.email,
     });
-    res.cookie("jwt", token, {
-      httpOnly: true,
-      secure: false,
-      sameSite: "none",
-    });
+    res.cookie('jwt', token,{
+      httpOnly :true,
+      secure : true,
+      sameSite : 'None'
+  });
     return res.json({ message: "User created ", result });
   } catch (err) {
     console.log(err);
@@ -126,11 +126,11 @@ const login = async (req, res) => {
     lastName: userDoc.lastName,
     userEmail: userDoc.email,
   });
-  res.cookie("jwt", token, {
-    httpOnly: true,
-    secure: false,
-    sameSite: "none",
-  });
+  res.cookie('jwt', token,{
+    httpOnly :true,
+    secure : true,
+    sameSite : 'None'
+});
   return res.json({ message: "User logged in", userDoc });
 };
 
@@ -138,7 +138,7 @@ const logout = (req, res) => {
   res.clearCookie("jwt", {
     httpOnly: true,
     secure: false,
-    sameSite: "none",
+    sameSite: "None",
   });
   res.status(200).json({ message: "Logged out successfully" });
 };
