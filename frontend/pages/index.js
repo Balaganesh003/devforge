@@ -6,6 +6,7 @@ import HeroCard from '@/components/HeroCard';
 import Students from '@/assets/users/students.svg';
 import Companies from '@/assets/users/companies.svg';
 import Colleges from '@/assets/users/colleges.svg';
+import axios from 'axios';
 
 const inter = Inter({
   subsets: ['latin'],
