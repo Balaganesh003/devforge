@@ -10,6 +10,12 @@ import jobRouter from "./routes/job.routes.js"
 import cookieParser from 'cookie-parser';
 import swaggerUi from 'swagger-ui-express';
 import {createRequire} from 'node:module';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { isAuthenticatedCompany } from './middlewares/isAuthenticatedCompany.js';
+import { verifyJWT } from './middlewares/jwt.js';
+import { verifyJwtByBearer } from './utils/verifyJwtByBearer.js';
+
 const require = createRequire(import.meta.url);
 const swaggerDocument = require('./swagger-output.json');
 
@@ -31,23 +37,55 @@ const corsOptions = {
   },
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  allowedHeaders: [
-    "Content-Type",
-    "Authorization",
-    "Access-Control-Allow-Credentials",
-  ],
+//   allowedHeaders: [
+//     "Content-Type",
+//     "Authorization",
+//     "Access-Control-Allow-Credentials",
+//   ],
   optionsSuccessStatus: 200,
+
 };
+
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://your-client-origin.com'); // Change this to your client's origin
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
 
 
 app.use(express.json());
 app.use(cors(corsOptions));
 
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log(err));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
+const rootDir = path.resolve(__dirname, "../")
+
+console.log(path.join(rootDir, 'exports'))
+
+mongoose
+.connect(process.env.MONGO_URI)
+.then(() => console.log("MongoDB connected"))
+.catch((err) => console.log(err));
+
+app.get("/",(req,res)=>{
+  res.send("Test ok");
+})
+// app.use('/public', isAuthenticatedCompany, express.static(path.join(rootDir, 'exports')));
+// app.use('/public', express.static(path.join(rootDir, 'exports')));
+app.get('/api/exports/:jobId/:fileName',verifyJWT,isAuthenticatedCompany,(req, res) => {
+  const { jobId, fileName } = req.params;
+  const filePath = path.join(rootDir, 'exports', jobId, fileName);
+  console.log(filePath)
+  res.sendFile(filePath, err => {
+    if (err) {
+      res.status(404).send('File not found');
+    }
+  });
+});
 app.use("/api/user",userRouter);
 app.use("/api/userProfile",userProfileRouter)
 app.use("/api/company", companyRouter)

@@ -23,10 +23,10 @@ export const createCompany = async(req,res)=>{
             companyName : result.companyName,
             companyEmail: result.email,
         });
-        res.cookie('jwt', token, {
-            httpOnly: true,
-            secure: false,
-            sameSite: 'none',
+        res.cookie('jwt', token,{
+            httpOnly :true,
+            secure : true,
+            sameSite : 'None'
         });
         return res.json({ message: "User created ", result });
     }catch(err){
@@ -37,6 +37,7 @@ export const createCompany = async(req,res)=>{
 
 export const login = async (req, res) => {
     const { email, password } = req.body;
+    console.log(email,password)
     const companyDoc = await Company.findOne({ email });
     if (!companyDoc) {
       return res.status(404).json({ message: "No company by that email" });
@@ -50,10 +51,10 @@ export const login = async (req, res) => {
       companyName : companyDoc.companyName,
       companyEmail: companyDoc.email,
     });
-    res.cookie("jwt", token, {
-      httpOnly: true,
-      secure: false,
-      sameSite: "none",
+    res.cookie('jwt', token,{
+        httpOnly :true,
+        secure : true,
+        sameSite : 'None'
     });
     return res.json({ message: "company logged in", companyDoc });
   };
