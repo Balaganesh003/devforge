@@ -52,6 +52,7 @@ const SignUp = ({ nextPanel, isLoading }) => {
         }
       );
 
+      nextPanel(e);
       toast.success('Sign up successful!');
     } catch (error) {
       // if (error.response) {
