@@ -124,14 +124,14 @@ const SignUpPage = () => {
             {/* {index === 0 && (
               <InvitePage nextPanel={nextPanel} isLoading={isLoading} />
             )} */}
-            {index === 1 && (
+            {index === 0 && (
               <SignUp
                 nextPanel={nextPanel}
                 prevPanel={prevPanel}
                 isLoading={isLoading}
               />
             )}
-            {index === 0 && (
+            {index === 1 && (
               <VerifyEmail
                 nextPanel={GotoObarding}
                 prevPanel={prevPanel}

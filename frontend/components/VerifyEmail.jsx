@@ -3,11 +3,13 @@ import ColouredButton from './ColouredButton';
 import Otp from './Otp';
 import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const VerifyEmail = ({ isLoading, nextPanel }) => {
   const [otp, setOtp] = useState(Array(6).fill(''));
   const otpInputRefs = useRef([]);
 
+  const router = useRouter();
   const handelOtpSubmit = async (e) => {
     e.preventDefault();
 
@@ -26,6 +28,7 @@ const VerifyEmail = ({ isLoading, nextPanel }) => {
       if (res.status === 200) {
         // Successfully verified OTP
         toast.success('OTP verified successfully!');
+        router.push('/onboarding');
         nextPanel(e);
       } else {
         // Handle specific errors based on server response
